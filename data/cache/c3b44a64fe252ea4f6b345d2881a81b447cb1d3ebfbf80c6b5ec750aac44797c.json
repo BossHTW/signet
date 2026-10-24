@@ -1,0 +1,38 @@
+{
+  "model": "claude-sonnet-5-5",
+  "id": "msg_011CgMTjauZ9prcsudMcaUhm",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "thinking",
+      "thinking": "",
+      "signature": "CAQShAgKEAgTGAI4AUIIdGhpbmtpbmcSDEfy9+8SQEOkbHhgURoMzlydR2iTdan2N0QaIjBwjQvWlMPJlyBN40ZlOkrIP+9SLZe2OBCMYGP5+BgFbj86Ven6sQGv+3TvwqSH578qoQcfAJVyqzmq7/55R2bAsio9lFKjejzl1rUS8qFhsHmnZm5IPFXwi7HaZg4OwMOvJzEFDbaK/l31aZgq432utEnn0MWd4G1Ifd/wmAnwZiVyAE9hI0AmdFIDy6M9YYgCps9SgL8auaGAkQgDnNL2HA+l8ElZnWYu4seHrkmQrlUHrnjnqYVzU0B940fii3aSkpU4jBWtdToRwnQIhh2FJJtcgpC+l4JGUNcKc+XhgShyZRTo287DbfiMU3ValknkBMgalxtpAJRuy1c0/NNfrFgQwOnctnvsEaOwmigenkDliyC8cwyxGgiR6ZSKeuXlF9ripez/5smn6ZVW9vjWuLUBLpoKohcvYgUd9W5VdRSSQubel6O4+JWKR+OUsO5kjhPD4m74hqeL8JbdRe6FER+O5P531OEDWK/k+boumtiNEWmMv+sRDEyJ3+HXkMktA7G9vUmV6J9yjBVOqDsGabl8dDGUaoCZebjqB3KUIa6fyY7aWnJsnXnCj4UqAf4y1n58svs9Fhytc7zu9Tr3R7D2+G20N9P++WW1qRK3LQgjxh92rxVjj8UuzN1Rl3gkcDHaOXmhWg930907BCjduHY/GbT+LR0y3YtNGlxMmT8mLXujZMv/qVkQtc+qba1f0ZKQl2O6sOSEiWwsTV8o/s+h6dxrtJRPlbBvjYfOBzineicFJJgqebgDxVIfclGHKxodHvoqDDbjcorYydspKm+UXVOxqGFtjaDS7KOBKwpT6uI2mJLrOASyLPx3Sae25Q21E4o6II8WWz+JIUK90ZifyMWsIpW2P5U/QtiJ3Kiadw7XttLMYQZ2qLk4ziE5vnV8udxEvzKJ8OiDIkzJxdUQjqhOGn5n3wZ3NmAXA97uY8tkwCIxidL3DRnftJq1Qi4J1CYtrcvsadK9UA1nqTW5s6rzDy+pPPqGpHAHsfKNerews+0DTWhwV3DyaH+JP5ZFeUaPHYAt+Pc6AO6hGoliunpCS77Y8J8vNbdzqhVnrxOwFA34Yw766zNUFrhxV+lBCoXCdIRUyW5d1YEQYgEx+7mITLLcY9Szt4cLvEDBbpiGXYSx8rMKUnlJkQ+fCEKVNb7rm7nsDY1MLYqypWr2I15QUQskzBnHCxx7IvlRH2HinKHFQjeowYVkqe705n/J4ppZtMbKbNe47QBDHuXMnHyVjj2Jc4P0uztkPf3tGuQQgYv41LJ+k/f4Q3wHrscRcEN5YBBNs5KxtmgcaoVKKBgB"
+    },
+    {
+      "type": "text",
+      "text": "This record was ESCALATED by SYSTEM. The request was for $1200.00 in rent paid to \"Zillow\", and the case note reads \"Test case.\" The document read shows the vendor as \"Zillow Rental Manager\" (90% confidence) and a total of $1253.00 (95% confidence). It lists three line items: Monthly Rent - Past Due Balance (Oct 2026) at $1200.00,"
+    }
+  ],
+  "container": null,
+  "stop_reason": "max_tokens",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 587,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 300,
+    "output_tokens_details": {
+      "thinking_tokens": 167
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

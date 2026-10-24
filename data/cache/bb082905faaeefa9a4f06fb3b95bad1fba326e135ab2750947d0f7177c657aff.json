@@ -1,0 +1,87 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMTgzK9MY6hcaqpmggGt",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01YLwX9S2JUD9P7hM8DjBpAm",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.93
+        },
+        "vendorName": {
+          "value": "Zillow Rental Manager",
+          "confidence": 0.9,
+          "evidence": "ZILLOW RENTAL MANAGER / Payment Confirmation & Receipt"
+        },
+        "clientNameOnDoc": {
+          "value": "Marcus Vance",
+          "confidence": 0.95
+        },
+        "address": {
+          "value": "1428 Elmwood Ave, Apt 3B, San Francisco, CA 94107",
+          "confidence": 0.95
+        },
+        "date": {
+          "value": "2026-10-14",
+          "confidence": 0.95,
+          "evidence": "Date Processed: October 14, 2026"
+        },
+        "amountCents": {
+          "value": 125300,
+          "confidence": 0.95,
+          "evidence": "TOTAL AMOUNT PAID: $1,253.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly Rent - Past Due Balance (Oct 2026)",
+              "cents": 120000,
+              "flag": "other"
+            },
+            {
+              "label": "Late Payment Processing Fee (Non-refundable) (Oct 2026)",
+              "cents": 5000,
+              "flag": "late_fee"
+            },
+            {
+              "label": "Zillow Service & Processing Fee (Oct 2026)",
+              "cents": 300,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.92
+        },
+        "notes": "placeholder"
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 2059,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 745,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

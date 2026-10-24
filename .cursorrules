@@ -40,7 +40,7 @@ Tagline: "Not a rubber stamp. Not a bottleneck." Every human decision ends with 
 - TypeScript strict. No `any`. Zod-validate every route input and every LLM output.
 - Money is integer cents everywhere. Format only in components.
 - Dates are ISO strings; compare with date-fns, never with string comparison.
-- Small components; no component over ~150 lines. Tailwind + shadcn only; no new UI libraries.
+- Small components; no component over ~150 lines. Tailwind + small hand-written components in src/components; no UI libraries.
 - Prefer deleting code to adding abstraction. Three similar lines beat a helper.
 - Every engine change: run `npm test` before committing. Commit small, often, with imperative messages.
 

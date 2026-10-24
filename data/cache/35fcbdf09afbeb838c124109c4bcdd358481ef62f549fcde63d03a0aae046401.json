@@ -1,0 +1,34 @@
+{
+  "model": "claude-sonnet-5-5",
+  "id": "msg_011CgLzVefz9MpHyMriNQ3kj",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "thinking",
+      "thinking": "",
+      "signature": "CAQSswcKEAgTGAI4AUIIdGhpbmtpbmcSDAAUlZazsVaeffqtLxoMNDmoypHw2z2eTTx4IjDPeTpcfGRwAwcT/gNkF6ZtIjQWG+r70E3CnRuDB7m3mkHK+3NLXhohLT1FNpuubCoq0AaCNMGzZYf1slIq3xKq1UC8FIOAA11CTFTh69pydpxWeqX7AkOytU79G2amunCboIxrAQHAd90rV85lmZbRPlcLVXUhnJD8T9ZZrHuBRpgQQFZ/wFXCB1VsSEcOVvcOAo8BpO1oJbTDwuNMOOOsiLPJoH55mjWUqf9bAQeLc7hbDoyMgyoRWDdCV7lnXX2GAE/D9ZnQVoBIqdRP7rQH/WVFJ7oiIwkyzLT+sAaRehbXpWQsIk5+8bX8xjo2gEfwu3gGaJHXkAo4S77rPIRVOSn3jEked09aI129T1Os7mQAqNK8uw4Krwt1Yy7Rbkf2kM+7fEVdTX7YXE9SzqGMqKAj3gLEmir+4E6cQtMiNddDnhU1s464aNnHaJ7TxYOPlcTkuxB8TSaNQ/NWnOkwIqzUW3SDkaD6c1gzC3TVSKXBeqNgaff9I46MGuNZl7/xeiN8OsIDG5+9mulFQIWtG4T27NkKfK7WfFOe2iXUZ/3WiUL9MhHxtW+yYKJqAUV+zjizt4chyBBrwKLjh3dC3Qrh+FpXGjYaSBa1YDtnW3swb1YB8moOj0Ct1pKsBb+rPwKNZkjP3LTKzUZl8t14/+hZicsdccZVsfEr5yPV/NU4QwJp3hnDzJy0916ho+AMpocouF1ACfxdsnI1M+zPkrc2b4nHQ6Qu6+FJeDFRQCeM40sUdWxG5NhJyApKYDb0GCRpcLvYu7ITW/zQ+fZ2MxNKhY9K0SDX/Wyasfso2jf61HE9r7EbfpNvKWUwTGET4tydAFpf6fdp11CD0+erOq95/9XiY9LO7zRbV42/jH6DofKyNJiDLx8w5IxZlD6LV/cZLp8ujfFRB0/S8mfcXyOph8EPQr9h/5n2QR1SwaYcBTzTIMDdRKJM8uScOwXdhy/Hmn7x1NXU4rhnDFs/RIPJ8kTZObEyR5qHmf+QAc/WMaIbXr0YrhXw2/wusPLTqzq1CHB9KgwTVnK7P9y6MrE6fVcrz8q9o/0SbGz9Rcke2/FVj6aaFthM7LHVDae6HyhvhThDpMVmsKCwcp9U6RQBWQn3zmYA1mfarGJLEubn7PuLzZs2J942QlVcaJVgR+QvrhqXcx/2P5H3+q3u7ThoJqAgkCExc+YpzhUzNZF4RBgB"
+    }
+  ],
+  "container": null,
+  "stop_reason": "max_tokens",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 200,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 120,
+    "output_tokens_details": {
+      "thinking_tokens": 119
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

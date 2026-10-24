@@ -197,7 +197,12 @@ export function buildPolicyCtx(i: PolicyInput, age: number, vendorNorm: string):
   const sameVendor45d = i.history.filter(
     (h) => h.requestId !== i.request.id && h.vendorNormalized === vendorNorm && daysBetween(h.requestedAt, i.request.requestedAt) <= DUP_WINDOW_DAYS,
   ).length;
+  const sameVendorAmount45d = i.history.filter(
+    (h) => h.requestId !== i.request.id && h.vendorNormalized === vendorNorm && daysBetween(h.requestedAt, i.request.requestedAt) <= DUP_WINDOW_DAYS &&
+      Math.abs(h.requestedCents - i.request.requestedCents) <= i.request.requestedCents * 0.01,
+  ).length;
   return {
+    "history.sameVendorAmount45dCount": sameVendorAmount45d,
     "request.category": i.request.category,
     "request.requestedCents": i.request.requestedCents,
     "request.vendorNameRaw": i.request.vendorNameRaw,

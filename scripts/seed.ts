@@ -27,10 +27,13 @@ CREATE TABLE IF NOT EXISTS compliance_reports (id TEXT PRIMARY KEY, grant_id TEX
 
 export function loadSeed(seed: Seed, dbPath = DB_PATH) {
   fs.mkdirSync(path.dirname(dbPath), { recursive: true });
-  for (const f of [dbPath, dbPath + "-wal", dbPath + "-shm", dbPath + "-journal"]) if (fs.existsSync(f)) fs.rmSync(f);
+  // Clear in place (not delete) so a running dev server keeps a valid handle to the same file.
   const db = new Database(dbPath);
-  db.pragma("journal_mode = WAL");
+  db.pragma("journal_mode = DELETE");
+  db.pragma("busy_timeout = 5000");
   db.exec(DDL);
+  for (const t of ["compliance_reports", "rule_proposals", "audit_events", "decisions", "bank_transactions", "documents", "requests", "vendors", "grant_streams", "clients", "case_managers"]) db.exec(`DELETE FROM ${t}`);
+  db.exec("DELETE FROM sqlite_sequence WHERE name='audit_events'");
   const j = (x: unknown) => JSON.stringify(x);
   const tx = db.transaction(() => {
     const cm = db.prepare("INSERT INTO case_managers VALUES (?,?,?)");

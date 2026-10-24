@@ -45,7 +45,7 @@ export type FieldPath =
   | "request.category" | "request.requestedCents" | "request.vendorNameRaw" | "request.clientAgeYears"
   | "extracted.lineItems.flags" | "extracted.amountCents"
   | "match.vendorConfidence" | "match.bankConfidence"
-  | "vendor.crsStatus" | "vendor.normalizedName" | "grant.id" | "history.sameVendor45dCount";
+  | "vendor.crsStatus" | "vendor.normalizedName" | "grant.id" | "history.sameVendor45dCount" | "history.sameVendorAmount45dCount";
 export type Op = "eq" | "neq" | "gt" | "gte" | "lt" | "lte" | "in" | "contains" | "matches";
 export type Predicate =
   | { all: Predicate[] } | { any: Predicate[] } | { not: Predicate }

@@ -54,10 +54,10 @@ export function proposeRule(args: {
   switch (chosenTrigger) {
     case "DUP-HIT":
       return {
-        title: "Escalate repeat vendor+amount within 45 days",
+        title: "Escalate when the same vendor and amount were already paid within 45 days",
         action: "escalate",
         predicate: { all: [
-          { field: "history.sameVendor45dCount", op: "gte", value: 1 },
+          { field: "history.sameVendorAmount45dCount", op: "gte", value: 1 },
           { field: "request.category", op: "eq", value: category },
         ] },
       };

@@ -271,5 +271,5 @@ if (process.argv[1] && process.argv[1].endsWith("generate.ts")) {
   fs.writeFileSync(out, JSON.stringify(seed, null, 2));
   const planted = seed.requests.filter((q) => q.plantedAnomaly);
   console.log(`wrote ${out}: ${seed.requests.length} requests, ${seed.clients.length} clients, ${seed.vendors.length} vendors, ${seed.bank.length} bank postings, ${planted.length} planted anomalies`);
-  for (const p of planted) console.log(`  ${p.plantedAnomaly.padEnd(24)} ${p.id} ${p.category} $${(p.requestedCents / 100).toFixed(2)} ${p.requestedAt}`);
+  for (const p of planted) console.log(`  ${(p.plantedAnomaly ?? "").padEnd(24)} ${p.id} ${p.category} $${(p.requestedCents / 100).toFixed(2)} ${p.requestedAt}`);
 }
