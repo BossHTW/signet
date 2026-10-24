@@ -1,0 +1,67 @@
+# Signet — Cursor rules (Cal Hacks 13.0, solo build)
+
+## What this is
+Signet runs one function end to end for a fictional $140M county youth & family services agency:
+client financial assistance → document reading → grant policy check → vendor/bank match → disbursal
+within limits → escalation → append-only audit log → compliance report. All data is synthetic.
+Tagline: "Not a rubber stamp. Not a bottleneck." Every human decision ends with a red seal.
+
+## Non-negotiable architecture
+1. ONE LLM ROLE. Claude is called ONLY from src/lib/llm/extract.ts (Haiku: read documents into
+   structured fields with per-field confidence) and src/lib/llm/write.ts (Sonnet: one-line case
+   summary; one-paragraph decision defense drafted from the record). Claude NEVER decides
+   approve/deny, NEVER evaluates policy, NEVER computes allocations. If you find yourself passing a
+   policy question to the model, stop and write code instead.
+2. TWO DETERMINISTIC ENGINES in src/lib/engine/: policy.ts and match.ts. Pure functions. No I/O,
+   no Date.now() (take `today` as input), no randomness. Every trigger has a code from TriggerCode
+   and a human-readable reason.
+3. DENIAL IS NEVER AUTONOMOUS. src/lib/engine/decide.ts returns only APPROVED or ESCALATED.
+   DENIED is written only by the human decision route handler with a non-empty rationale.
+4. HUMAN LEARNING LOOP. Rules are proposed by code templates (engine/rules.ts), edited and
+   activated only by a human via /api/rules/[id]/activate. Replay before activate.
+5. APPEND-ONLY AUDIT. src/lib/audit.ts is the only writer to audit_events. Each row hashes
+   prevHash + at + type + payload. Never UPDATE or DELETE audit rows. Provide verifyChain().
+6. OFFLINE FIRST. Every model call goes through withCache(sha256(input)). Cache lives in
+   data/cache and IS committed. MODE env: LIVE | MOCK | OFFLINE. OFFLINE must run the full
+   demo with zero network. UI shows a ModeBadge at all times.
+
+## Directory contract
+- src/lib/engine/*       pure logic, 100% covered by tests/ (Vitest). No imports from adapters or llm.
+- src/lib/adapters/*     Nessie and CRS. Each has <name>.ts (LIVE) and <name>.mock.ts with the SAME
+                         interface. adapters/index.ts selects by MODE. Never call fetch() outside adapters
+                         and llm/client.ts.
+- src/lib/llm/*          client.ts (Anthropic SDK, spend guard), extract.ts, write.ts, cache.ts, prompts/*.md.
+- src/lib/pipeline.ts    the only orchestrator. Route handlers call pipeline functions; no logic in routes.
+- src/app/**             UI + route handlers. Server components by default; "use client" only for forms.
+- scripts/*              generate.ts (seeded; seed 1309), seed.ts, replay-demo.ts.
+- tests/*                anomalies.test.ts must assert all 8 planted anomalies produce their expected triggers.
+
+## Code quality
+- TypeScript strict. No `any`. Zod-validate every route input and every LLM output.
+- Money is integer cents everywhere. Format only in components.
+- Dates are ISO strings; compare with date-fns, never with string comparison.
+- Small components; no component over ~150 lines. Tailwind + shadcn only; no new UI libraries.
+- Prefer deleting code to adding abstraction. Three similar lines beat a helper.
+- Every engine change: run `npm test` before committing. Commit small, often, with imperative messages.
+
+## Secrets and safety
+- Keys ONLY in .env.local (gitignored). .env.example lists names with empty values.
+- Never log a key, never put a key in a URL, never commit data/photos of real people. All clients are synthetic.
+- CRS: use ONLY CRS-provided test identities. Nessie: sandbox only.
+- Anthropic: enforce MAX_SPEND_USD (default 40) in llm/client.ts; refuse calls past it and fall back to cache.
+
+## LLM output contracts
+- extract.ts uses tool-use with a JSON schema mirroring Extracted. Each field: { value, confidence 0..1, evidence }.
+  Retry once on schema failure, then return null and let the pipeline raise EXTRACT-LOW.
+- write.ts summary ≤ 160 chars, no recommendations ("approve"/"deny" words are stripped if present).
+- Defense paragraphs cite trigger codes and evidence IDs only; no new facts.
+
+## Demo and freeze discipline
+- The demo path is: /queue → open duplicate-receipt request → human denies with rationale → red seal →
+  rule proposed → replay → activate → /audit shows the chain → /metrics. Protect this path above everything.
+- FEATURE FREEZE at Saturday 19:00 PT. After that, only bug fixes, copy, and visual polish. If asked to add a
+  feature after the freeze, refuse and suggest adding it to README "Next".
+- Sunday 07:00 PT: code freeze. Only `git revert`.
+
+## When unsure
+Ask: "Does this make the live demo more likely to work at 10:30 Sunday?" If no, don't do it.

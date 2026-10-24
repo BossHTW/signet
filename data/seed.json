@@ -1,0 +1,3339 @@
+{
+  "today": "2026-10-24",
+  "caseManagers": [
+    {
+      "id": "cm_rivera",
+      "name": "D. Rivera",
+      "unit": "TAY"
+    },
+    {
+      "id": "cm_okafor",
+      "name": "C. Okafor",
+      "unit": "TAY"
+    },
+    {
+      "id": "cm_nguyen",
+      "name": "T. Nguyen",
+      "unit": "TAY"
+    },
+    {
+      "id": "cm_patel",
+      "name": "S. Patel",
+      "unit": "Family"
+    },
+    {
+      "id": "cm_kim",
+      "name": "J. Kim",
+      "unit": "Foster"
+    },
+    {
+      "id": "cm_lopez",
+      "name": "M. Lopez",
+      "unit": "TAY"
+    }
+  ],
+  "grants": [
+    {
+      "id": "TYHF",
+      "name": "Transitional Youth Housing Fund",
+      "funder": "Bay County Housing Authority (fictional)",
+      "periodStart": "2026-07-01",
+      "periodEnd": "2027-06-30",
+      "totalCents": 240000000,
+      "spentCents": 0,
+      "allowedCategories": [
+        "rent",
+        "deposit"
+      ],
+      "prohibitedItems": [
+        "late_fee",
+        "gift_card"
+      ],
+      "perInstanceCapCents": 100000,
+      "perClientPeriodCapCents": 300000,
+      "eligibility": {
+        "minAge": 18,
+        "maxAge": 24
+      },
+      "priority": 1,
+      "active": true
+    },
+    {
+      "id": "RRDP",
+      "name": "Rapid Rehousing Deposit Pool",
+      "funder": "Golden State Youth Futures Foundation (fictional)",
+      "periodStart": "2026-07-01",
+      "periodEnd": "2027-06-30",
+      "totalCents": 90000000,
+      "spentCents": 0,
+      "allowedCategories": [
+        "deposit",
+        "rent"
+      ],
+      "prohibitedItems": [
+        "late_fee"
+      ],
+      "perInstanceCapCents": 150000,
+      "perClientPeriodCapCents": 150000,
+      "eligibility": {
+        "minAge": 18,
+        "maxAge": 26,
+        "programs": [
+          "TAY"
+        ]
+      },
+      "priority": 2,
+      "active": true
+    },
+    {
+      "id": "EUSG",
+      "name": "Emergency Utility Stabilization Grant",
+      "funder": "Pacific Community Energy Trust (fictional)",
+      "periodStart": "2026-07-01",
+      "periodEnd": "2027-06-30",
+      "totalCents": 60000000,
+      "spentCents": 0,
+      "allowedCategories": [
+        "utilities"
+      ],
+      "prohibitedItems": [
+        "late_fee",
+        "reconnection_penalty"
+      ],
+      "perInstanceCapCents": 40000,
+      "perClientPeriodCapCents": 80000,
+      "eligibility": {},
+      "priority": 1,
+      "active": true
+    },
+    {
+      "id": "ECG",
+      "name": "Education Connectivity Grant",
+      "funder": "Bridgepoint Learning Fund (fictional)",
+      "periodStart": "2026-07-01",
+      "periodEnd": "2027-06-30",
+      "totalCents": 30000000,
+      "spentCents": 0,
+      "allowedCategories": [
+        "phone"
+      ],
+      "prohibitedItems": [
+        "late_fee",
+        "device_purchase"
+      ],
+      "perInstanceCapCents": 15000,
+      "perClientPeriodCapCents": 45000,
+      "eligibility": {
+        "minAge": 16,
+        "maxAge": 24,
+        "programs": [
+          "EDU",
+          "TAY"
+        ]
+      },
+      "priority": 1,
+      "active": true
+    },
+    {
+      "id": "FRTF",
+      "name": "Family Reunification Transit Fund",
+      "funder": "Bay County Family Services Levy (fictional)",
+      "periodStart": "2025-10-16",
+      "periodEnd": "2026-10-15",
+      "totalCents": 12000000,
+      "spentCents": 0,
+      "allowedCategories": [
+        "transit"
+      ],
+      "prohibitedItems": [],
+      "perInstanceCapCents": 12000,
+      "perClientPeriodCapCents": 36000,
+      "eligibility": {
+        "programs": [
+          "FAMILY"
+        ]
+      },
+      "priority": 1,
+      "active": true
+    },
+    {
+      "id": "YDIG",
+      "name": "Youth Documents & ID Grant",
+      "funder": "Northbay Civic Access Fund (fictional)",
+      "periodStart": "2026-07-01",
+      "periodEnd": "2027-06-30",
+      "totalCents": 9000000,
+      "spentCents": 0,
+      "allowedCategories": [
+        "documents"
+      ],
+      "prohibitedItems": [],
+      "perInstanceCapCents": 10000,
+      "perClientPeriodCapCents": 20000,
+      "eligibility": {
+        "minAge": 16,
+        "maxAge": 24
+      },
+      "priority": 1,
+      "active": true
+    },
+    {
+      "id": "FTSF",
+      "name": "Foster Transition Support Fund",
+      "funder": "State Foster Youth Bridge Program (fictional)",
+      "periodStart": "2026-07-01",
+      "periodEnd": "2027-06-30",
+      "totalCents": 75000000,
+      "spentCents": 0,
+      "allowedCategories": [
+        "rent",
+        "deposit",
+        "phone",
+        "documents"
+      ],
+      "prohibitedItems": [
+        "late_fee"
+      ],
+      "perInstanceCapCents": 75000,
+      "perClientPeriodCapCents": 200000,
+      "eligibility": {
+        "minAge": 18,
+        "maxAge": 21,
+        "programs": [
+          "FOSTER"
+        ]
+      },
+      "priority": 3,
+      "active": true
+    },
+    {
+      "id": "GCAF",
+      "name": "General Client Assistance Fund",
+      "funder": "Bay County General Fund (fictional)",
+      "periodStart": "2026-07-01",
+      "periodEnd": "2027-06-30",
+      "totalCents": 150000000,
+      "spentCents": 0,
+      "allowedCategories": [
+        "rent",
+        "deposit",
+        "utilities",
+        "phone",
+        "transit",
+        "documents"
+      ],
+      "prohibitedItems": [
+        "gift_card"
+      ],
+      "perInstanceCapCents": 50000,
+      "perClientPeriodCapCents": 100000,
+      "eligibility": {},
+      "priority": 9,
+      "active": true
+    }
+  ],
+  "clients": [
+    {
+      "id": "cl_fugu19",
+      "displayName": "Jordan N.",
+      "dob": "2003-07-26",
+      "programs": [
+        "TAY"
+      ],
+      "caseManagerId": "cm_rivera"
+    },
+    {
+      "id": "cl_6tu8am",
+      "displayName": "Maya L.",
+      "dob": "2001-01-26",
+      "programs": [
+        "TAY"
+      ],
+      "caseManagerId": "cm_kim"
+    },
+    {
+      "id": "cl_c5emzf",
+      "displayName": "Devon T.",
+      "dob": "2007-02-03",
+      "programs": [
+        "TAY",
+        "EDU"
+      ],
+      "caseManagerId": "cm_lopez"
+    },
+    {
+      "id": "cl_2a5ib6",
+      "displayName": "Priya K.",
+      "dob": "2004-10-11",
+      "programs": [
+        "TAY"
+      ],
+      "caseManagerId": "cm_nguyen"
+    },
+    {
+      "id": "cl_0d6qzx",
+      "displayName": "Luis D.",
+      "dob": "2010-05-22",
+      "programs": [
+        "EDU",
+        "FAMILY"
+      ],
+      "caseManagerId": "cm_lopez"
+    },
+    {
+      "id": "cl_ev565a",
+      "displayName": "Aaliyah J.",
+      "dob": "2000-01-07",
+      "programs": [
+        "TAY"
+      ],
+      "caseManagerId": "cm_kim"
+    },
+    {
+      "id": "cl_eiey4a",
+      "displayName": "Kai J.",
+      "dob": "2008-04-12",
+      "programs": [
+        "FAMILY",
+        "FOSTER"
+      ],
+      "caseManagerId": "cm_rivera"
+    },
+    {
+      "id": "cl_1pqwxf",
+      "displayName": "Sofia F.",
+      "dob": "2007-07-26",
+      "programs": [
+        "FAMILY"
+      ],
+      "caseManagerId": "cm_patel"
+    },
+    {
+      "id": "cl_3ge79o",
+      "displayName": "Marcus H.",
+      "dob": "2006-08-31",
+      "programs": [
+        "TAY",
+        "EDU",
+        "FAMILY",
+        "FOSTER"
+      ],
+      "caseManagerId": "cm_rivera"
+    },
+    {
+      "id": "cl_5amv96",
+      "displayName": "Elena G.",
+      "dob": "2002-03-18",
+      "programs": [
+        "TAY",
+        "EDU"
+      ],
+      "caseManagerId": "cm_rivera"
+    },
+    {
+      "id": "cl_5oro6x",
+      "displayName": "Tyler L.",
+      "dob": "2000-04-06",
+      "programs": [
+        "TAY"
+      ],
+      "caseManagerId": "cm_kim"
+    },
+    {
+      "id": "cl_2m38p7",
+      "displayName": "Nia A.",
+      "dob": "2008-01-11",
+      "programs": [
+        "EDU",
+        "FOSTER"
+      ],
+      "caseManagerId": "cm_lopez"
+    },
+    {
+      "id": "cl_eitf7i",
+      "displayName": "Andre H.",
+      "dob": "2006-01-17",
+      "programs": [
+        "TAY",
+        "FOSTER"
+      ],
+      "caseManagerId": "cm_patel"
+    },
+    {
+      "id": "cl_1tgn6f",
+      "displayName": "Hana T.",
+      "dob": "2001-01-10",
+      "programs": [
+        "TAY"
+      ],
+      "caseManagerId": "cm_rivera"
+    },
+    {
+      "id": "cl_000xva",
+      "displayName": "Isaiah T.",
+      "dob": "2002-08-24",
+      "programs": [
+        "TAY",
+        "EDU"
+      ],
+      "caseManagerId": "cm_nguyen"
+    },
+    {
+      "id": "cl_bt8d43",
+      "displayName": "Camila D.",
+      "dob": "2003-01-07",
+      "programs": [
+        "TAY"
+      ],
+      "caseManagerId": "cm_kim"
+    },
+    {
+      "id": "cl_asm6ec",
+      "displayName": "Owen F.",
+      "dob": "2002-05-17",
+      "programs": [
+        "TAY",
+        "EDU",
+        "FAMILY"
+      ],
+      "caseManagerId": "cm_rivera"
+    },
+    {
+      "id": "cl_1hy044",
+      "displayName": "Zara V.",
+      "dob": "2005-05-30",
+      "programs": [
+        "TAY",
+        "FAMILY"
+      ],
+      "caseManagerId": "cm_patel"
+    },
+    {
+      "id": "cl_e276ru",
+      "displayName": "Mateo K.",
+      "dob": "2010-08-11",
+      "programs": [
+        "EDU"
+      ],
+      "caseManagerId": "cm_lopez"
+    },
+    {
+      "id": "cl_1991i3",
+      "displayName": "Leah F.",
+      "dob": "2005-07-22",
+      "programs": [
+        "TAY",
+        "EDU",
+        "FAMILY"
+      ],
+      "caseManagerId": "cm_kim"
+    },
+    {
+      "id": "cl_dxws61",
+      "displayName": "Jamal D.",
+      "dob": "2003-02-13",
+      "programs": [
+        "TAY",
+        "EDU",
+        "FAMILY"
+      ],
+      "caseManagerId": "cm_kim"
+    },
+    {
+      "id": "cl_48scqh",
+      "displayName": "Ruby P.",
+      "dob": "2004-06-17",
+      "programs": [
+        "TAY",
+        "EDU"
+      ],
+      "caseManagerId": "cm_lopez"
+    },
+    {
+      "id": "cl_146a4w",
+      "displayName": "Theo K.",
+      "dob": "1999-09-30",
+      "programs": [
+        "TAY"
+      ],
+      "caseManagerId": "cm_lopez"
+    },
+    {
+      "id": "cl_aw5bk1",
+      "displayName": "Imani R.",
+      "dob": "1999-08-19",
+      "programs": [
+        "FAMILY"
+      ],
+      "caseManagerId": "cm_lopez"
+    }
+  ],
+  "vendors": [
+    {
+      "id": "v_5g66op",
+      "legalName": "Bay Area Housing LLC",
+      "normalizedName": "BAY AREA HOUSING",
+      "aliases": [],
+      "category": "rent",
+      "crsTestIdentityId": null,
+      "crsStatus": "VERIFIED",
+      "nessieAccountId": null,
+      "descriptor": "BAY PROP MGMT"
+    },
+    {
+      "id": "v_75m0zm",
+      "legalName": "Mission Terrace Apartments LP",
+      "normalizedName": "MISSION TERRACE APARTMENTS",
+      "aliases": [
+        "Mission Terrace",
+        "MISSION TERRACE APTS"
+      ],
+      "category": "rent",
+      "crsTestIdentityId": null,
+      "crsStatus": "VERIFIED",
+      "nessieAccountId": null,
+      "descriptor": "MISSION TERRACE APTS"
+    },
+    {
+      "id": "v_13suro",
+      "legalName": "Sunset Residential Partners",
+      "normalizedName": "SUNSET RESIDENTIAL PARTNERS",
+      "aliases": [
+        "Sunset Residential",
+        "SUNSET RESIDENTIAL"
+      ],
+      "category": "rent",
+      "crsTestIdentityId": null,
+      "crsStatus": "VERIFIED",
+      "nessieAccountId": null,
+      "descriptor": "SUNSET RESIDENTIAL"
+    },
+    {
+      "id": "v_90zrdn",
+      "legalName": "Harbor View Housing Co",
+      "normalizedName": "HARBOR VIEW HOUSING",
+      "aliases": [
+        "HARBOR VIEW HOUSING"
+      ],
+      "category": "deposit",
+      "crsTestIdentityId": null,
+      "crsStatus": "VERIFIED",
+      "nessieAccountId": null,
+      "descriptor": "HARBOR VIEW HOUSING"
+    },
+    {
+      "id": "v_5xyctp",
+      "legalName": "Westside Commons Management",
+      "normalizedName": "WESTSIDE COMMONS MANAGEMENT",
+      "aliases": [
+        "Westside Commons",
+        "WESTSIDE COMMONS MGMT"
+      ],
+      "category": "rent",
+      "crsTestIdentityId": null,
+      "crsStatus": "VERIFIED",
+      "nessieAccountId": null,
+      "descriptor": "WESTSIDE COMMONS MGMT"
+    },
+    {
+      "id": "v_9xgubg",
+      "legalName": "Pacific Gas & Electric Company",
+      "normalizedName": "PACIFIC GAS ELECTRIC COMPANY",
+      "aliases": [
+        "PG&E",
+        "PGE",
+        "PGE*ONLINE PMT"
+      ],
+      "category": "utilities",
+      "crsTestIdentityId": null,
+      "crsStatus": "VERIFIED",
+      "nessieAccountId": null,
+      "descriptor": "PGE*ONLINE PMT"
+    },
+    {
+      "id": "v_5zdwdh",
+      "legalName": "Bay Water & Sewer District",
+      "normalizedName": "BAY WATER SEWER DISTRICT",
+      "aliases": [
+        "Bay Water",
+        "BAY WATER SEWER"
+      ],
+      "category": "utilities",
+      "crsTestIdentityId": null,
+      "crsStatus": "VERIFIED",
+      "nessieAccountId": null,
+      "descriptor": "BAY WATER SEWER"
+    },
+    {
+      "id": "v_8gu1rz",
+      "legalName": "Northbay Internet Services",
+      "normalizedName": "NORTHBAY INTERNET SERVICES",
+      "aliases": [
+        "Northbay ISP",
+        "NORTHBAY INTERNET"
+      ],
+      "category": "utilities",
+      "crsTestIdentityId": null,
+      "crsStatus": "VERIFIED",
+      "nessieAccountId": null,
+      "descriptor": "NORTHBAY INTERNET"
+    },
+    {
+      "id": "v_23a6sa",
+      "legalName": "Metro by T-Mobile",
+      "normalizedName": "METRO BY T MOBILE",
+      "aliases": [
+        "MetroPCS",
+        "Metro PCS",
+        "METROPCS 800-123"
+      ],
+      "category": "phone",
+      "crsTestIdentityId": null,
+      "crsStatus": "VERIFIED",
+      "nessieAccountId": null,
+      "descriptor": "METROPCS 800-123"
+    },
+    {
+      "id": "v_9u8fme",
+      "legalName": "Cricket Wireless",
+      "normalizedName": "CRICKET WIRELESS",
+      "aliases": [
+        "CRICKET WIRELESS"
+      ],
+      "category": "phone",
+      "crsTestIdentityId": null,
+      "crsStatus": "VERIFIED",
+      "nessieAccountId": null,
+      "descriptor": "CRICKET WIRELESS"
+    },
+    {
+      "id": "v_9rotgn",
+      "legalName": "Bay Area Rapid Transit",
+      "normalizedName": "BAY AREA RAPID TRANSIT",
+      "aliases": [
+        "BART",
+        "Clipper",
+        "BART CLIPPER"
+      ],
+      "category": "transit",
+      "crsTestIdentityId": null,
+      "crsStatus": "VERIFIED",
+      "nessieAccountId": null,
+      "descriptor": "BART CLIPPER"
+    },
+    {
+      "id": "v_fewml4",
+      "legalName": "Golden Gate Transit",
+      "normalizedName": "GOLDEN GATE TRANSIT",
+      "aliases": [
+        "GG Transit",
+        "GOLDEN GATE TRANSIT"
+      ],
+      "category": "transit",
+      "crsTestIdentityId": null,
+      "crsStatus": "VERIFIED",
+      "nessieAccountId": null,
+      "descriptor": "GOLDEN GATE TRANSIT"
+    },
+    {
+      "id": "v_83i15z",
+      "legalName": "California DMV",
+      "normalizedName": "CALIFORNIA DMV",
+      "aliases": [
+        "DMV",
+        "CA DMV FEE"
+      ],
+      "category": "documents",
+      "crsTestIdentityId": null,
+      "crsStatus": "VERIFIED",
+      "nessieAccountId": null,
+      "descriptor": "CA DMV FEE"
+    },
+    {
+      "id": "v_6j3oya",
+      "legalName": "Bay County Clerk-Recorder",
+      "normalizedName": "BAY COUNTY CLERK RECORDER",
+      "aliases": [
+        "County Clerk",
+        "BAY CO CLERK"
+      ],
+      "category": "documents",
+      "crsTestIdentityId": null,
+      "crsStatus": "VERIFIED",
+      "nessieAccountId": null,
+      "descriptor": "BAY CO CLERK"
+    },
+    {
+      "id": "v_6ugs5f",
+      "legalName": "Golden Gate Rooms LLC",
+      "normalizedName": "GOLDEN GATE ROOMS",
+      "aliases": [
+        "GG ROOMS"
+      ],
+      "category": "deposit",
+      "crsTestIdentityId": null,
+      "crsStatus": "FLAGGED",
+      "nessieAccountId": null,
+      "descriptor": "GG ROOMS"
+    }
+  ],
+  "bank": [
+    {
+      "id": "tx_c4yoxm",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-12",
+      "amountCents": 2400,
+      "descriptor": "GOLDEN GATE TRANSIT 10/05",
+      "counterpartyNormalized": "GOLDEN GATE TRANSIT",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_bey57u",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-06",
+      "amountCents": 8500,
+      "descriptor": "BAY WATER SEWER 10/01",
+      "counterpartyNormalized": "BAY WATER SEWER",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_1l4d0y",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-29",
+      "amountCents": 9800,
+      "descriptor": "METROPCS 800-123 09/24",
+      "counterpartyNormalized": "METROPCS 800 123",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_3oztcb",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-10",
+      "amountCents": 22000,
+      "descriptor": "NORTHBAY INTERNET 10/08",
+      "counterpartyNormalized": "NORTHBAY INTERNET",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_crbc6m",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-21",
+      "amountCents": 5900,
+      "descriptor": "CA DMV FEE 10/14",
+      "counterpartyNormalized": "CA DMV FEE",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_bayvsl",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-20",
+      "amountCents": 19800,
+      "descriptor": "PGE*ONLINE PMT 09/18",
+      "counterpartyNormalized": "PGE ONLINE PMT",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_0usyyw",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-11",
+      "amountCents": 8000,
+      "descriptor": "BART CLIPPER 10/08",
+      "counterpartyNormalized": "BART CLIPPER",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_cdcqrv",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-22",
+      "amountCents": 7600,
+      "descriptor": "CRICKET WIRELESS 10/16",
+      "counterpartyNormalized": "CRICKET WIRELESS",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_5up0fg",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-10",
+      "amountCents": 9200,
+      "descriptor": "CRICKET WIRELESS 10/06",
+      "counterpartyNormalized": "CRICKET WIRELESS",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_6zw11j",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-25",
+      "amountCents": 82200,
+      "descriptor": "HARBOR VIEW HOUSING 09/13",
+      "counterpartyNormalized": "HARBOR VIEW HOUSING",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_6a4l4a",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-05",
+      "amountCents": 68100,
+      "descriptor": "WESTSIDE COMMONS MGMT 09/30",
+      "counterpartyNormalized": "WESTSIDE COMMONS MANAGEMENT",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_gd7m4c",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-25",
+      "amountCents": 8100,
+      "descriptor": "BAY WATER SEWER 09/23",
+      "counterpartyNormalized": "BAY WATER SEWER",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_fphvxm",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-10",
+      "amountCents": 6600,
+      "descriptor": "CRICKET WIRELESS 10/09",
+      "counterpartyNormalized": "CRICKET WIRELESS",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_cx32zd",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-13",
+      "amountCents": 9400,
+      "descriptor": "CRICKET WIRELESS 10/10",
+      "counterpartyNormalized": "CRICKET WIRELESS",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_bmrl8z",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-07",
+      "amountCents": 9800,
+      "descriptor": "CRICKET WIRELESS 09/26",
+      "counterpartyNormalized": "CRICKET WIRELESS",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_0hija4",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-21",
+      "amountCents": 8600,
+      "descriptor": "METROPCS 800-123 10/09",
+      "counterpartyNormalized": "METROPCS 800 123",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_09djen",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-06",
+      "amountCents": 4000,
+      "descriptor": "CA DMV FEE 09/27",
+      "counterpartyNormalized": "CA DMV FEE",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_axt04c",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-28",
+      "amountCents": 2100,
+      "descriptor": "GOLDEN GATE TRANSIT 09/16",
+      "counterpartyNormalized": "GOLDEN GATE TRANSIT",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_fd82bn",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-12",
+      "amountCents": 8600,
+      "descriptor": "NORTHBAY INTERNET 10/07",
+      "counterpartyNormalized": "NORTHBAY INTERNET",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_9pz97d",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-27",
+      "amountCents": 12000,
+      "descriptor": "PGE*ONLINE PMT 10/17",
+      "counterpartyNormalized": "PGE ONLINE PMT",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_8jykyq",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-21",
+      "amountCents": 47000,
+      "descriptor": "SUNSET RESIDENTIAL 10/11",
+      "counterpartyNormalized": "SUNSET RESIDENTIAL",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_e4i19n",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-04",
+      "amountCents": 6400,
+      "descriptor": "NORTHBAY INTERNET 09/27",
+      "counterpartyNormalized": "NORTHBAY INTERNET",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_crq0ss",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-07",
+      "amountCents": 8600,
+      "descriptor": "METROPCS 800-123 09/30",
+      "counterpartyNormalized": "METROPCS 800 123",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_84cz7q",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-17",
+      "amountCents": 80000,
+      "descriptor": "HARBOR VIEW HOUSING 09/09",
+      "counterpartyNormalized": "HARBOR VIEW HOUSING",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_0qs6su",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-10",
+      "amountCents": 8700,
+      "descriptor": "METROPCS 800-123 10/06",
+      "counterpartyNormalized": "METROPCS 800 123",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_afuuur",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-19",
+      "amountCents": 3100,
+      "descriptor": "BAY CO CLERK 10/13",
+      "counterpartyNormalized": "BAY CLERK",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_c7v35k",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-26",
+      "amountCents": 67800,
+      "descriptor": "BAY PROP MGMT 10/18",
+      "counterpartyNormalized": "BAY PROPERTY MANAGEMENT",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_abpmj4",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-07",
+      "amountCents": 7300,
+      "descriptor": "GOLDEN GATE TRANSIT 09/28",
+      "counterpartyNormalized": "GOLDEN GATE TRANSIT",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_3e4jjr",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-11",
+      "amountCents": 10600,
+      "descriptor": "CRICKET WIRELESS 10/05",
+      "counterpartyNormalized": "CRICKET WIRELESS",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_aotb3j",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-30",
+      "amountCents": 5300,
+      "descriptor": "BAY CO CLERK 09/24",
+      "counterpartyNormalized": "BAY CLERK",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_fb4xqr",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-07",
+      "amountCents": 89300,
+      "descriptor": "HARBOR VIEW HOUSING 09/26",
+      "counterpartyNormalized": "HARBOR VIEW HOUSING",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_egmvsq",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-14",
+      "amountCents": 4800,
+      "descriptor": "CRICKET WIRELESS 09/12",
+      "counterpartyNormalized": "CRICKET WIRELESS",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_8exroj",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-25",
+      "amountCents": 53600,
+      "descriptor": "MISSION TERRACE APTS 10/15",
+      "counterpartyNormalized": "MISSION TERRACE APARTMENTS",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_9md62i",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-24",
+      "amountCents": 5400,
+      "descriptor": "METROPCS 800-123 09/15",
+      "counterpartyNormalized": "METROPCS 800 123",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_399s0h",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-23",
+      "amountCents": 75700,
+      "descriptor": "SUNSET RESIDENTIAL 09/20",
+      "counterpartyNormalized": "SUNSET RESIDENTIAL",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_9wyuzo",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-27",
+      "amountCents": 46500,
+      "descriptor": "SUNSET RESIDENTIAL 09/23",
+      "counterpartyNormalized": "SUNSET RESIDENTIAL",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_6xb5u2",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-14",
+      "amountCents": 45900,
+      "descriptor": "BAY PROP MGMT 10/14",
+      "counterpartyNormalized": "BAY PROPERTY MANAGEMENT",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_82bfoe",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-04",
+      "amountCents": 19900,
+      "descriptor": "NORTHBAY INTERNET 09/30",
+      "counterpartyNormalized": "NORTHBAY INTERNET",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_05khi5",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-05",
+      "amountCents": 8000,
+      "descriptor": "BAY WATER SEWER 09/30",
+      "counterpartyNormalized": "BAY WATER SEWER",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_1fqwz6",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-07",
+      "amountCents": 4200,
+      "descriptor": "BART CLIPPER 10/01",
+      "counterpartyNormalized": "BART CLIPPER",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_8qkyzi",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-22",
+      "amountCents": 15200,
+      "descriptor": "PGE*ONLINE PMT 09/21",
+      "counterpartyNormalized": "PGE ONLINE PMT",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_4s2u3k",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-26",
+      "amountCents": 4200,
+      "descriptor": "BAY CO CLERK 09/26",
+      "counterpartyNormalized": "BAY CLERK",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_9feb16",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-21",
+      "amountCents": 78700,
+      "descriptor": "HARBOR VIEW HOUSING 10/11",
+      "counterpartyNormalized": "HARBOR VIEW HOUSING",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_2vvhua",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-03",
+      "amountCents": 79500,
+      "descriptor": "SUNSET RESIDENTIAL 09/29",
+      "counterpartyNormalized": "SUNSET RESIDENTIAL",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_e7bej9",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-21",
+      "amountCents": 29500,
+      "descriptor": "BAY WATER SEWER 09/21",
+      "counterpartyNormalized": "BAY WATER SEWER",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_4mvglr",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-15",
+      "amountCents": 11500,
+      "descriptor": "METROPCS 800-123 10/04",
+      "counterpartyNormalized": "METROPCS 800 123",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_dv2s4w",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-08",
+      "amountCents": 99500,
+      "descriptor": "HARBOR VIEW HOUSING 10/02",
+      "counterpartyNormalized": "HARBOR VIEW HOUSING",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_aupl4u",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-19",
+      "amountCents": 9500,
+      "descriptor": "BART CLIPPER 10/11",
+      "counterpartyNormalized": "BART CLIPPER",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_5nhxcc",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-13",
+      "amountCents": 7000,
+      "descriptor": "BAY CO CLERK 10/13",
+      "counterpartyNormalized": "BAY CLERK",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_79v243",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-20",
+      "amountCents": 110000,
+      "descriptor": "MISSION TERRACE APTS 10/19",
+      "counterpartyNormalized": "MISSION TERRACE APARTMENTS",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_2b6fxh",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-10",
+      "amountCents": 115000,
+      "descriptor": "SUNSET RESIDENTIAL 10/10",
+      "counterpartyNormalized": "SUNSET RESIDENTIAL",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_fcv4o4",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-09",
+      "amountCents": 120000,
+      "descriptor": "WESTSIDE COMMONS MGMT 10/01",
+      "counterpartyNormalized": "WESTSIDE COMMONS MANAGEMENT",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_1rqsip",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-29",
+      "amountCents": 72000,
+      "descriptor": "BAY PROP MGMT 10/18",
+      "counterpartyNormalized": "BAY PROPERTY MANAGEMENT",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_3z0jw7",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-21",
+      "amountCents": 120000,
+      "descriptor": "SUNSET RESIDENTIAL 10/17",
+      "counterpartyNormalized": "SUNSET RESIDENTIAL",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_6eewwp",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-20",
+      "amountCents": 21200,
+      "descriptor": "PGE*ONLINE PMT 10/16",
+      "counterpartyNormalized": "PGE ONLINE PMT",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_d7gup5",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-22",
+      "amountCents": 8999,
+      "descriptor": "METROPCS 800-123 10/11",
+      "counterpartyNormalized": "METROPCS 800 123",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_5uxv43",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-24",
+      "amountCents": 11000,
+      "descriptor": "BART CLIPPER 10/14",
+      "counterpartyNormalized": "BART CLIPPER",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_ac3ay8",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-29",
+      "amountCents": 90000,
+      "descriptor": "WESTSIDE COMMONS MGMT 10/21",
+      "counterpartyNormalized": "WESTSIDE COMMONS MANAGEMENT",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_cmg7ob",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-23",
+      "amountCents": 40500,
+      "descriptor": "BAY WATER SEWER 10/18",
+      "counterpartyNormalized": "BAY WATER SEWER",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_1j0f5d",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-13",
+      "amountCents": 7500,
+      "descriptor": "METROPCS 800-123 10/12",
+      "counterpartyNormalized": "METROPCS 800 123",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_fpyuuf",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-19",
+      "amountCents": 236218,
+      "descriptor": "UBER TRIP",
+      "counterpartyNormalized": "NOISE",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_0s8q12",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-05",
+      "amountCents": 239077,
+      "descriptor": "USPS PO 0944",
+      "counterpartyNormalized": "NOISE",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_4k8z51",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-10",
+      "amountCents": 140154,
+      "descriptor": "OFFICE DEPOT 2210",
+      "counterpartyNormalized": "NOISE",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_9dewcw",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-08-29",
+      "amountCents": 101331,
+      "descriptor": "PAYROLL ADJ",
+      "counterpartyNormalized": "NOISE",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_4c4idm",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-22",
+      "amountCents": 102294,
+      "descriptor": "PAYROLL ADJ",
+      "counterpartyNormalized": "NOISE",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_aolmtj",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-10",
+      "amountCents": 119048,
+      "descriptor": "COSTCO WHSE #0472",
+      "counterpartyNormalized": "NOISE",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_f303a0",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-30",
+      "amountCents": 190621,
+      "descriptor": "PAYROLL ADJ",
+      "counterpartyNormalized": "NOISE",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_436390",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-02",
+      "amountCents": 162905,
+      "descriptor": "AMZN MKTP US",
+      "counterpartyNormalized": "NOISE",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_707s6q",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-11",
+      "amountCents": 145559,
+      "descriptor": "AMZN MKTP US",
+      "counterpartyNormalized": "NOISE",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_9zcqqx",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-07",
+      "amountCents": 209262,
+      "descriptor": "OFFICE DEPOT 2210",
+      "counterpartyNormalized": "NOISE",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_1hyzwk",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-21",
+      "amountCents": 231889,
+      "descriptor": "PAYROLL ADJ",
+      "counterpartyNormalized": "NOISE",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_3vhgs1",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-09-17",
+      "amountCents": 182996,
+      "descriptor": "AMZN MKTP US",
+      "counterpartyNormalized": "NOISE",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_arvpm9",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-08-27",
+      "amountCents": 44188,
+      "descriptor": "OFFICE DEPOT 2210",
+      "counterpartyNormalized": "NOISE",
+      "source": "MOCK"
+    },
+    {
+      "id": "tx_dnv9c4",
+      "accountId": "acct_bcyfs_ops",
+      "postedAt": "2026-10-04",
+      "amountCents": 60913,
+      "descriptor": "OFFICE DEPOT 2210",
+      "counterpartyNormalized": "NOISE",
+      "source": "MOCK"
+    }
+  ],
+  "requests": [
+    {
+      "id": "req_38iyg6",
+      "clientId": "cl_asm6ec",
+      "caseManagerId": "cm_rivera",
+      "category": "deposit",
+      "requestedCents": 82200,
+      "vendorId": "v_90zrdn",
+      "vendorNameRaw": "Harbor View Housing Co",
+      "caseNote": "Deposit needed to hold the room; landlord gave 48 hrs.",
+      "requestedAt": "2026-09-14",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_3qb8nr",
+          "kind": "lease",
+          "sourceHash": "0cb004447db53a2e77cbae0bc546bfc9654fcd7be3779032ec1b31cdbb4b60dc",
+          "rawText": "RENT RECEIPT / STATEMENT\nHarbor View Housing Co\nTenant: Owen F.\nPeriod: 2026-09-13\nSecurity deposit             $822.00\nTotal Due: $822.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Harbor View Housing Co",
+        "amountCents": 82200,
+        "date": "2026-09-13",
+        "lineItems": [
+          {
+            "label": "Security deposit",
+            "cents": 82200
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_8xh7hu",
+      "clientId": "cl_5amv96",
+      "caseManagerId": "cm_rivera",
+      "category": "deposit",
+      "requestedCents": 80000,
+      "vendorId": "v_90zrdn",
+      "vendorNameRaw": "Harbor View Housing Co",
+      "caseNote": "Move-in deposit for approved unit, lease starts Monday.",
+      "requestedAt": "2026-09-14",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_6hmnpr",
+          "kind": "lease",
+          "sourceHash": "9274e692cc8ddfb7f85ab4bab916ef6087a2244f5e78797b8963dc4df5e42794",
+          "rawText": "RENT RECEIPT / STATEMENT\nHarbor View Housing Co\nTenant: Elena G.\nPeriod: 2026-09-09\nSecurity deposit             $800.00\nTotal Due: $800.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Harbor View Housing Co",
+        "amountCents": 80000,
+        "date": "2026-09-09",
+        "lineItems": [
+          {
+            "label": "Security deposit",
+            "cents": 80000
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_9fuli2",
+      "clientId": "cl_5oro6x",
+      "caseManagerId": "cm_kim",
+      "category": "phone",
+      "requestedCents": 4800,
+      "vendorId": "v_9u8fme",
+      "vendorNameRaw": "Cricket Wireless",
+      "caseNote": "Monthly plan, client interviewing this week.",
+      "requestedAt": "2026-09-17",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_eigmnn",
+          "kind": "receipt",
+          "sourceHash": "8b105f04a960658e4949f8355e82f9398a40d94826688321fe254b758391e0d8",
+          "rawText": "Cricket Wireless\n2026-09-12\nMonthly plan                 $48.00\nTotal $48.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Cricket Wireless",
+        "amountCents": 4800,
+        "date": "2026-09-12",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 4800
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_0s909u",
+      "clientId": "cl_2a5ib6",
+      "caseManagerId": "cm_nguyen",
+      "category": "phone",
+      "requestedCents": 5400,
+      "vendorId": "v_23a6sa",
+      "vendorNameRaw": "Metro by T-Mobile",
+      "caseNote": "Monthly plan, client interviewing this week.",
+      "requestedAt": "2026-09-20",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_8whynq",
+          "kind": "receipt",
+          "sourceHash": "7f33305fd5b832544c31ce1c035a56f479ffdf1ee9bdd0de66a75e3991cd3ba7",
+          "rawText": "Metro by T-Mobile\n2026-09-15\nMonthly plan                 $54.00\nTotal $54.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Metro by T-Mobile",
+        "amountCents": 5400,
+        "date": "2026-09-15",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 5400
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_fxmd3m",
+      "clientId": "cl_2a5ib6",
+      "caseManagerId": "cm_nguyen",
+      "category": "utilities",
+      "requestedCents": 19800,
+      "vendorId": "v_9xgubg",
+      "vendorNameRaw": "Pacific Gas & Electric Company",
+      "caseNote": "Water bill overdue, client was hospitalized last month.",
+      "requestedAt": "2026-09-22",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_7qtci4",
+          "kind": "utility_bill",
+          "sourceHash": "e4e88915e81db434787a4f80dd9da2b7c07f251318799e6931216e34794e3487",
+          "rawText": "Pacific Gas & Electric Company\nACCOUNT STATEMENT\nService address on file\nStatement date: 2026-09-18\nService charges              $198.00\nAmount Due $198.00\nDue upon receipt",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Pacific Gas & Electric Company",
+        "amountCents": 19800,
+        "date": "2026-09-18",
+        "lineItems": [
+          {
+            "label": "Service charges",
+            "cents": 19800
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_ca7gm9",
+      "clientId": "cl_e276ru",
+      "caseManagerId": "cm_lopez",
+      "category": "transit",
+      "requestedCents": 2100,
+      "vendorId": "v_fewml4",
+      "vendorNameRaw": "Golden Gate Transit",
+      "caseNote": "Transit to family visitation (court-ordered schedule).",
+      "requestedAt": "2026-09-22",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_2zvsqn",
+          "kind": "receipt",
+          "sourceHash": "bb9fb7613c27a2e3fd231a8545e5fb85ed093a66cd3875dd00379a6df5116dd5",
+          "rawText": "Golden Gate Transit\n2026-09-16\nTransit fare                 $21.00\nTotal $21.0O\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Golden Gate Transit",
+        "amountCents": 2100,
+        "date": "2026-09-16",
+        "lineItems": [
+          {
+            "label": "Transit fare",
+            "cents": 2100
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_50kah0",
+      "clientId": "cl_1pqwxf",
+      "caseManagerId": "cm_patel",
+      "category": "rent",
+      "requestedCents": 46500,
+      "vendorId": "v_13suro",
+      "vendorNameRaw": "Sunset Residential Partners",
+      "caseNote": "Client at risk of eviction, landlord agreed to accept partial.",
+      "requestedAt": "2026-09-24",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_a9ya08",
+          "kind": "lease",
+          "sourceHash": "1c5d80e5f322409b7b0a22233649d493ba467b4411b3f5b62923361fe22c05b3",
+          "rawText": "RENT RECEIPT / STATEMENT\nSunset Residential Partners\nTenant: Sofia F.\nPeriod: 2026-09-23\nMonthly rent                 $465.00\nTotal Due: $465.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Sunset Residential Partners",
+        "amountCents": 46500,
+        "date": "2026-09-23",
+        "lineItems": [
+          {
+            "label": "Monthly rent",
+            "cents": 46500
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_fergib",
+      "clientId": "cl_1pqwxf",
+      "caseManagerId": "cm_patel",
+      "category": "utilities",
+      "requestedCents": 8100,
+      "vendorId": "v_5zdwdh",
+      "vendorNameRaw": "Bay Water & Sewer District",
+      "caseNote": "Water bill overdue, client was hospitalized last month.",
+      "requestedAt": "2026-09-25",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_el2zis",
+          "kind": "utility_bill",
+          "sourceHash": "e5375eb4a3efe833012367c4e976b3e4f96ed062ecfb8a00430ee4c7202c8511",
+          "rawText": "Bay Water & Sewer District\nACCOUNT STATEMENT\nService address on file\nStatement date: 2026-09-23\nService charges              $81.00\nAmount Due $81.00\nDue upon receipt",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay Water & Sewer District",
+        "amountCents": 8100,
+        "date": "2026-09-23",
+        "lineItems": [
+          {
+            "label": "Service charges",
+            "cents": 8100
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_589gbm",
+      "clientId": "cl_1pqwxf",
+      "caseManagerId": "cm_patel",
+      "category": "rent",
+      "requestedCents": 75700,
+      "vendorId": "v_13suro",
+      "vendorNameRaw": "Sunset Residential Partners",
+      "caseNote": "Rent for October, roommate moved out.",
+      "requestedAt": "2026-09-25",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_14gly5",
+          "kind": "lease",
+          "sourceHash": "9fdcca924e5b78bfb05cb2470b70f6fdf68dc55ec8b4c528aee6a6ea5589ef40",
+          "rawText": "RENT RECEIPT / STATEMENT\nSunset Residential Partners\nTenant: Sofia F.\nPeriod: 2026-09-20\nMonthly rent                 $757.00\nTotal Due: $757.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Sunset Residential Partners",
+        "amountCents": 75700,
+        "date": "2026-09-20",
+        "lineItems": [
+          {
+            "label": "Monthly rent",
+            "cents": 75700
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_f2ddk0",
+      "clientId": "cl_eiey4a",
+      "caseManagerId": "cm_rivera",
+      "category": "utilities",
+      "requestedCents": 15200,
+      "vendorId": "v_9xgubg",
+      "vendorNameRaw": "Pacific Gas & Electric Company",
+      "caseNote": "Electric shutoff notice received, needs payment this week.",
+      "requestedAt": "2026-09-26",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_2193nn",
+          "kind": "utility_bill",
+          "sourceHash": "9de7669dd22137b0127745c57e4d87ff089fd6c6872e6151256fc1005fa1796c",
+          "rawText": "Pacific Gas & Electric Company\nACCOUNT STATEMENT\nService address on file\nStatement date: 2026-09-21\nService charges              $152.00\nAmount Due $152.00\nDue upon receipt",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Pacific Gas & Electric Company",
+        "amountCents": 15200,
+        "date": "2026-09-21",
+        "lineItems": [
+          {
+            "label": "Service charges",
+            "cents": 15200
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_1u5xnt",
+      "clientId": "cl_48scqh",
+      "caseManagerId": "cm_lopez",
+      "category": "utilities",
+      "requestedCents": 29500,
+      "vendorId": "v_5zdwdh",
+      "vendorNameRaw": "Bay Water & Sewer District",
+      "caseNote": "Electric shutoff notice received, needs payment this week.",
+      "requestedAt": "2026-09-27",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_5al3q9",
+          "kind": "utility_bill",
+          "sourceHash": "0c2528e7a13b34e17ca8f701205a37f33f4785b5ada3419d82005171ad44d617",
+          "rawText": "Bay Water & Sewer District\nACCOUNT STATEMENT\nService address on file\nStatement date: 2026-09-21\nService charges              $295.00\nAmount Due $295.00\nDue upon receipt",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay Water & Sewer District",
+        "amountCents": 29500,
+        "date": "2026-09-21",
+        "lineItems": [
+          {
+            "label": "Service charges",
+            "cents": 29500
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_b47su2",
+      "clientId": "cl_48scqh",
+      "caseManagerId": "cm_lopez",
+      "category": "phone",
+      "requestedCents": 9800,
+      "vendorId": "v_9u8fme",
+      "vendorNameRaw": "Cricket Wireless",
+      "caseNote": "Monthly plan, client interviewing this week.",
+      "requestedAt": "2026-09-28",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_c1pgnk",
+          "kind": "receipt",
+          "sourceHash": "8cfebc531ca36dd9ba4db172b41aa20b9b7ef1ea5e6426235a4e2dcafcf46c26",
+          "rawText": "Cricket Wireless\n2026-09-26\nMonthly plan                 $98.00\nTotal $98.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Cricket Wireless",
+        "amountCents": 9800,
+        "date": "2026-09-26",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 9800
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_deqiss",
+      "clientId": "cl_5oro6x",
+      "caseManagerId": "cm_kim",
+      "category": "documents",
+      "requestedCents": 4000,
+      "vendorId": "v_83i15z",
+      "vendorNameRaw": "California DMV",
+      "caseNote": "Birth certificate copy for school enrollment.",
+      "requestedAt": "2026-09-28",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_6w53m7",
+          "kind": "receipt",
+          "sourceHash": "6fe2f80e501a9f7a59a478f8e1f68dceb34b5b84b6646487167cf2921c3582e0",
+          "rawText": "California DMV\n2026-09-27\nDocument fee                 $40.00\nTotal $40.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "California DMV",
+        "amountCents": 4000,
+        "date": "2026-09-27",
+        "lineItems": [
+          {
+            "label": "Document fee",
+            "cents": 4000
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_e7x4av",
+      "clientId": "cl_c5emzf",
+      "caseManagerId": "cm_lopez",
+      "category": "documents",
+      "requestedCents": 4200,
+      "vendorId": "v_6j3oya",
+      "vendorNameRaw": "Bay County Clerk-Recorder",
+      "caseNote": "Birth certificate copy for school enrollment.",
+      "requestedAt": "2026-09-28",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_574lpi",
+          "kind": "receipt",
+          "sourceHash": "8101b7dda9acddbd5d2ed8e69f5e44c0d7eab8cf7c9c4cf7494199f999be45f3",
+          "rawText": "Bay County Clerk-Recorder\n2026-09-26\nDocument fee                 $42.00\nTotal $42.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay County Clerk-Recorder",
+        "amountCents": 4200,
+        "date": "2026-09-26",
+        "lineItems": [
+          {
+            "label": "Document fee",
+            "cents": 4200
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_9rfc6s",
+      "clientId": "cl_1991i3",
+      "caseManagerId": "cm_kim",
+      "category": "phone",
+      "requestedCents": 9800,
+      "vendorId": "v_23a6sa",
+      "vendorNameRaw": "Metro by T-Mobile",
+      "caseNote": "Monthly plan, client interviewing this week.",
+      "requestedAt": "2026-09-29",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_dn3sqh",
+          "kind": "receipt",
+          "sourceHash": "a408d844f14757f0e0c8682d611041fd0ef9e5fab0f705b0fc175e2a40f38daa",
+          "rawText": "Metro by T-Mobile\n2026-09-24\nMonthly plan                 $98.00\nTotal $98.OO\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Metro by T-Mobile",
+        "amountCents": 9800,
+        "date": "2026-09-24",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 9800
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_e1ldtl",
+      "clientId": "cl_bt8d43",
+      "caseManagerId": "cm_kim",
+      "category": "deposit",
+      "requestedCents": 89300,
+      "vendorId": "v_90zrdn",
+      "vendorNameRaw": "HARBOR VIEW HOUSING",
+      "caseNote": "Move-in deposit for approved unit, lease starts Monday.",
+      "requestedAt": "2026-09-29",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_0ur2pu",
+          "kind": "lease",
+          "sourceHash": "86659233d9ab78230a97b4bf8372b40a00e8c3540e9f5709d000286881f371d4",
+          "rawText": "RENT RECEIPT / STATEMENT\nHarbor View Housing Co\nTenant: Camila D.\nPeriod: 2026-09-26\nSecurity deposit             $893.00\nTotal Due: $893.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Harbor View Housing Co",
+        "amountCents": 89300,
+        "date": "2026-09-26",
+        "lineItems": [
+          {
+            "label": "Security deposit",
+            "cents": 89300
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_09xsha",
+      "clientId": "cl_e276ru",
+      "caseManagerId": "cm_lopez",
+      "category": "utilities",
+      "requestedCents": 6400,
+      "vendorId": "v_8gu1rz",
+      "vendorNameRaw": "NORTHBAY INTERNET",
+      "caseNote": "Electric shutoff notice received, needs payment this week.",
+      "requestedAt": "2026-09-30",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_d7225v",
+          "kind": "utility_bill",
+          "sourceHash": "fbc0f523907b5281a8914edb4dd8477e6c27a1357107e0951f23c87c3da022a8",
+          "rawText": "Northbay Internet Services\nACCOUNT STATEMENT\nService address on file\nStatement date: 2026-09-27\nService charges              $64.0O\nAmount Due $64.00\nDue upon receipt",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Northbay Internet Services",
+        "amountCents": 6400,
+        "date": "2026-09-27",
+        "lineItems": [
+          {
+            "label": "Service charges",
+            "cents": 6400
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_5df3wb",
+      "clientId": "cl_2m38p7",
+      "caseManagerId": "cm_lopez",
+      "category": "documents",
+      "requestedCents": 5300,
+      "vendorId": "v_6j3oya",
+      "vendorNameRaw": "BAY CO CLERK",
+      "caseNote": "State ID replacement so client can start work.",
+      "requestedAt": "2026-09-30",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_68hxij",
+          "kind": "receipt",
+          "sourceHash": "2a9ff9db54b6dd3d4157d160926e0c1ddbd42ae01fd37c2c34225c9985cb2c0f",
+          "rawText": "Bay County Clerk-Recorder\n2026-O9-24\nDocument fee                 $53.00\nTotal $53.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay County Clerk-Recorder",
+        "amountCents": 5300,
+        "date": "2026-09-24",
+        "lineItems": [
+          {
+            "label": "Document fee",
+            "cents": 5300
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_99rbjx",
+      "clientId": "cl_eitf7i",
+      "caseManagerId": "cm_patel",
+      "category": "rent",
+      "requestedCents": 68100,
+      "vendorId": "v_5xyctp",
+      "vendorNameRaw": "WESTSIDE COMMONS MGMT",
+      "caseNote": "Monthly rent, client started new job last week.",
+      "requestedAt": "2026-10-01",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_6gr06h",
+          "kind": "lease",
+          "sourceHash": "e24dccd2f302aa33147e2e1654782052c79d9ab7ec022e13f8ed527c3b3acfba",
+          "rawText": "RENT RECEIPT / STATEMENT\nWestside Commons Management\nTenant: Andre H.\nPeriod: 2026-09-30\nMonthly rent                 $681.00\nTotal Due: $681.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Westside Commons Management",
+        "amountCents": 68100,
+        "date": "2026-09-30",
+        "lineItems": [
+          {
+            "label": "Monthly rent",
+            "cents": 68100
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_884mbs",
+      "clientId": "cl_bt8d43",
+      "caseManagerId": "cm_kim",
+      "category": "utilities",
+      "requestedCents": 19900,
+      "vendorId": "v_8gu1rz",
+      "vendorNameRaw": "Northbay Internet Services",
+      "caseNote": "Electric shutoff notice received, needs payment this week.",
+      "requestedAt": "2026-10-01",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_1xpy3p",
+          "kind": "utility_bill",
+          "sourceHash": "2e41813529e76b58cef53da54009123cbc1edc2eaf93844f3396ce74cc9e95f3",
+          "rawText": "Northbay Internet Services\nACCOUNT STATEMENT\nService address on file\nStatement date: 2026-09-30\nService charges              $199.00\nAMOUNT DUE: $199.00\nDue upon receipt",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Northbay Internet Services",
+        "amountCents": 19900,
+        "date": "2026-09-30",
+        "lineItems": [
+          {
+            "label": "Service charges",
+            "cents": 19900
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_0mlr6i",
+      "clientId": "cl_c5emzf",
+      "caseManagerId": "cm_lopez",
+      "category": "rent",
+      "requestedCents": 79500,
+      "vendorId": "v_13suro",
+      "vendorNameRaw": "Sunset Residential Partners",
+      "caseNote": "Rent for October, roommate moved out.",
+      "requestedAt": "2026-10-01",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_8l03vq",
+          "kind": "lease",
+          "sourceHash": "09ebabfcfc0edeeaa739e2e1a0c2156b8f1bf164b1be1aefbc15948370692970",
+          "rawText": "RENT RECEIPT / STATEMENT\nSunset Residential Partners\nTenant: Devon T.\nPeriod: 2026-09-29\nMonthly rent                 $795.00\nTotal Due: $795.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Sunset Residential Partners",
+        "amountCents": 79500,
+        "date": "2026-09-29",
+        "lineItems": [
+          {
+            "label": "Monthly rent",
+            "cents": 79500
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_8lr8zk",
+      "clientId": "cl_eitf7i",
+      "caseManagerId": "cm_patel",
+      "category": "phone",
+      "requestedCents": 8600,
+      "vendorId": "v_23a6sa",
+      "vendorNameRaw": "Metro by T-Mobile",
+      "caseNote": "Monthly plan, client interviewing this week.",
+      "requestedAt": "2026-10-02",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_4k0bqt",
+          "kind": "receipt",
+          "sourceHash": "4223e134595917bfb8e3b491c18b460a29516534cf45a1917c994c94605b40b1",
+          "rawText": "Metro by T-Mobile\n2026-09-30\nMonthly plan                 $86.00\nTotal $86.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Metro by T-Mobile",
+        "amountCents": 8600,
+        "date": "2026-09-30",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 8600
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_0ebvql",
+      "clientId": "cl_dxws61",
+      "caseManagerId": "cm_kim",
+      "category": "deposit",
+      "requestedCents": 99500,
+      "vendorId": "v_90zrdn",
+      "vendorNameRaw": "Harbor View Housing Co",
+      "caseNote": "Deposit needed to hold the room; landlord gave 48 hrs.",
+      "requestedAt": "2026-10-02",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_9tkjbp",
+          "kind": "lease",
+          "sourceHash": "ee0d439d484f2a6ac9f825b629c65931a9d96d30f9c870f16b94ab0a80cdfdc5",
+          "rawText": "RENT RECEIPT / STATEMENT\nHarbor View Housing Co\nTenant: Jamal D.\nPeriod: 2026-10-02\nSecurity deposit             $99500\nTotal Due: $995.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Harbor View Housing Co",
+        "amountCents": 99500,
+        "date": "2026-10-02",
+        "lineItems": [
+          {
+            "label": "Security deposit",
+            "cents": 99500
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_al4he3",
+      "clientId": "cl_eiey4a",
+      "caseManagerId": "cm_rivera",
+      "category": "transit",
+      "requestedCents": 7300,
+      "vendorId": "v_fewml4",
+      "vendorNameRaw": "GOLDEN GATE TRANSIT",
+      "caseNote": "Transit to family visitation (court-ordered schedule).",
+      "requestedAt": "2026-10-03",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_4jysaz",
+          "kind": "receipt",
+          "sourceHash": "7c74b07eff1bbe0540d5119958db298383bc4e7e65abfaa577c70ed2f5998bbd",
+          "rawText": "Golden Gate Transit\n2026-09-28\nTransit fare                 $73.00\nTotal $73.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Golden Gate Transit",
+        "amountCents": 7300,
+        "date": "2026-09-28",
+        "lineItems": [
+          {
+            "label": "Transit fare",
+            "cents": 7300
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_fecv2w",
+      "clientId": "cl_asm6ec",
+      "caseManagerId": "cm_rivera",
+      "category": "utilities",
+      "requestedCents": 8500,
+      "vendorId": "v_5zdwdh",
+      "vendorNameRaw": "Bay Water & Sewer District",
+      "caseNote": "Internet needed for online classes.",
+      "requestedAt": "2026-10-04",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_9rjsuc",
+          "kind": "utility_bill",
+          "sourceHash": "98416ad42b0d4238170657f417476e2cc978e756d574ea42fecb893b882d03c9",
+          "rawText": "Bay Water & Sewer District\nACCOUNT STATEMENT\nService address on file\nStatement date: 2026-10-01\nService charges              $85.00\nAmount Due $85.00\nDue upon receipt",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay Water & Sewer District",
+        "amountCents": 8500,
+        "date": "2026-10-01",
+        "lineItems": [
+          {
+            "label": "Service charges",
+            "cents": 8500
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_etaks4",
+      "clientId": "cl_3ge79o",
+      "caseManagerId": "cm_rivera",
+      "category": "rent",
+      "requestedCents": 120000,
+      "vendorId": "v_5xyctp",
+      "vendorNameRaw": "Westside Commons Management",
+      "caseNote": "Monthly rent, client started new job last week.",
+      "requestedAt": "2026-10-04",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_74nue6",
+          "kind": "lease",
+          "sourceHash": "24369813090e1ac0f5caf09ad8a29a3574f3fb244f601da063a556079063bd9a",
+          "rawText": "RENT RECEIPT / STATEMENT\nWestside Commons Management\nTenant: Marcus H.\nPeriod: 2026-10-01\nMonthly rent                 $1200.00\nTotal Due: $120000\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Westside Commons Management",
+        "amountCents": 120000,
+        "date": "2026-10-01",
+        "lineItems": [
+          {
+            "label": "Monthly rent",
+            "cents": 120000
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_3frn3w",
+      "clientId": "cl_1pqwxf",
+      "caseManagerId": "cm_patel",
+      "category": "utilities",
+      "requestedCents": 8000,
+      "vendorId": "v_5zdwdh",
+      "vendorNameRaw": "BAY WATER SEWER",
+      "caseNote": "Internet needed for online classes.",
+      "requestedAt": "2026-10-05",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_05kitg",
+          "kind": "utility_bill",
+          "sourceHash": "aaf71c963c2a5177b4879fbeec5886b5de1bd80cfa608e7975fa352b57ffae1d",
+          "rawText": "Bay Water & Sewer District\nACCOUNT STATEMENT\nService address on file\nStatement date: 2026-09-30\nService charges              $80.00\nAmount Due …\nDue upon receipt",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay Water & Sewer District",
+        "amountCents": 8000,
+        "date": "2026-09-30",
+        "lineItems": [
+          {
+            "label": "Service charges",
+            "cents": 8000
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_31hn0e",
+      "clientId": "cl_2m38p7",
+      "caseManagerId": "cm_lopez",
+      "category": "transit",
+      "requestedCents": 4200,
+      "vendorId": "v_9rotgn",
+      "vendorNameRaw": "Bay Area Rapid Transit",
+      "caseNote": "Transit to family visitation (court-ordered schedule).",
+      "requestedAt": "2026-10-05",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_eslapz",
+          "kind": "receipt",
+          "sourceHash": "f73e9cf40c6e5da9f5667a6383ebd74f8103d51872c54b3fc90151289763ccc9",
+          "rawText": "Bay Area Rapid Transit\n2026-10-01\nTransit fare                 $42.00\nTotal $42.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay Area Rapid Transit",
+        "amountCents": 4200,
+        "date": "2026-10-01",
+        "lineItems": [
+          {
+            "label": "Transit fare",
+            "cents": 4200
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_g4fei0",
+      "clientId": "cl_5amv96",
+      "caseManagerId": "cm_rivera",
+      "category": "phone",
+      "requestedCents": 8700,
+      "vendorId": "v_23a6sa",
+      "vendorNameRaw": "Metro by T-Mobile",
+      "caseNote": "Monthly plan, client interviewing this week.",
+      "requestedAt": "2026-10-07",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_307xey",
+          "kind": "receipt",
+          "sourceHash": "4ace3989d1bc7f39fe6658be8a96d0d89152b099c5eb6ab01ca737ee9aef9b32",
+          "rawText": "Metro by T-Mobile\n2026-10-06\nMonthly plan                 $8700\nTotal $87.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Metro by T-Mobile",
+        "amountCents": 8700,
+        "date": "2026-10-06",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 8700
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_7mxv1k",
+      "clientId": "cl_2m38p7",
+      "caseManagerId": "cm_lopez",
+      "category": "phone",
+      "requestedCents": 11500,
+      "vendorId": "v_23a6sa",
+      "vendorNameRaw": "Metro by T-Mobile",
+      "caseNote": "Phone plan so client can receive job callbacks.",
+      "requestedAt": "2026-10-08",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_ayu7w9",
+          "kind": "receipt",
+          "sourceHash": "21f5256b5fd3dd215ae5565295f452f797e97a40b4d966087feda5fa3206ba48",
+          "rawText": "Metro by T-Mobile\n2026-10-04\nMonthly plan                 $115.00\nTotal $115.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Metro by T-Mobile",
+        "amountCents": 11500,
+        "date": "2026-10-04",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 11500
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_6ccwjs",
+      "clientId": "cl_0d6qzx",
+      "caseManagerId": "cm_lopez",
+      "category": "transit",
+      "requestedCents": 2400,
+      "vendorId": "v_fewml4",
+      "vendorNameRaw": "Golden Gate Transit",
+      "caseNote": "Clipper reload for work commute.",
+      "requestedAt": "2026-10-09",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_dure27",
+          "kind": "receipt",
+          "sourceHash": "e5412345beb6782621bee109118deda32ca8d15d290bb8de06b9092c1894e492",
+          "rawText": "Golden Gate Transit\n2026-10-05\nTransit fare                 $24.00\nTotal $24.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Golden Gate Transit",
+        "amountCents": 2400,
+        "date": "2026-10-05",
+        "lineItems": [
+          {
+            "label": "Transit fare",
+            "cents": 2400
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_9lu7f6",
+      "clientId": "cl_2a5ib6",
+      "caseManagerId": "cm_nguyen",
+      "category": "phone",
+      "requestedCents": 9200,
+      "vendorId": "v_9u8fme",
+      "vendorNameRaw": "Cricket Wireless",
+      "caseNote": "Monthly plan, client interviewing this week.",
+      "requestedAt": "2026-10-09",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_3wdpqy",
+          "kind": "receipt",
+          "sourceHash": "b0c1719b47a778c6cd020d5aa65b7a6cf504c34b98f2e0612799cb7f0dca5999",
+          "rawText": "Cricket Wireless\n2026-10-06\nMonthly plan                 $92.00\nTotal $92.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Cricket Wireless",
+        "amountCents": 9200,
+        "date": "2026-10-06",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 9200
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_cggyat",
+      "clientId": "cl_5oro6x",
+      "caseManagerId": "cm_kim",
+      "category": "utilities",
+      "requestedCents": 22000,
+      "vendorId": "v_8gu1rz",
+      "vendorNameRaw": "Northbay ISP",
+      "caseNote": "Internet needed for online classes.",
+      "requestedAt": "2026-10-11",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_62m661",
+          "kind": "utility_bill",
+          "sourceHash": "a6a6407ca9688c0c05c5933c995c76f7c498181646cf4546c284e1ee4ca5917d",
+          "rawText": "Northbay Internet Services\nACCOUNT STATEMENT\nService address on file\nStatement date: 2026-10-08\nService charges              $220.00\nAmount Due $220.00\nDue upon receipt",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Northbay Internet Services",
+        "amountCents": 22000,
+        "date": "2026-10-08",
+        "lineItems": [
+          {
+            "label": "Service charges",
+            "cents": 22000
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_0jsg4r",
+      "clientId": "cl_bt8d43",
+      "caseManagerId": "cm_kim",
+      "category": "transit",
+      "requestedCents": 8000,
+      "vendorId": "v_9rotgn",
+      "vendorNameRaw": "Clipper",
+      "caseNote": "Transit to family visitation (court-ordered schedule).",
+      "requestedAt": "2026-10-11",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_8yyn4g",
+          "kind": "receipt",
+          "sourceHash": "e49b7a10329bf7251644cf703ea1da3aaac5c540a56ad1818ef8ad714a446899",
+          "rawText": "Bay Area Rapid Transit\n2026-10-08\nTransit fare                 $80.00\nTotal $80.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay Area Rapid Transit",
+        "amountCents": 8000,
+        "date": "2026-10-08",
+        "lineItems": [
+          {
+            "label": "Transit fare",
+            "cents": 8000
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_5wsa0i",
+      "clientId": "cl_6tu8am",
+      "caseManagerId": "cm_kim",
+      "category": "phone",
+      "requestedCents": 8600,
+      "vendorId": "v_23a6sa",
+      "vendorNameRaw": "Metro by T-Mobile",
+      "caseNote": "Monthly plan, client interviewing this week.",
+      "requestedAt": "2026-10-11",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_5wtm6c",
+          "kind": "receipt",
+          "sourceHash": "db30982f40d63d4d9221f41c494f85badd840cb9fff69c6322f89ab2cb0e44af",
+          "rawText": "Metro by T-Mobile\n2026-10-09\nMonthly plan                 $86.00\nTotal $86.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Metro by T-Mobile",
+        "amountCents": 8600,
+        "date": "2026-10-09",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 8600
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_g9tjvc",
+      "clientId": "cl_48scqh",
+      "caseManagerId": "cm_lopez",
+      "category": "phone",
+      "requestedCents": 10600,
+      "vendorId": "v_9u8fme",
+      "vendorNameRaw": "Cricket Wireless",
+      "caseNote": "Monthly plan, client interviewing this week.",
+      "requestedAt": "2026-10-11",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_eh093v",
+          "kind": "receipt",
+          "sourceHash": "4ea8a89b67ea62f4cb71fc79869cac93b36c64d078f1bb3314f0fbbeccc790df",
+          "rawText": "Cricket Wireless\n2026-10-05\nMonthly plan                 $106.00\nTotal $10…\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Cricket Wireless",
+        "amountCents": 10600,
+        "date": "2026-10-05",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 10600
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_655beq",
+      "clientId": "cl_5amv96",
+      "caseManagerId": "cm_rivera",
+      "category": "deposit",
+      "requestedCents": 78700,
+      "vendorId": "v_90zrdn",
+      "vendorNameRaw": "HARBOR VIEW HOUSING",
+      "caseNote": "Deposit needed to hold the room; landlord gave 48 hrs.",
+      "requestedAt": "2026-10-11",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_dqvol9",
+          "kind": "lease",
+          "sourceHash": "6e2134bb0fd1240f994daf30a6372e3f0f4441b6d7665bea5833dc98a3dd2704",
+          "rawText": "RENT RECEIPT / STATEMENT\nHarbor View Housing Co\nTenant: Elena G.\nPeriod: 2026-10-11\nSecurity deposit             $787.00\nTotal Due: $787.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Harbor View Housing Co",
+        "amountCents": 78700,
+        "date": "2026-10-11",
+        "lineItems": [
+          {
+            "label": "Security deposit",
+            "cents": 78700
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_2of56k",
+      "clientId": "cl_2m38p7",
+      "caseManagerId": "cm_lopez",
+      "category": "transit",
+      "requestedCents": 9500,
+      "vendorId": "v_9rotgn",
+      "vendorNameRaw": "Bay Area Rapid Transit",
+      "caseNote": "Transit to family visitation (court-ordered schedule).",
+      "requestedAt": "2026-10-12",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_bouw55",
+          "kind": "receipt",
+          "sourceHash": "e982aa4706185a2302bf2b6626fd3cb70d959c4318e4e1153d86a2889351b59b",
+          "rawText": "Bay Area Rapid Transit\n2026-10-11\nTransit fare                 $95.00\nTotal $95.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay Area Rapid Transit",
+        "amountCents": 9500,
+        "date": "2026-10-11",
+        "lineItems": [
+          {
+            "label": "Transit fare",
+            "cents": 9500
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_aevqgk",
+      "clientId": "cl_2a5ib6",
+      "caseManagerId": "cm_nguyen",
+      "category": "rent",
+      "requestedCents": 115000,
+      "vendorId": "v_13suro",
+      "vendorNameRaw": "Sunset Residential Partners",
+      "caseNote": "Client at risk of eviction, landlord agreed to accept partial.",
+      "requestedAt": "2026-10-12",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_8lg6o7",
+          "kind": "lease",
+          "sourceHash": "bc147d762237ea19e22d5811e6e5c326903f6193ebb3ca0165a686f10a38325f",
+          "rawText": "RENT RECEIPT / STATEMENT\nSunset Residential Partners\nTenant: Priya K.\nPeriod: 2026-10-10\nMonthly rent                 $1150.00\nTotal Due: $1150.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Sunset Residential Partners",
+        "amountCents": 115000,
+        "date": "2026-10-10",
+        "lineItems": [
+          {
+            "label": "Monthly rent",
+            "cents": 115000
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_8v95a1",
+      "clientId": "cl_c5emzf",
+      "caseManagerId": "cm_lopez",
+      "category": "phone",
+      "requestedCents": 7500,
+      "vendorId": "v_23a6sa",
+      "vendorNameRaw": "MetroPCS",
+      "caseNote": "Monthly plan, client interviewing this week.",
+      "requestedAt": "2026-10-12",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_2q42qp",
+          "kind": "receipt",
+          "sourceHash": "6d03d42181413f907186587d550403fa89e5fc4ee1d92fbe8e4cb4c5484530f8",
+          "rawText": "Metro by T-Mobile\n2026-10-12\nMonthly plan                 $75.00\nTotal $75.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Metro by T-Mobile",
+        "amountCents": 7500,
+        "date": "2026-10-12",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 7500
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_ecxfyq",
+      "clientId": "cl_eiey4a",
+      "caseManagerId": "cm_rivera",
+      "category": "utilities",
+      "requestedCents": 8600,
+      "vendorId": "v_8gu1rz",
+      "vendorNameRaw": "Northbay ISP",
+      "caseNote": "Internet needed for online classes.",
+      "requestedAt": "2026-10-13",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_dbldc9",
+          "kind": "utility_bill",
+          "sourceHash": "672c8a6fe151dc96c0ce79ce22562d9c917a0874d2a8d4c9db724245f65a99e7",
+          "rawText": "Northbay Internet Services\nACCOUNT STATEMENT\nService address on file\nStatement date: 2026-10-07\nService charges              $86.00\nAmount Due $86.00\nDue upon receipt",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Northbay Internet Services",
+        "amountCents": 8600,
+        "date": "2026-10-07",
+        "lineItems": [
+          {
+            "label": "Service charges",
+            "cents": 8600
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_65ry68",
+      "clientId": "cl_c5emzf",
+      "caseManagerId": "cm_lopez",
+      "category": "rent",
+      "requestedCents": 47000,
+      "vendorId": "v_13suro",
+      "vendorNameRaw": "Sunset Residential Partners",
+      "caseNote": "Rent for October, roommate moved out.",
+      "requestedAt": "2026-10-13",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_15m9gh",
+          "kind": "lease",
+          "sourceHash": "106b8b7eb5a4a1f0df718417b6b4c8b1b299211306c6744bc8c1b0f667fd8424",
+          "rawText": "RENT RECEIPT / STATEMENT\nSunset Residential Partners\nTenant: Devon T.\nPeriod: 2026-10-l1\nMonthly rent                 $470.00\nTotal Due: $470.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Sunset Residential Partners",
+        "amountCents": 47000,
+        "date": "2026-10-11",
+        "lineItems": [
+          {
+            "label": "Monthly rent",
+            "cents": 47000
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_27ojh7",
+      "clientId": "cl_1991i3",
+      "caseManagerId": "cm_kim",
+      "category": "documents",
+      "requestedCents": 3100,
+      "vendorId": "v_6j3oya",
+      "vendorNameRaw": "Bay County Clerk-Recorder",
+      "caseNote": "Birth certificate copy for school enrollment.",
+      "requestedAt": "2026-10-13",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_1mkx3u",
+          "kind": "receipt",
+          "sourceHash": "9237a22282d78bda0cfb6fd90f167a61248c6d4cfd954434b80e074668a7a031",
+          "rawText": "Bay County Clerk-Recorder\n2026-10-13\nDocument fee                 $31.00\nTotal $31.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay County Clerk-Recorder",
+        "amountCents": 3100,
+        "date": "2026-10-13",
+        "lineItems": [
+          {
+            "label": "Document fee",
+            "cents": 3100
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_7uat3z",
+      "clientId": "cl_dxws61",
+      "caseManagerId": "cm_kim",
+      "category": "phone",
+      "requestedCents": 6600,
+      "vendorId": "v_9u8fme",
+      "vendorNameRaw": "Cricket Wireless",
+      "caseNote": "Monthly plan, client interviewing this week.",
+      "requestedAt": "2026-10-14",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_2fyp55",
+          "kind": "receipt",
+          "sourceHash": "ab07ecccc29abe1760b18bf11b8873ff5665e3afba42d1285fac39ea051fff4f",
+          "rawText": "Cricket Wireless\n2026-10-09\nMonthly plan                 $66.00\nTotal $66.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Cricket Wireless",
+        "amountCents": 6600,
+        "date": "2026-10-09",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 6600
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_blnlpg",
+      "clientId": "cl_6tu8am",
+      "caseManagerId": "cm_kim",
+      "category": "documents",
+      "requestedCents": 7000,
+      "vendorId": "v_6j3oya",
+      "vendorNameRaw": "Bay County Clerk-Recorder",
+      "caseNote": "Birth certificate copy for school enrollment.",
+      "requestedAt": "2026-10-14",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_enzdj1",
+          "kind": "receipt",
+          "sourceHash": "67f9c1438b331c607b9c64843296ea5c105e4fb74b1b6737045776359c796997",
+          "rawText": "Bay County Clerk-…\n2026-10-13\nDocument fee                 $70.00\nTotal $70.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay County Clerk-Recorder",
+        "amountCents": 7000,
+        "date": "2026-10-13",
+        "lineItems": [
+          {
+            "label": "Document fee",
+            "cents": 7000
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_0w3s8m",
+      "clientId": "cl_000xva",
+      "caseManagerId": "cm_nguyen",
+      "category": "phone",
+      "requestedCents": 9400,
+      "vendorId": "v_9u8fme",
+      "vendorNameRaw": "Cricket Wireless",
+      "caseNote": "Monthly plan, client interviewing this week.",
+      "requestedAt": "2026-10-16",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_3rdok2",
+          "kind": "receipt",
+          "sourceHash": "2d71eb3a7cd866cc4cc8b5e4ac9ed006a4f15f4ef30c455327e1c1a77cf358c1",
+          "rawText": "Cricket Wireless\n2026-10-10\nMonthly plan                 $94.00\nTotal $94.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Cricket Wireless",
+        "amountCents": 9400,
+        "date": "2026-10-10",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 9400
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_3h6x83",
+      "clientId": "cl_1pqwxf",
+      "caseManagerId": "cm_patel",
+      "category": "rent",
+      "requestedCents": 53600,
+      "vendorId": "v_75m0zm",
+      "vendorNameRaw": "MISSION TERRACE APTS",
+      "caseNote": "Monthly rent, client started new job last week.",
+      "requestedAt": "2026-10-17",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_69wb34",
+          "kind": "lease",
+          "sourceHash": "cb38d4de7e3ac917b570bb6fe212789e8593729b8665395b7e7506c0c2a70512",
+          "rawText": "RENT RECEIPT / STATEMENT\nMission Terrace Apartments LP\nTenant: Sofia F.\nPeriod: 2O26-10-15\nMonthly rent                 $536.00\nTotal Due: $536.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Mission Terrace Apartments LP",
+        "amountCents": 53600,
+        "date": "2026-10-15",
+        "lineItems": [
+          {
+            "label": "Monthly rent",
+            "cents": 53600
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_a6b2uy",
+      "clientId": "cl_ev565a",
+      "caseManagerId": "cm_kim",
+      "category": "phone",
+      "requestedCents": 8999,
+      "vendorId": "v_23a6sa",
+      "vendorNameRaw": "Metro by T-Mobile",
+      "caseNote": "Phone plan for job callbacks.",
+      "requestedAt": "2026-10-17",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_aybuf5",
+          "kind": "receipt",
+          "sourceHash": "e6bd88f50c6fa083489f85d7cc210a2466394c5709c840b29cfca0aeadb6d133",
+          "rawText": "Metro by T-Mobile\n2026-10-16\nPrepaid monthly plan         $89.99\nTotal $89.99\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Metro by T-Mobile",
+        "amountCents": 8999,
+        "date": "2026-10-11",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 8999
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_16v9ne",
+      "clientId": "cl_fugu19",
+      "caseManagerId": "cm_rivera",
+      "category": "rent",
+      "requestedCents": 72000,
+      "vendorId": "v_5g66op",
+      "vendorNameRaw": "Bay Area Housing LLC",
+      "caseNote": "Rent receipt is under the landlord's DBA name.",
+      "requestedAt": "2026-10-18",
+      "plantedAnomaly": "VENDOR_NAME_MISMATCH",
+      "documents": [
+        {
+          "id": "doc_eo2h5z",
+          "kind": "lease",
+          "sourceHash": "9fafa527fb08c5230a7706d2b5f635623c471f67b23f4c5261a0d40d6e50eec6",
+          "rawText": "RENT RECEIPT / STATEMENT\nBay Prop Mgmt\nTenant: Jordan N.\nPeriod: 2026-10-18\nMonthly rent                 $720.00\nTotal Due: $720.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay Prop Mgmt",
+        "amountCents": 72000,
+        "date": "2026-10-18",
+        "lineItems": [
+          {
+            "label": "Monthly rent",
+            "cents": 72000
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_eevppw",
+      "clientId": "cl_5amv96",
+      "caseManagerId": "cm_rivera",
+      "category": "phone",
+      "requestedCents": 8999,
+      "vendorId": "v_23a6sa",
+      "vendorNameRaw": "Metro by T-Mobile",
+      "caseNote": "Client needs phone plan for interviews.",
+      "requestedAt": "2026-10-19",
+      "plantedAnomaly": "DUPLICATE_TWO_NAMES",
+      "documents": [
+        {
+          "id": "doc_8oaa31",
+          "kind": "receipt",
+          "sourceHash": "e6bd88f50c6fa083489f85d7cc210a2466394c5709c840b29cfca0aeadb6d133",
+          "rawText": "Metro by T-Mobile\n2026-10-16\nPrepaid monthly plan         $89.99\nTotal $89.99\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Metro by T-Mobile",
+        "amountCents": 8999,
+        "date": "2026-10-18",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 8999
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_1hvhag",
+      "clientId": "cl_0d6qzx",
+      "caseManagerId": "cm_lopez",
+      "category": "transit",
+      "requestedCents": 11000,
+      "vendorId": "v_9rotgn",
+      "vendorNameRaw": "BART",
+      "caseNote": "Transit for court-ordered family visitation.",
+      "requestedAt": "2026-10-19",
+      "plantedAnomaly": "OUTSIDE_PERIOD",
+      "documents": [
+        {
+          "id": "doc_de0ru7",
+          "kind": "receipt",
+          "sourceHash": "f7266e72f4b6387998d40e787b9e8630f8ae0c4b017d9d4c9ae456142a28306d",
+          "rawText": "Bay Area Rapid Transit\n2026-10-14\nTransit fare                 $11000\nTotal $110.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay Area Rapid Transit",
+        "amountCents": 11000,
+        "date": "2026-10-14",
+        "lineItems": [
+          {
+            "label": "Transit fare",
+            "cents": 11000
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_dldg6w",
+      "clientId": "cl_2a5ib6",
+      "caseManagerId": "cm_nguyen",
+      "category": "documents",
+      "requestedCents": 5900,
+      "vendorId": "v_83i15z",
+      "vendorNameRaw": "California DMV",
+      "caseNote": "State ID replacement so client can start work.",
+      "requestedAt": "2026-10-20",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_02cd5q",
+          "kind": "receipt",
+          "sourceHash": "93536cde5ec8423e1f453fe76b03e4817b57798198e7bd2d903f805034afcd11",
+          "rawText": "California DMV\n2026-10-14\nDocument fee                 $59.00\nTotal $59.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "California DMV",
+        "amountCents": 5900,
+        "date": "2026-10-14",
+        "lineItems": [
+          {
+            "label": "Document fee",
+            "cents": 5900
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_07n50a",
+      "clientId": "cl_1pqwxf",
+      "caseManagerId": "cm_patel",
+      "category": "rent",
+      "requestedCents": 45900,
+      "vendorId": "v_5g66op",
+      "vendorNameRaw": "Bay Area Housing LLC",
+      "caseNote": "Rent for October, roommate moved out.",
+      "requestedAt": "2026-10-20",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_7eng88",
+          "kind": "lease",
+          "sourceHash": "9ba979152b1bf4a8ddae48fd6296e8c3524d400c89a15503603177aca177a18e",
+          "rawText": "RENT RECEIPT / STATEMENT\nBay Area Housing LLC\nTenant: Sofia F.\nPeriod: 2026-10-14\nMonthly rent                 $459.00\nTotal Due: $459.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay Area Housing LLC",
+        "amountCents": 45900,
+        "date": "2026-10-14",
+        "lineItems": [
+          {
+            "label": "Monthly rent",
+            "cents": 45900
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_96s3po",
+      "clientId": "cl_fugu19",
+      "caseManagerId": "cm_rivera",
+      "category": "rent",
+      "requestedCents": 110000,
+      "vendorId": "v_75m0zm",
+      "vendorNameRaw": "Mission Terrace Apartments LP",
+      "caseNote": "Client at risk of eviction, landlord agreed to accept partial.",
+      "requestedAt": "2026-10-20",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_ay7f67",
+          "kind": "lease",
+          "sourceHash": "76aa9a91168bcee8ddd10a2f33777aab78e13cb23c1397755eb03ab23ddb9adb",
+          "rawText": "RENT RECEIPT / STATEMENT\nMission Terrace Apartments LP\nTenatn: Jordan N.\nPeriod: 2026-10-19\nMonthly rent                 $1100.00\nTotal Due: $1100.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Mission Terrace Apartments LP",
+        "amountCents": 110000,
+        "date": "2026-10-19",
+        "lineItems": [
+          {
+            "label": "Monthly rent",
+            "cents": 110000
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_77byk1",
+      "clientId": "cl_fugu19",
+      "caseManagerId": "cm_rivera",
+      "category": "rent",
+      "requestedCents": 120000,
+      "vendorId": "v_13suro",
+      "vendorNameRaw": "Sunset Residential Partners",
+      "caseNote": "Rent $1,200; landlord will not accept partial payment.",
+      "requestedAt": "2026-10-20",
+      "plantedAnomaly": "SPLIT_FUNDER",
+      "documents": [
+        {
+          "id": "doc_aydmk3",
+          "kind": "lease",
+          "sourceHash": "2ab1df29253c6b3476a8be4e52243fd75f310d51b3ba45e12312945ec6a24e75",
+          "rawText": "RENT RECEIPT / STATEMENT\nSunset Residential Partners\nTenant: Jordan N.\nPeriod: 2026-10-17\nMonthly rent                 $1200.00\nTotal Due: $1200.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Sunset Residential Partners",
+        "amountCents": 120000,
+        "date": "2026-10-17",
+        "lineItems": [
+          {
+            "label": "Monthly rent",
+            "cents": 120000
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_ezo54v",
+      "clientId": "cl_ev565a",
+      "caseManagerId": "cm_kim",
+      "category": "utilities",
+      "requestedCents": 21200,
+      "vendorId": "v_9xgubg",
+      "vendorNameRaw": "PG&E",
+      "caseNote": "Shutoff notice; bill includes a late charge.",
+      "requestedAt": "2026-10-21",
+      "plantedAnomaly": "PROHIBITED_LATE_FEE",
+      "documents": [
+        {
+          "id": "doc_1bsill",
+          "kind": "utility_bill",
+          "sourceHash": "0d8d2a16be2e65c9f2c50c6227c9828bbdf5663b51d36a1be222400609ba0a71",
+          "rawText": "Pacific Gas & Electric Company\nACCOUNT STATEMENT\nService address on file\nStatement date: 2026-10-16\nElectric service Sep     …\nLate Payment Charge          $35.00\nAmount Due $212.00\nDue upon receipt",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Pacific Gas & Electric Company",
+        "amountCents": 21200,
+        "date": "2026-10-16",
+        "lineItems": [
+          {
+            "label": "Electric service Sep",
+            "cents": 17700
+          },
+          {
+            "label": "Late Payment Charge",
+            "cents": 3500,
+            "flag": "late_fee"
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_dxp7ux",
+      "clientId": "cl_2a5ib6",
+      "caseManagerId": "cm_nguyen",
+      "category": "phone",
+      "requestedCents": 7600,
+      "vendorId": "v_9u8fme",
+      "vendorNameRaw": "Cricket Wireless",
+      "caseNote": "Phone plan so client can receive job callbacks.",
+      "requestedAt": "2026-10-22",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_1b6mkr",
+          "kind": "receipt",
+          "sourceHash": "a761259109c8c3f439e4ff435bb030c2a1fa69d174846d7ecc31612f22e768f0",
+          "rawText": "Cricket Wireless\n2026-10-16\nMonthly plan                 $76.00\nTotal $76.00\nThank you",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Cricket Wireless",
+        "amountCents": 7600,
+        "date": "2026-10-16",
+        "lineItems": [
+          {
+            "label": "Monthly plan",
+            "cents": 7600
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_bjruuk",
+      "clientId": "cl_c5emzf",
+      "caseManagerId": "cm_lopez",
+      "category": "utilities",
+      "requestedCents": 12000,
+      "vendorId": "v_9xgubg",
+      "vendorNameRaw": "Pacific Gas & Electric Company",
+      "caseNote": "Water bill overdue, client was hospitalized last month.",
+      "requestedAt": "2026-10-22",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_5wtnhe",
+          "kind": "utility_bill",
+          "sourceHash": "63ed8da3cca55481599c680032815b834016db310bbcdb191bf5e2e63ddc30ba",
+          "rawText": "Pacific Gas & Electric Company\nACCOUNT STATEMENT\nService address on file\nStatement date: 2026-10-17\nService charges              $120.00\nAmount Due $120.00\nDue upon receipt",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Pacific Gas & Electric Company",
+        "amountCents": 12000,
+        "date": "2026-10-17",
+        "lineItems": [
+          {
+            "label": "Service charges",
+            "cents": 12000
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_a6rgq6",
+      "clientId": "cl_ev565a",
+      "caseManagerId": "cm_kim",
+      "category": "rent",
+      "requestedCents": 67800,
+      "vendorId": "v_5g66op",
+      "vendorNameRaw": "Bay Area Housing LLC",
+      "caseNote": "Client at risk of eviction, landlord agreed to accept partial.",
+      "requestedAt": "2026-10-22",
+      "plantedAnomaly": null,
+      "documents": [
+        {
+          "id": "doc_fyi8k4",
+          "kind": "lease",
+          "sourceHash": "88cf0645df1ce17bf52249654520b9e052f248fd09c4b9652f15b2f78cc74ff0",
+          "rawText": "RENT RECEIPT / STATEMENT\nBay Area Housing LLC\nTenant: Aaliyah J.\nPeriod: 2026-10-18\nMonthly rent                 $678.00\nTOTAI Due: $678.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay Area Housing LLC",
+        "amountCents": 67800,
+        "date": "2026-10-18",
+        "lineItems": [
+          {
+            "label": "Monthly rent",
+            "cents": 67800
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_bhw13x",
+      "clientId": "cl_146a4w",
+      "caseManagerId": "cm_lopez",
+      "category": "rent",
+      "requestedCents": 90000,
+      "vendorId": "v_5xyctp",
+      "vendorNameRaw": "Westside Commons Management",
+      "caseNote": "Monthly rent, client started new job last week.",
+      "requestedAt": "2026-10-22",
+      "plantedAnomaly": "INELIGIBLE_AGE",
+      "documents": [
+        {
+          "id": "doc_6t8mrg",
+          "kind": "lease",
+          "sourceHash": "078edafff547151e791d45e77c994ce15b37c58de13abb7566e6e11b84132240",
+          "rawText": "RENT RECEIPT / STATEMENT\nWestside Commons Management\nTenant: Theo K.\nPeriod: 2026-10-21\nMonthly rent                 $900.00\nTotal Due: $90O.00\nPlease remit by the 5th.",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Westside Commons Management",
+        "amountCents": 90000,
+        "date": "2026-10-21",
+        "lineItems": [
+          {
+            "label": "Monthly rent",
+            "cents": 90000
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_58it59",
+      "clientId": "cl_2a5ib6",
+      "caseManagerId": "cm_nguyen",
+      "category": "utilities",
+      "requestedCents": 45000,
+      "vendorId": "v_5zdwdh",
+      "vendorNameRaw": "Bay Water",
+      "caseNote": "Internet needed for online classes.",
+      "requestedAt": "2026-10-22",
+      "plantedAnomaly": "AMOUNT_MISMATCH",
+      "documents": [
+        {
+          "id": "doc_2xko6d",
+          "kind": "utility_bill",
+          "sourceHash": "dc63f713fa43c4301a19fb56bf107439fb2fb3b9cd860dfebb8c717d1fdb0cc0",
+          "rawText": "Bay Water & Sewer District\nACCOUNT STATEMENT\nService address on file\nStatement date: 2026-1O-18\nService charges          …\nAmount Due $405.O0\nDue upon receipt",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Bay Water & Sewer District",
+        "amountCents": 40500,
+        "date": "2026-10-18",
+        "lineItems": [
+          {
+            "label": "Service charges",
+            "cents": 40500
+          }
+        ]
+      }
+    },
+    {
+      "id": "req_e20279",
+      "clientId": "cl_fugu19",
+      "caseManagerId": "cm_rivera",
+      "category": "deposit",
+      "requestedCents": 110000,
+      "vendorId": "v_6ugs5f",
+      "vendorNameRaw": "Golden Gate Rooms",
+      "caseNote": "New landlord, wants deposit by Friday to hold the room.",
+      "requestedAt": "2026-10-23",
+      "plantedAnomaly": "CRS_FLAGGED_VENDOR",
+      "documents": [
+        {
+          "id": "doc_17d0kh",
+          "kind": "invoice",
+          "sourceHash": "59966c33e48c54dbcd776516c17b5a093fd826041a1667a2314d0f30894e428e",
+          "rawText": "INVOICE\nGolden Gate Rooms LLC\nBill to: Jordan N.\nDate: 2026-10-22\nSecurity deposit             $1100.00\nTOTAL $1100.00",
+          "imagePath": null
+        }
+      ],
+      "truth": {
+        "vendorName": "Golden Gate Rooms LLC",
+        "amountCents": 110000,
+        "date": "2026-10-22",
+        "lineItems": [
+          {
+            "label": "Security deposit",
+            "cents": 110000
+          }
+        ]
+      }
+    }
+  ]
+}

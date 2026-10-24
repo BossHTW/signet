@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Signet — Not a rubber stamp. Not a bottleneck.
 
-## Getting Started
+Built solo at **Cal Hacks 13.0** (Oct 23–25, 2026). Repo created at the event; all work done at the event.
 
-First, run the development server:
+> **Synthetic data.** Bay County Youth & Family Services, its funders, clients, case managers and documents are
+> fictional and generated (`scripts/generate.ts`, seed 1309). Funding-rule *shapes* mirror real public grant
+> programs (per-instance caps, period limits, prohibited line items, eligibility by age and program).
+> No real organization or person appears anywhere.
+
+## What it does (one function, end to end)
+
+A case manager requests money for or on behalf of a young person (rent, deposit, utilities, phone, transit, documents).
+
+`intake → document reading → grant policy check → vendor/bank match → disbursal within limits → escalation → audit → compliance report`
+
+- **One LLM role.** Claude reads documents into fields with per-field confidence and writes one-line summaries. It never approves, denies, allocates or evaluates policy.
+- **Two deterministic engines.** `src/lib/engine/policy.ts` (eligibility, caps, prohibited items, period, duplicates, split funding) and `src/lib/engine/match.ts` (vendor identity, bank reconciliation, CRS status).
+- **One human queue.** Approvals within per-category limits are automatic. **Denial is never autonomous.** Ten escalation codes, each with a reason.
+- **Learning loop.** A human's rationale becomes a proposed rule (tiny JSON predicate), replayed against history, activated only by a human.
+- **Append-only, hash-chained audit log.** Every decision ends with a seal: grey for the system, red for a human.
+
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local        # add ANTHROPIC_API_KEY; MODE=OFFLINE needs no keys
+npm run seed                      # 62 synthetic requests, 8 planted anomalies → data/signet.db
+npm test                          # all 8 anomalies must trigger; nothing may be DENIED by code
+npm run demo:replay               # engines over the whole workload, no LLM, no network
+npm run dev                       # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What's live vs. mocked
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Component | At judging | Fallback |
+|---|---|---|
+| Claude (Haiku reads, Sonnet writes) | live | committed response cache (`MODE=OFFLINE`) |
+| Capital One Nessie (bank feed, transfers) | live | `adapters/nessie.mock.ts` |
+| CRS Credit API (vendor identity, test identities only) | live | `adapters/crs.mock.ts` |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The mode badge in the UI always shows `LIVE`, `MOCK` or `OFFLINE`.
 
-## Learn More
+## Escalation codes
 
-To learn more about Next.js, take a look at the following resources:
+`POL-HARD` policy fail · `LIMIT-OVER` above auto-approve limit · `SPLIT-REQ` needs two grants · `DUP-HIT` duplicate document or vendor+amount · `AMT-DIFF` document ≠ request · `EXTRACT-LOW` unreadable field · `MATCH-LOW` vendor unclear · `BANK-LOW` no matching posting · `VENDOR-FLAG` CRS flagged · `RULE-ESC` human-approved rule
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Tracks
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Hyphenate · Anthropic (Claude for Public Benefit) · Microsoft · Capital One Nessie · CRS · Fetch.ai · Creao · Best People-First · Best Solo · Notability · GoDaddy (notarubberstamp.com)
 
-## Deploy on Vercel
+## Next (not built this weekend)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+SSO and roles, real grant-management and bank connectors, funder-specific export formats, retention policy.
