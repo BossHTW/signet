@@ -2,6 +2,7 @@
 import Anthropic from "@anthropic-ai/sdk";
 import { cacheGet, cacheKey, cacheSet, llmStats } from "./cache";
 import { currentMode } from "@/lib/adapters/types";
+import { chargeDemoLive, DEMO_BUSY } from "@/lib/demoLimit";
 
 export const HAIKU = process.env.CLAUDE_HAIKU_MODEL ?? "claude-haiku-4-5";
 // Summaries/defenses default to Haiku too: one model that must exist. Set CLAUDE_SONNET_MODEL to upgrade (run `npm run models` to see IDs).
@@ -32,8 +33,10 @@ export async function cachedMessage(args: Anthropic.MessageCreateParamsNonStream
 
   let res: Anthropic.Message;
   try {
+    await chargeDemoLive();
     res = await sdk().messages.create(args);
   } catch (e) {
+    if ((e as Error).message === DEMO_BUSY) throw e;
     // Never crash the pipeline on a model error: degrade (EXTRACT-LOW / fallback summary) and record why.
     const msg = (e as { message?: string }).message ?? String(e);
     console.warn(`[llm] ${args.model} unavailable: ${msg.slice(0, 160)}`);

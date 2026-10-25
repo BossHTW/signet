@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfnfC1TH3Gy5yWTU5sS",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01AN5243qEf4FXdSwfL9D3Xj",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.7
+        },
+        "vendorName": {
+          "value": "Golden Gate Transit",
+          "evidence": "Golden Gate Transit",
+          "confidence": 0.95
+        },
+        "date": {
+          "value": "2026-09-16",
+          "evidence": "2026-09-16",
+          "confidence": 0.95
+        },
+        "amountCents": {
+          "value": 2100,
+          "evidence": "Total $21.0O",
+          "confidence": 0.7
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Transit fare",
+              "cents": 2100,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "clientNameOnDoc": {
+          "value": "",
+          "confidence": 0.95
+        },
+        "address": {
+          "value": "",
+          "confidence": 0.95
+        },
+        "notes": "The total reads \"$21.0O\" in OCR; the letter O is likely a misread zero, and the line item matches $21.00. No client name or address appears on the document. The document type 'receipt' is my inference from a fare payment, not stated in the text."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1555,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 470,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

@@ -91,10 +91,11 @@ function makeVendors(r: Rng): SeedVendor[] {
     // finance teams keep the bank's descriptor string on the vendor record; the first landlord deliberately has none (anomaly 1)
     aliases: legalName === "Bay Area Housing LLC" ? aliases : [...aliases, descriptor], category, crsTestIdentityId: null, crsStatus, nessieAccountId: null, descriptor,
   });
+  const mark = (vendor: SeedVendor, persona: string): SeedVendor => ({ ...vendor, crsTestIdentityId: persona });
   return [
     // landlords (the first has NO alias so anomaly 1 triggers MATCH-LOW/BANK-LOW)
     v("Bay Area Housing LLC", "rent", "BAY PROP MGMT"),
-    v("Mission Terrace Apartments LP", "rent", "MISSION TERRACE APTS", ["Mission Terrace"]),
+    mark(v("Mission Terrace Apartments LP", "rent", "MISSION TERRACE APTS", ["Mission Terrace"]), "P01"), // live CRS FraudFinder: prime persona -> VERIFIED
     v("Sunset Residential Partners", "rent", "SUNSET RESIDENTIAL", ["Sunset Residential"]),
     v("Harbor View Housing Co", "deposit", "HARBOR VIEW HOUSING"),
     v("Westside Commons Management", "rent", "WESTSIDE COMMONS MGMT", ["Westside Commons"]),
@@ -112,7 +113,7 @@ function makeVendors(r: Rng): SeedVendor[] {
     v("California DMV", "documents", "CA DMV FEE", ["DMV"]),
     v("Bay County Clerk-Recorder", "documents", "BAY CO CLERK", ["County Clerk"]),
     // the sketchy one (anomaly 7)
-    v("Golden Gate Rooms LLC", "deposit", "GG ROOMS", [], "FLAGGED"),
+    mark(v("Golden Gate Rooms LLC", "deposit", "GG ROOMS", [], "FLAGGED"), "P13"), // live CRS FraudFinder: synthetic-identity persona -> FLAGGED
   ];
 }
 

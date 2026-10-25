@@ -1,0 +1,65 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNKCrAnEuNZPeYbDowkj",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01UFc6gwtoaau8PbVjMoHgzK",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.9
+        },
+        "vendorName": {
+          "value": "Bay Area Rapid Transit",
+          "confidence": 0.95,
+          "evidence": "Bay Area Rapid Transit"
+        },
+        "date": {
+          "value": "2026-10-08",
+          "confidence": 0.95,
+          "evidence": "2026-10-08"
+        },
+        "amountCents": {
+          "value": 8000,
+          "confidence": 0.95,
+          "evidence": "Total $80.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Transit fare",
+              "cents": 8000
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "Case manager notes this is a transit from Clipper (likely referring to Clipper Card, Bay Area transit payment system)."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1413,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 260,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

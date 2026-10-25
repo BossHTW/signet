@@ -1,0 +1,69 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNKFEodNRhC3UAza9Qst",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01FayXKc3gfWpiojHFdEMYHd",
+      "name": "record_extraction",
+      "input": {
+        "vendorName": {
+          "value": "Sunset Residential Partners",
+          "confidence": 0.99,
+          "evidence": "Sunset Residential Partners"
+        },
+        "clientNameOnDoc": {
+          "value": "Devon T.",
+          "confidence": 0.95
+        },
+        "date": {
+          "value": "2026-10-11",
+          "confidence": 0.85,
+          "evidence": "Period: 2026-10-l1"
+        },
+        "amountCents": {
+          "value": 47000,
+          "confidence": 0.99,
+          "evidence": "Total Due: $470.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly rent",
+              "cents": 47000
+            }
+          ],
+          "confidence": 0.99
+        },
+        "docType": {
+          "value": "lease",
+          "confidence": 0.95
+        },
+        "notes": "OCR may have rendered \"10-11\" as \"10-l1\" (lowercase L instead of digit 1); interpreted as October 11, 2026."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1443,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 315,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

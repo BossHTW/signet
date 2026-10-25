@@ -1,0 +1,68 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNTJCPn2XBNGajoohkSA",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01GiAt6UoggykkxwX8g6EHrR",
+      "name": "record_extraction",
+      "input": {
+        "vendorName": {
+          "value": "Mint Mobile",
+          "confidence": 1,
+          "evidence": "MINT MOBILE"
+        },
+        "docType": {
+          "value": "utility_bill",
+          "confidence": 0.95
+        },
+        "date": {
+          "value": "2026-10-18",
+          "confidence": 1,
+          "evidence": "Statement date: 2026-10-18"
+        },
+        "amountCents": {
+          "value": 3000,
+          "confidence": 1,
+          "evidence": "Amount due (this line): $30.00"
+        },
+        "clientNameOnDoc": {
+          "value": "Agency family plan",
+          "confidence": 0.85
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Line 3 of 5 — Unlimited",
+              "cents": 3000
+            }
+          ],
+          "confidence": 0.95
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1454,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 276,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

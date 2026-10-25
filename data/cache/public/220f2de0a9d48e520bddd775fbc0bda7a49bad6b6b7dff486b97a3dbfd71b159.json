@@ -1,0 +1,26 @@
+{
+  "vendorQuery": "Golden Gate Transit",
+  "sfBusiness": {
+    "found": false,
+    "count": 0,
+    "dbaNames": [],
+    "ownerNames": [],
+    "firstStart": null,
+    "active": null,
+    "source": "data.sf.gov"
+  },
+  "web": {
+    "found": true,
+    "results": [
+      {
+        "title": "Golden Gate Transit - Bus Schedules",
+        "link": "https://www.goldengate.org/bus/route-schedule/santa-rosa-san-francisco-101/",
+        "displayLink": "https://www.goldengate.org › bus › route-schedule › sa..."
+      }
+    ],
+    "source": "Google (JSON) via Bright Data"
+  },
+  "fetchedAt": "2026-10-25T09:47:45.319Z",
+  "source": "BRIGHTDATA",
+  "errors": []
+}

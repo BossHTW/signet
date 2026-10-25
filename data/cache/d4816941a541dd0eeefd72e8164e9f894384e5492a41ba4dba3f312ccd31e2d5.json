@@ -1,0 +1,73 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMg81jZRAt7MofFu1XYB",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01PV1DBsU4m1CE4drT5cobNN",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.7
+        },
+        "vendorName": {
+          "value": "Westside Commons Management",
+          "evidence": "Westside Commons Management",
+          "confidence": 0.95
+        },
+        "clientNameOnDoc": {
+          "value": "Theo K.",
+          "confidence": 0.85
+        },
+        "date": {
+          "value": "2026-10-21",
+          "evidence": "Period: 2026-10-21",
+          "confidence": 0.6
+        },
+        "amountCents": {
+          "value": 90000,
+          "evidence": "Monthly rent $900.00; Total Due: $90O.00",
+          "confidence": 0.75
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly rent",
+              "cents": 90000,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.85
+        },
+        "notes": "Document is titled 'Rent Receipt / Statement' but reads like a rent statement; 'Total Due' OCR reads '$90O.00' (letter O for zero), and the monthly rent line shows $900.00, so the total was taken as $900.00. The 'Period' value is a full date, not a month, so the date is uncertain. Address field not present on document."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1595,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 494,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

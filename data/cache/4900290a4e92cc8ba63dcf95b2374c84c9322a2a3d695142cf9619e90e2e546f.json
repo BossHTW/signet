@@ -1,0 +1,70 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNKJc2eQJz3h8eKeandk",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01Ltn3iRc9SK2nfS4wpxvNdG",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.95
+        },
+        "vendorName": {
+          "value": "Mission Terrace Apartments LP",
+          "confidence": 0.95,
+          "evidence": "Mission Terrace Apartments LP"
+        },
+        "clientNameOnDoc": {
+          "value": "Jordan N.",
+          "confidence": 0.9,
+          "evidence": "Tenatn: Jordan N."
+        },
+        "date": {
+          "value": "2026-10-19",
+          "confidence": 0.95,
+          "evidence": "Period: 2026-10-19"
+        },
+        "amountCents": {
+          "value": 110000,
+          "confidence": 0.95,
+          "evidence": "Total Due: $1100.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly rent",
+              "cents": 110000
+            }
+          ],
+          "confidence": 0.95
+        },
+        "notes": "OCR misspelled 'Tenant' as 'Tenatn'; otherwise document is clear and legible."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1450,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 315,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

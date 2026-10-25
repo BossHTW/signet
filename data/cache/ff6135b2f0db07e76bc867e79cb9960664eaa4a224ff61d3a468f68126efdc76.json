@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMg7dZp2BCAJtYNYu872",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01TRmwy5R3MkJt7sP9p6pqGA",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.7
+        },
+        "vendorName": {
+          "value": "Bay Area Housing LLC",
+          "confidence": 0.95,
+          "evidence": "Bay Area Housing LLC"
+        },
+        "clientNameOnDoc": {
+          "value": "Aaliyah J.",
+          "confidence": 0.9
+        },
+        "date": {
+          "value": "2026-10-18",
+          "confidence": 0.75,
+          "evidence": "Period: 2026-10-18"
+        },
+        "amountCents": {
+          "value": 67800,
+          "confidence": 0.9,
+          "evidence": "TOTAI Due: $678.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly rent",
+              "cents": 67800,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "notes": "Document is labeled 'Rent Receipt / Statement' and says 'Please remit by the 5th', so it may be a statement of amount due rather than proof of payment; the total label reads 'TOTAI Due' (OCR), and the period date is a single date without a clear billing range."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1606,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 516,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

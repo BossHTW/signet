@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfnMinuWAUWP84MmgeE",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01PdYNRy5K3BdsWnmuFogGtD",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "utility_bill",
+          "confidence": 0.9
+        },
+        "vendorName": {
+          "value": "Pacific Gas & Electric Company",
+          "confidence": 0.95,
+          "evidence": "Pacific Gas & Electric Company"
+        },
+        "clientNameOnDoc": {
+          "value": "",
+          "confidence": 0.3
+        },
+        "address": {
+          "value": "Service address on file",
+          "confidence": 0.3
+        },
+        "amountCents": {
+          "value": 19800,
+          "confidence": 0.93,
+          "evidence": "Amount Due $198.00"
+        },
+        "date": {
+          "value": "2026-09-18",
+          "confidence": 0.95,
+          "evidence": "Statement date: 2026-09-18"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Service charges",
+              "cents": 19800,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "Document is an account statement with no client name and only a generic 'Service address on file' placeholder instead of a real address; no late fees or reconnection charges appear."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1593,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 466,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

@@ -1,0 +1,65 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNK6wLRF5WFbD7yUavSt",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01KM1zDzsiEqT4dACU44bhWc",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.85
+        },
+        "vendorName": {
+          "value": "Bay County Clerk-Recorder",
+          "confidence": 0.95,
+          "evidence": "Bay County Clerk-Recorder"
+        },
+        "date": {
+          "value": "2026-09-26",
+          "confidence": 0.95,
+          "evidence": "2026-09-26"
+        },
+        "amountCents": {
+          "value": 4200,
+          "confidence": 0.95,
+          "evidence": "Total $42.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Document fee",
+              "cents": 4200
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "Simple receipt for a single document fee from county clerk office."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1419,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 256,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

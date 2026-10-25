@@ -1,0 +1,43 @@
+{
+  "vendorQuery": "Cricket Wireless",
+  "sfBusiness": {
+    "found": true,
+    "count": 11,
+    "dbaNames": [
+      "Cricket Wireless LLC",
+      "Cricket Wireless"
+    ],
+    "ownerNames": [
+      "Cricket Wireless LLC",
+      "Jc American LLC",
+      "Spacetel LLC"
+    ],
+    "firstStart": "2014-05-15",
+    "active": true,
+    "source": "data.sf.gov"
+  },
+  "web": {
+    "found": true,
+    "results": [
+      {
+        "title": "Cricket Wireless Store | 1905 Irving St in San Francisco, CA",
+        "link": "https://www.cricketwireless.com/stores/ca/san-francisco/1905-irving-st",
+        "displayLink": "https://www.cricketwireless.com › ... › 1905 Irving St"
+      },
+      {
+        "title": "Cricket Wireless cell phones - 2575 San Bruno Ave",
+        "link": "https://www.cricketwireless.com/stores/ca/san-francisco/2575-san-bruno-ave/cell-phones",
+        "displayLink": "https://www.cricketwireless.com › ... › Cell phones"
+      },
+      {
+        "title": "CRICKET WIRELESS AUTHORIZED RETAILER",
+        "link": "https://www.yelp.com/biz/cricket-wireless-authorized-retailer-san-francisco-10",
+        "displayLink": "https://www.yelp.com › ... › Shopping › Mobile Phones"
+      }
+    ],
+    "source": "Google (JSON) via Bright Data"
+  },
+  "fetchedAt": "2026-10-25T09:47:15.927Z",
+  "source": "BRIGHTDATA",
+  "errors": []
+}

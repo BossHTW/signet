@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfptktmscnktxev4Ei3",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_018qUycuzyGYJxyxodUHWspp",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "Cricket Wireless",
+          "confidence": 0.95,
+          "evidence": "Cricket Wireless"
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "date": {
+          "value": "2026-09-26",
+          "confidence": 0.85,
+          "evidence": "2026-09-26"
+        },
+        "amountCents": {
+          "value": 9800,
+          "confidence": 0.9,
+          "evidence": "Total $98.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly plan",
+              "cents": 9800,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "Document is short and has no client name, address, or account details; it is unclear whether it is a bill, invoice, or receipt, so docType is a low-confidence guess. The case manager describes it as a phone bill, but the text itself does not say that."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1553,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 486,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

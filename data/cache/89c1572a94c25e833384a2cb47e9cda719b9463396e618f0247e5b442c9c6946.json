@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfvYjnvFE2i9Etz3hNX",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01FSYxD7CftrVpuQWRRaWZKU",
+      "name": "record_extraction",
+      "input": {
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0.1
+        },
+        "amountCents": {
+          "value": 4200,
+          "confidence": 0.95,
+          "evidence": "Total $42.00"
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0.1
+        },
+        "date": {
+          "value": "2026-10-01",
+          "confidence": 0.9,
+          "evidence": "2026-10-01"
+        },
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.8
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Transit fare",
+              "cents": 4200,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "Short receipt with no address or client name; the vendor name comes from the case manager's note as well as the document header.",
+        "vendorName": {
+          "value": "Bay Area Rapid Transit",
+          "confidence": 0.9,
+          "evidence": "Bay Area Rapid Transit"
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1560,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 451,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

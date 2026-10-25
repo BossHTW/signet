@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signet — Institutional Investor Memo</title>
+<style>
+  :root{
+    --ink:#15181A; --ink-2:#44494E; --ink-3:#6C737A; --line:#D7DAD4; --line-strong:#AEB3AC;
+    --paper:#FFFFFF; --wash:#F5F6F3; --signet:#B88A00; --seal:#9E2820; --verify:#2C4A68; --ok:#2E6B3F; --flag:#8A4B00;
+    --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+    --sans:"Public Sans",-apple-system,"Segoe UI",system-ui,sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  }
+  @import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..600&family=Public+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap");
+
+  *{box-sizing:border-box}
+  html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{margin:0;background:#6b6f72;color:var(--ink);font-family:var(--serif);font-size:10.5pt;line-height:1.5}
+
+  /* ---- Screen: show pages as a stack of sheets ---- */
+  .page{
+    background:var(--paper); width:8.5in; min-height:11in; margin:24px auto; padding:0.9in 0.95in 1.05in;
+    box-shadow:0 2px 24px rgba(0,0,0,.28); position:relative; counter-increment:pg;
+  }
+  .page::after{
+    content:"Signet · Confidential · " counter(pg); position:absolute; left:0.95in; right:0.95in; bottom:0.55in;
+    font-family:var(--mono); font-size:7.5pt; letter-spacing:.04em; color:var(--ink-3);
+    border-top:0.5pt solid var(--line); padding-top:6px; display:flex; justify-content:space-between;
+  }
+  .page::before{
+    content:"SIGNET — INSTITUTIONAL INVESTOR MEMO & VC PROPOSAL"; position:absolute; left:0.95in; right:0.95in; top:0.5in;
+    font-family:var(--mono); font-size:7.5pt; letter-spacing:.14em; color:var(--ink-3);
+  }
+  body{counter-reset:pg}
+  .cover{counter-increment:pg}
+  .cover::before{content:none}
+
+  /* ---- Print ---- */
+  @page{ size:Letter; margin:0.7in 0.75in; }
+  @media print{
+    body{background:#fff}
+    .page{width:auto;min-height:0;height:auto;margin:0;padding:0;box-shadow:none;page-break-before:always}
+    .page:first-child{page-break-before:avoid}
+    .page::before,.page::after{display:none}
+    .cover h1{margin-top:54px}
+    table,figure,.kpi,.callout,li{break-inside:avoid}
+    thead{display:table-header-group}
+    h1,h2,h3,h4{break-after:avoid}
+    .rule{break-after:avoid}
+  }
+
+  /* ---- Type ---- */
+  h1{font-family:var(--sans);font-weight:700;font-size:28pt;line-height:1.05;letter-spacing:-.01em;margin:0 0 6pt}
+  h2{font-family:var(--sans);font-weight:700;font-size:15pt;line-height:1.1;margin:0 0 4pt;color:var(--ink)}
+  h2 .no{color:var(--signet);font-family:var(--mono);font-size:11pt;margin-right:8px}
+  h3{font-family:var(--sans);font-weight:600;font-size:11pt;margin:16pt 0 3pt;color:var(--ink)}
+  h4{font-family:var(--sans);font-weight:600;font-size:9.5pt;margin:12pt 0 2pt;color:var(--ink-2);text-transform:uppercase;letter-spacing:.06em}
+  p{margin:0 0 7pt}
+  .sectlede{font-family:var(--sans);font-size:11pt;line-height:1.45;color:var(--ink-2);margin:0 0 12pt;font-weight:400}
+  .eyebrow{font-family:var(--mono);font-size:8pt;letter-spacing:.2em;text-transform:uppercase;color:var(--signet);margin-bottom:6pt}
+  b,strong{font-weight:600}
+  .mono{font-family:var(--mono);font-size:9pt}
+  sup{font-size:.7em}
+  a{color:var(--verify);text-decoration:none}
+  .rule{height:2pt;background:var(--ink);width:44px;margin:10pt 0 14pt}
+
+  /* ---- Tables ---- */
+  table{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:8.6pt;margin:8pt 0 10pt;line-height:1.35}
+  th{text-align:left;font-weight:600;font-size:7.6pt;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2);
+     border-bottom:1pt solid var(--ink);padding:5pt 7pt;vertical-align:bottom}
+  td{padding:5pt 7pt;border-bottom:0.5pt solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:var(--wash)}
+  td.num,th.num{text-align:right;font-family:var(--mono);font-size:8pt;white-space:nowrap}
+  caption{caption-side:bottom;font-family:var(--mono);font-size:7.3pt;color:var(--ink-3);text-align:left;padding-top:4pt;letter-spacing:.02em}
+
+  /* ---- Components ---- */
+  .kpi{display:flex;gap:10pt;margin:10pt 0 12pt}
+  .kpi .c{flex:1;border:0.75pt solid var(--line);border-top:2pt solid var(--signet);border-radius:3pt;padding:9pt 10pt}
+  .kpi .v{font-family:var(--sans);font-weight:700;font-size:19pt;line-height:1;color:var(--ink)}
+  .kpi .l{font-size:7.8pt;font-family:var(--sans);color:var(--ink-2);margin-top:5pt;line-height:1.3}
+  .callout{border-left:2.5pt solid var(--seal);background:var(--wash);padding:8pt 12pt;margin:10pt 0;font-family:var(--sans);font-size:9pt;line-height:1.45}
+  .callout b{color:var(--seal)}
+  .two{column-count:2;column-gap:22pt}
+  figure{margin:10pt 0;border:0.75pt solid var(--line);border-radius:4pt;padding:12pt;background:var(--wash)}
+  figure figcaption{font-family:var(--mono);font-size:7.5pt;color:var(--ink-3);margin-top:8pt;letter-spacing:.02em}
+  .pill{display:inline-block;font-family:var(--mono);font-size:7.5pt;border:0.75pt solid var(--line-strong);border-radius:999px;padding:2pt 8pt;color:var(--ink-2);margin:2pt 3pt 2pt 0}
+  .good{color:var(--ok)} .bad{color:var(--seal)} .warn{color:var(--flag)} .slate{color:var(--verify)}
+  ul,ol{margin:4pt 0 9pt;padding-left:16pt}
+  li{margin-bottom:3pt}
+  .diagram{font-family:var(--mono);font-size:8pt;line-height:1.7;white-space:pre;color:var(--ink-2);overflow-x:auto}
+
+  /* ---- Cover ---- */
+  .cover{display:block}
+  .cover .mk{width:46px;height:46px;border-radius:50%;background:var(--seal);color:#fff;display:grid;place-items:center;
+    font-family:var(--sans);font-weight:700;font-size:24px}
+  .cover h1{font-size:46pt;margin-top:96px}
+  .cover .tag{font-family:var(--serif);font-style:italic;font-size:15pt;color:var(--ink-2);margin:6pt 0 0}
+  .cover .meta{margin-top:30pt;font-family:var(--sans);font-size:9pt;color:var(--ink-2);border-top:1pt solid var(--ink);padding-top:12pt}
+  .cover .meta b{color:var(--ink)}
+  .cover .conf{margin-top:22pt;font-family:var(--mono);font-size:7.5pt;color:var(--ink-3);letter-spacing:.06em;line-height:1.6}
+  .toc{font-family:var(--sans);font-size:9.5pt;margin-top:26pt}
+  .toc div{display:flex;justify-content:space-between;border-bottom:0.5pt dotted var(--line-strong);padding:5pt 0;color:var(--ink-2)}
+  .toc div b{color:var(--ink);font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="page cover">
+  <div class="mk">S</div>
+  <h1>Signet</h1>
+  <div class="tag">Not a rubber stamp. Not a bottleneck.</div>
+  <div style="margin-top:14pt;font-family:var(--sans);font-size:11pt;color:var(--ink-2);max-width:52ch;line-height:1.5">
+    Deterministic 2&nbsp;CFR&nbsp;200 compliance for public-sector client-assistance disbursement, with the authorization kept where the law puts it: in named human hands.
+  </div>
+
+  <div class="toc">
+    <div><span><b>1.</b> Executive Summary &amp; the $140M Agency Benchmark</span><span class="mono">p.2</span></div>
+    <div><span><b>2.</b> Architectural Boundaries &amp; Restraint-First Design</span><span class="mono">p.4</span></div>
+    <div><span><b>3.</b> Transaction Lifecycle &amp; the Active Learning Loop</span><span class="mono">p.6</span></div>
+    <div><span><b>4.</b> Market Opportunity &amp; Bottom-Up TAM</span><span class="mono">p.8</span></div>
+    <div><span><b>5.</b> Go-to-Market, Competitive Moat &amp; Unit Economics</span><span class="mono">p.9</span></div>
+    <div><span><b>6.</b> Hackathon Test Case &amp; Live Demo Specification</span><span class="mono">p.11</span></div>
+    <div><span><b>7.</b> Risk Matrix &amp; Investment Recommendation</span><span class="mono">p.12</span></div>
+  </div>
+
+  <div class="meta">
+    <b>Prepared for:</b> Hackathon judges · County CIOs / CFOs · Seed investment committees &nbsp;·&nbsp;
+    <b>From:</b> Boss Huang, Founder &nbsp;·&nbsp; <b>As of:</b> October 24, 2026 &nbsp;·&nbsp; notarubberstamp.biz
+  </div>
+  <div class="conf">
+    CONFIDENTIAL DRAFT — FOR DISCUSSION ONLY. Built solo at Cal Hacks 13.0. Bay County Youth &amp; Family Services and all
+    clients, funders and documents are synthetic. Figures marked (assumption) are modeling inputs, not measured results;
+    measured results are drawn from the seeded synthetic workload and labeled as such.
+  </div>
+</section>
+
+<!-- ============ 1. EXEC SUMMARY ============ -->
+<section class="page">
+  <div class="eyebrow">Section 1</div>
+  <h2><span class="no">01</span>Executive Summary &amp; the $140M Agency Benchmark</h2>
+  <div class="rule"></div>
+
+  <p class="sectlede">Signet verifies client-assistance payments made from restricted public grants so that two named people can certify and release them in minutes, with an audit record an auditor can read without the vendor present. One language-model role — document parsing — and no model authority. That boundary is the product.</p>
+
+  <p>Public human-services agencies pay third parties — landlords, utilities, phone carriers, the DMV — on behalf of individuals out of dozens of restricted grants simultaneously. Each grant carries its own eligibility, per-instance and per-client caps, grant period, prohibited line items, and reporting format. The dollars per payment are small; the transaction count and the audit exposure are large. The work of deciding whether a given payment is allowable, allocable, and documented lives today in people reading documents and in email — not in any system of record. Grants-management software records the award; accounting software records the payment; the compliance judgment between them is manual.</p>
+
+  <p>Signet occupies that gap. It is not a grants-management suite, a case-management system, or a bank. It is one function, executed end to end: <b>request → document parsing → policy verification → bank match → human certification → human release → compliance audit log → funder report</b>. The system's only machine-produced outcomes are <span class="mono">READY</span> and <span class="mono">ESCALATED</span>. It never approves, never denies, and never moves money.</p>
+
+  <h3>The $140M agency benchmark</h3>
+  <p>The reference operating environment is a county youth &amp; family services department with an annual budget on the order of <b>$140M</b>, administering <b>30–50 restricted grant streams</b> (assumption; the synthetic workload models eight representative streams in depth). A department of this size typically braids federal, state, county, and private funding. The most common federal sources in this category, and the rule-shapes Signet encodes, include:</p>
+
+  <table>
+    <caption>Representative restricted streams at a $140M human-services department. Rule-shapes are real; stream names in the synthetic workload are fictional.</caption>
+    <thead><tr><th style="width:22%">Program</th><th style="width:30%">Authority</th><th>Characteristic compliance constraints Signet enforces as code</th></tr></thead>
+    <tbody>
+      <tr><td><b>HUD ESG</b><br>Emergency Solutions Grant</td><td>24 CFR Part 576</td><td>Third-party payment only; deposit ≤ 2 months' rent; utilities ≤ 24 months incl. ≤ 6 arrears; rent ≤ FMR &amp; rent-reasonable; no duplication of other public assistance.</td></tr>
+      <tr><td><b>TANF</b><br>(emergency assistance)</td><td>42 USC 601 et seq.; state plan</td><td>Eligibility by household and time limits; prohibited uses; allowable-cost determination documented per state plan.</td></tr>
+      <tr><td><b>CSBG</b><br>Community Services Block Grant</td><td>42 USC 9901; 2 CFR 200</td><td>Eligibility by income threshold; tripartite-board documentation; cost allocability across co-funded activities.</td></tr>
+      <tr><td><b>County general fund / private</b></td><td>County policy; funder MOU</td><td>Unrestricted or lightly restricted; used to absorb prohibited line items (e.g., a late fee) that a federal stream cannot pay.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Audit mechanics: 2 CFR 200 and the cost of a disallowed cost</h3>
+  <p>Every federal dollar an agency spends is governed by the Uniform Guidance (2 CFR Part 200). Costs must be <b>allowable</b> (200.403), <b>allocable</b> to the award (200.405), and supported by <b>source documentation</b> (200.302(b)(3)). The agency must maintain effective internal control aligned with the GAO Green Book or COSO (200.303(a)). Where a cost is later found non-compliant, it becomes a <b>disallowed cost</b> (200.410): the agency repays it from unrestricted funds, and a pattern of them becomes a Single Audit finding that carries into the agency's next award negotiation and risk designation.</p>
+
+  <div class="callout"><b>The compliance paradox.</b> The same controls that prevent disallowed costs, when applied by hand, create delay — and delay is itself a compliance problem. 2 CFR 200.305(b)(1) requires recipients to minimize the time between drawing funds and disbursing them. An agency cannot buy safety with slowness. Field-reported elapsed times for a reviewed client-assistance payment run to roughly <b>two weeks</b> (assumption; the Atlas records the manual loop, not a measured duration), during which an eviction notice or utility shut-off can land on the client Signet exists to protect.</p>
+
+  <h3>What the system does, measured</h3>
+  <p>On a seeded synthetic workload (62 requests across 8 streams, 24 clients, 15 vendors, with 8 planted anomalies), Signet's behavior is reproducible on every run:</p>
+  <div class="kpi">
+    <div class="c"><div class="v">77.4%</div><div class="l">verified clean on every check &amp; batch-eligible</div></div>
+    <div class="c"><div class="v">8 / 8</div><div class="l">planted anomalies caught</div></div>
+    <div class="c"><div class="v">0</div><div class="l">payments sent without two named humans</div></div>
+    <div class="c"><div class="v">244</div><div class="l">audit events, hash chain verifies end to end</div></div>
+  </div>
+  <p>The thesis for the sections that follow: whoever owns this verification-and-certification record owns the system of record for public client funds — and that record cannot be owned by an AI that decides (no agency may delegate certification to a model) nor by a generalist CRM (the controls are code that must be audited). It can be owned by a narrow system that makes verification nearly free while keeping authorization human.</p>
+</section>
+
+<!-- ============ 2. ARCHITECTURE ============ -->
+<section class="page">
+  <div class="eyebrow">Section 2</div>
+  <h2><span class="no">02</span>Architectural Boundaries &amp; Restraint-First Design</h2>
+  <div class="rule"></div>
+  <p class="sectlede">Signet is one LLM role, two deterministic engines, and a two-person human decision layer, wired so that authority flows only through the humans. The architecture is deliberately small: the smaller the surface, the easier it is for an auditor to establish what the system can and cannot do.</p>
+
+  <h3>Why generic LLMs fail public compliance</h3>
+  <p>Agentic products pitched into this market put a model in the decision seat: it reads the case, reasons over the rules, and recommends or executes a payment. They fail procurement on three grounds that do not improve with a better model:</p>
+  <ul>
+    <li><b>Liability.</b> GAO decision B-302789 locates pecuniary liability in the human certifying officer; 2 CFR 200.303 requires named, segregated control. An agency cannot assign that liability to a vendor's model, and no vendor will accept it.</li>
+    <li><b>Auditability.</b> A confidence score is not a control. An auditor needs the written rule, the evidence it was applied to, and the person who acted — not a probability.</li>
+    <li><b>Governance.</b> OMB M-25-21 requires human review and appeal for AI bearing on access to benefits; EU AI Act Art. 14 requires safeguards against automation bias. A system whose default action is "the agent approved" is precisely what these instruments constrain.</li>
+  </ul>
+
+  <h3>Isolation specification</h3>
+  <table>
+    <caption>Component responsibilities and hard boundaries. "May not" rows are enforced by the type system and asserted by tests, not by convention.</caption>
+    <thead><tr><th style="width:20%">Component</th><th style="width:42%">Responsibility</th><th>May not</th></tr></thead>
+    <tbody>
+      <tr><td><b>1 × LLM Parser</b><br><span class="mono">Claude Haiku</span> (tool-use, zod-validated); <span class="mono">Sonnet</span> drafts prose only</td><td>Turn a lease, bill, receipt or photo into typed fields — payee, amount, date, name-on-document, line items with a category flag — each with a confidence and an evidence quote. Caches by content hash, so the same document yields the same fields.</td><td>See a decision, rule, limit, bank record or payment. Emit a verdict (prompts forbid <span class="mono">approve/deny/recommend</span>; outputs scrubbed). On failure, degrade to a heuristic parser + <span class="mono">EXTRACT-LOW</span> flag.</td></tr>
+      <tr><td><b>2 × Deterministic Engines</b><br>Policy + Match (pure functions, 11 tests)</td><td><b>Policy:</b> eligibility, caps, prohibited items, period, duplicate detection (hash + vendor-and-amount within 45 days), greedy split allocation in priority order. <b>Match:</b> vendor identity (normalization, Dice-bigram + token similarity, DBA aliases), <b>Capital One Nessie</b> bank-feed reconciliation, public business record, HUD FMR benchmark.</td><td>Approve, deny, or move money. Both engines emit only flags, confidences, and a proposed allocation.</td></tr>
+      <tr><td><b>1 × Human Decision Layer</b><br>two segregated roles</td><td><b>Approver</b> (<span class="mono">program.supervisor</span>): decides escalations with a written reason; opens batches; reads a seeded sample; certifies. <b>Releaser</b> (<span class="mono">finance.director</span>, ≠ certifier): releases certified batches; activates rules.</td><td>The releaser may not be the certifier. The parser and engines may not perform either act.</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:8.5pt;color:var(--ink-3);font-family:var(--sans)">Note on model: the brief references "Claude 3.5 Sonnet"; the implementation uses a small fast model (Haiku class) for parsing and a larger model (Sonnet class) for descriptive prose, behind one swappable interface. The exact model id is configuration, not architecture.</p>
+
+  <h3>Why non-determinism is confined to parsing</h3>
+  <p>A language model is the correct tool for the only unstructured step: reading a photographed receipt with a smudged total, or a lease that names the landlord by a trade name. It is the wrong tool for every step after, because every step after must be reproducible, explainable against a written rule, and defensible to an auditor years later. So the model's output is treated as a <b>draft of the facts, not a judgment</b>: typed, schema-validated, confidence-bounded, and content-hash-cached. Low confidence is itself a deterministic flag that routes the item to a human. Three mechanisms make the boundary structural rather than cultural:</p>
+  <ul>
+    <li><b>Type system.</b> The system outcome is a two-value union (<span class="mono">READY | ESCALATED</span>). There is no code path from the pipeline to an approval, a denial, or a transfer; the bank adapter's transfer method is reachable only from <span class="mono">releaseBatch</span>, which refuses unless the batch is certified and the caller differs from the certifier.</li>
+    <li><b>Tests.</b> Eleven engine tests run the planted anomalies through the engines with no database and no model and assert that nothing is ever approved or denied by code. A headless end-to-end check (<span class="mono">npm run flow</span>) fails if a payment event appears before a release.</li>
+    <li><b>Record.</b> Every model call is logged with its cache key; every check with its evidence; the UI labels the model's role on every screen so a reviewer is never invited to treat a reading as a recommendation (the EU AI Act Art. 14 automation-bias safeguard).</li>
+  </ul>
+  <figure>
+    <svg viewBox="0 0 760 326" width="100%" role="img" aria-label="Signet architecture: the system reads, checks and sorts; two named people certify and release, and only the second human's action moves money.">
+      <defs>
+        <marker id="ar" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#5B6168"/></marker>
+        <marker id="arg" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#2E6B3F"/></marker>
+      </defs>
+      <style>
+        .t{font-family:"Public Sans",sans-serif}
+        .lane{font-size:10.5px;font-weight:700;letter-spacing:.06em;fill:#6C737A}
+        .nm{font-size:13px;font-weight:700;fill:#15181A;text-anchor:middle}
+        .sb{font-size:9.5px;fill:#44494E;text-anchor:middle}
+        .lbl{font-size:10px;fill:#6C737A;font-family:"JetBrains Mono",monospace}
+        .box{fill:#fff;stroke:#AEB3AC;stroke-width:1}
+        .e{stroke:#5B6168;stroke-width:1.3;fill:none}
+      </style>
+      <g class="t">
+        <!-- SYSTEM lane -->
+        <text class="lane" x="12" y="16">SYSTEM&#160;&#160;·&#160;&#160;may read, check, sort&#160;&#160;·&#160;&#160;may NOT approve, deny or pay</text>
+        <rect class="box" x="12" y="30" width="140" height="56" rx="7" stroke="#2C4A68"/>
+        <text class="nm" x="82" y="56" fill="#2C4A68">Parser</text><text class="sb" x="82" y="72">Claude · reads only</text>
+        <line class="e" x1="152" y1="58" x2="186" y2="58" marker-end="url(#ar)"/>
+        <rect class="box" x="188" y="30" width="156" height="56" rx="7"/>
+        <text class="nm" x="266" y="52">Policy engine</text><text class="sb" x="266" y="68">caps · prohibited</text><text class="sb" x="266" y="80">· duplicates (code)</text>
+        <line class="e" x1="344" y1="58" x2="378" y2="58" marker-end="url(#ar)"/>
+        <rect class="box" x="380" y="30" width="168" height="56" rx="7"/>
+        <text class="nm" x="464" y="52">Match engine</text><text class="sb" x="464" y="68">vendor · bank · FMR</text><text class="sb" x="464" y="80">(code + Nessie)</text>
+        <line class="e" x1="548" y1="58" x2="586" y2="58" marker-end="url(#ar)"/>
+        <rect x="588" y="34" width="118" height="48" rx="7" fill="#F5F6F3" stroke="#AEB3AC"/>
+        <text class="nm" x="647" y="54" font-size="12">READY / ASK</text><text class="sb" x="647" y="70">system outcome only</text>
+        <!-- divider -->
+        <line x1="12" y1="112" x2="748" y2="112" stroke="#AEB3AC" stroke-dasharray="4 4"/>
+        <!-- drop into people lane -->
+        <path class="e" d="M647 82 V98 H141 V140" marker-end="url(#ar)"/>
+        <!-- PEOPLE lane -->
+        <text class="lane" x="12" y="130">PEOPLE&#160;&#160;·&#160;&#160;two names on every dollar</text>
+        <rect class="box" x="12" y="142" width="258" height="54" rx="7" stroke="#9E2820"/>
+        <text class="nm" x="141" y="165" fill="#9E2820">Supervisor certifies</text><text class="sb" x="141" y="182">decides escalations · reads the sample</text>
+        <line class="e" x1="270" y1="169" x2="306" y2="169" marker-end="url(#ar)"/>
+        <rect class="box" x="308" y="142" width="176" height="54" rx="7" stroke="#9E2820"/>
+        <text class="nm" x="396" y="165" fill="#9E2820">Finance releases</text><text class="sb" x="396" y="182">a different person</text>
+        <path d="M484 169 H560" stroke="#2E6B3F" stroke-width="2.2" fill="none" marker-end="url(#arg)"/>
+        <text x="566" y="166" font-size="14" font-weight="700" fill="#2E6B3F">$ moves</text>
+        <text class="lbl" x="566" y="182" fill="#2E6B3F">the only money arrow</text>
+        <!-- learning loop -->
+        <path class="e" d="M141 196 V224 H176" marker-end="url(#ar)"/>
+        <rect x="178" y="210" width="166" height="28" rx="6" fill="#F5F6F3" stroke="#AEB3AC"/>
+        <text x="261" y="228" class="sb" font-family="JetBrains Mono, monospace">proposed JSON rule</text>
+        <line class="e" x1="344" y1="224" x2="380" y2="224" marker-end="url(#ar)"/>
+        <rect x="382" y="210" width="96" height="28" rx="6" fill="#F5F6F3" stroke="#AEB3AC"/>
+        <text x="430" y="228" class="sb">replay on history</text>
+        <line class="e" x1="478" y1="224" x2="514" y2="224" marker-end="url(#ar)"/>
+        <rect x="516" y="210" width="190" height="28" rx="6" fill="#F5F6F3" stroke="#AEB3AC"/>
+        <text x="611" y="228" class="sb" fill="#9E2820" font-weight="700">Finance activates (2nd person)</text>
+      </g>
+    </svg>
+    <figcaption>The only arrow that moves money leaves the second human. Each adapter (Nessie, Bright Data, Moss, CRS) has a same-shape mock, so the full chain runs offline.</figcaption>
+  </figure>
+</section>
+
+<!-- ============ 3. LIFECYCLE ============ -->
+<section class="page">
+  <div class="eyebrow">Section 3</div>
+  <h2><span class="no">03</span>Transaction Lifecycle &amp; the Active Learning Loop</h2>
+  <div class="rule"></div>
+  <p class="sectlede">One request, from the case manager's keyboard to the funder's report. The record is the deliverable, so each step names what it writes to the append-only, hash-chained log.</p>
+
+  <table>
+    <caption>End-to-end transaction trace. Status transitions in small caps; audit event types in mono.</caption>
+    <thead><tr><th style="width:4%">#</th><th style="width:22%">Step</th><th>What happens, and what is recorded</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><b>Request</b></td><td>Case manager submits category, amount, payee-as-typed, case note, document (text or photo). The document's SHA-256 is stored. → <span class="mono">REQUEST_CREATED</span>. Status <span class="mono">NEW</span>.</td></tr>
+      <tr><td>2</td><td><b>Parsing</b></td><td>Parser returns typed fields + confidence + evidence quotes; model id stored. A required field under the confidence floor becomes an <span class="mono">EXTRACT-LOW</span> flag. → <span class="mono">DOC_EXTRACTED</span>.</td></tr>
+      <tr><td>3</td><td><b>Policy verification</b></td><td>Eligibility (age, program, period); per-instance and remaining per-client caps (committed spend counts READY + APPROVED, not only released); prohibited line items; 45-day duplicate search (hash, or vendor+amount within 1%); allocation proposed in stream-priority order.</td></tr>
+      <tr><td>4</td><td><b>Bank match</b></td><td>Payee normalized &amp; scored against vendors + aliases; Nessie feed searched for a matching posting on reimbursements; identity status, cached public record, and (for rent) HUD 1-br FMR consulted. → <span class="mono">CHECKS_RUN</span>.</td></tr>
+      <tr><td>5</td><td><b>Sort</b></td><td><span class="mono">decide()</span> merges flags, applies active human rules, returns <span class="mono">READY</span> or <span class="mono">ESCALATED</span> with a grey system seal. → <span class="mono">VERIFIED_READY</span> / <span class="mono">ESCALATED</span>.</td></tr>
+      <tr><td>6</td><td><b>Escalation</b></td><td>Escalated items reach the Approver one card at a time: the document, the parsed fields, each flag with a plain title, the rule it derives from (manual §/CFR cite), a precedent, and what to look at. Approve (certify) or deny — reason required. → <span class="mono">HUMAN_DECIDED</span> (red seal). Denial is the only path to <span class="mono">DENIED</span>.</td></tr>
+      <tr><td>7</td><td><b>Certification</b></td><td>READY + approved items collect into a batch. A deterministic sample (seeded by batch id: 10%, min 3, plus every item ≥ $2,000) must be opened &amp; attested before certification. → <span class="mono">BATCH_OPENED</span>, <span class="mono">ITEM_ATTESTED</span>, <span class="mono">BATCH_CERTIFIED</span>.</td></tr>
+      <tr><td>8</td><td><b>Disbursal</b></td><td>The Releaser (≠ certifier) releases. Per item the bank adapter posts a Nessie withdrawal, the stream's spent balance increments, status → <span class="mono">RELEASED</span>. → <span class="mono">PAYMENT_SENT</span>, <span class="mono">BATCH_RELEASED</span> (both names).</td></tr>
+      <tr><td>9</td><td><b>Compliance audit log</b></td><td>Every event appended to a hash chain (each carries the prior hash); <span class="mono">verifyChain()</span> recomputes end to end. Funder reports generated per stream/period, one row per request, exported to CSV.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Active Learning Loop — specification</h3>
+  <p>When the Approver decides an escalation, Signet does not update a model. It reads the written reason with the chosen flag, the category, the normalized vendor, and any line-item categories, and drafts a candidate rule from a fixed template set. A rule is a small JSON predicate over a closed vocabulary of 14 fields and 8 operators (<span class="mono">eq, neq, gt, gte, lt, lte, in, contains, matches</span>) with <span class="mono">all/any/not</span> composition. Its action is one of three — and none of them approves, denies, or pays:</p>
+
+  <table>
+    <caption>The three permitted rule actions. <span class="mono">allow_within_limit</span> can remove only a MATCH-LOW flag (a blessed alias), never a hard fail.</caption>
+    <thead><tr><th style="width:26%">Action</th><th>Effect</th></tr></thead>
+    <tbody>
+      <tr><td><span class="mono">escalate</span></td><td>Route a matching future request to a human.</td></tr>
+      <tr><td><span class="mono">flag</span></td><td>Annotate without changing the outcome.</td></tr>
+      <tr><td><span class="mono">allow_within_limit</span></td><td>Waive a vendor-name mismatch for a confirmed alias, within the batch limit.</td></tr>
+    </tbody>
+  </table>
+
+  <figure>
+    <div class="diagram">  Human resolves an escalation (writes the reason)
+            │
+            ▼
+  Candidate rule drafted  ──►  { "all": [ {"field":"extracted.lineItems.flags","op":"contains","value":"late_fee"} ],
+            │                     "action": "escalate" }
+            ▼
+  Replayed against full history  ──►  "matched 7 · would have changed 2"  (too broad is visible before it ships)
+            │
+            ▼
+  Second person (Finance) activates  ──►  rule evaluated in decide() on every later request,
+                                          surfaced as RULE-ESC citing the originating reason</div>
+    <figcaption>The flywheel is not a model getting smarter; it is an agency's judgment accumulating as readable, testable code that lowers its own escalation rate. On the synthetic workload the first two rules cut repeat escalations on one landlord from 2 to 0 and narrow a duplicate rule from 13 affected decisions to 2.</figcaption>
+  </figure>
+
+  <h4>Audit trail structure</h4>
+  <p>The log is an append-only table of events <span class="mono">{seq, at, requestId, type, actor, payload, prevHash, hash}</span> where <span class="mono">hash = SHA-256(prevHash + at + type + actor + payload)</span>. From the log alone, for any released payment, an auditor can reconstruct: the source document and its hash; the fields read and the model that read them; every check and its evidence; the stream, amount and cap tested; the batch, the sample rule, and whether the item was sampled and attested; the certifier, the releaser, and the bank transaction id; and any human rule that influenced the outcome, with the reason that created it. This is the documentation 2 CFR 200.302(b) requires and the segregation the Green Book requires, held in one structure.</p>
+</section>
+
+<!-- ============ 4. MARKET ============ -->
+<section class="page">
+  <div class="eyebrow">Section 4</div>
+  <h2><span class="no">04</span>Market Opportunity &amp; Bottom-Up TAM</h2>
+  <div class="rule"></div>
+  <p class="sectlede">The beachhead is a funded budget line — compliance and finance operations — not a net-new category agencies must be taught to want.</p>
+
+  <h3>Beachhead segments</h3>
+  <p>Two buyer groups that already disburse client assistance under restricted grants and already undergo the Single Audit: the <b>3,143 US counties and county-equivalents</b>, through their human-services departments, and the roughly <b>500 multi-service nonprofits</b> with budgets above $100M (assumption; derived from IRS Form 990 human-services filers) that act as sub-recipients of the same federal and state money and inherit the same compliance obligations.</p>
+
+  <h3>Monetization</h3>
+  <p>A dual stream, both honoring the non-negotiable principle that the vendor holds <b>no stake in any payment</b> — never a percentage of funds, no fee that varies with the outcome:</p>
+  <ul>
+    <li><b>Core SaaS license</b> — <b>$75,000</b> base, tiered by active grant streams under management ($50k ≤10 streams · $90k 11–25 · $150k 26+). The stream is the natural expansion unit: each adds a rule set, a report format, and a funder.</li>
+    <li><b>Transaction-processing fee</b> — <b>$1.50 per request</b> routed through verification, flat regardless of amount, charged whether certified or denied. It funds the metered costs (parser reads, lookups, identity checks) and scales with work, not money.</li>
+  </ul>
+
+  <table>
+    <caption>Bottom-up beachhead TAM. ACV blends base license, stream tier, and processing fee at modeled request volumes. All figures (assumption).</caption>
+    <thead><tr><th>Segment</th><th class="num">Count</th><th>Basis</th><th class="num">ACV</th><th class="num">Annual TAM</th></tr></thead>
+    <tbody>
+      <tr><td>Counties, pop. &gt; 250k</td><td class="num">320</td><td>$100M+ budgets; the $140M benchmark</td><td class="num">$110,000</td><td class="num">$35.2M</td></tr>
+      <tr><td>Counties, pop. 50k–250k</td><td class="num">800</td><td>$10–100M; fewer streams</td><td class="num">$45,000</td><td class="num">$36.0M</td></tr>
+      <tr><td>Counties, pop. &lt; 50k</td><td class="num">2,023</td><td>often consortium-administered</td><td class="num">$12,000</td><td class="num">$24.3M</td></tr>
+      <tr><td>Nonprofits, budget &gt; $100M</td><td class="num">500</td><td>sub-recipients; more streams/$</td><td class="num">$75,000</td><td class="num">$37.5M</td></tr>
+      <tr><td><b>Beachhead TAM</b></td><td class="num"><b>3,643</b></td><td></td><td class="num"></td><td class="num"><b>$133M</b></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout"><b>Beachhead vs. broader TAM.</b> The investable case rests on the $133M beachhead: 2% penetration is a $2.7M ARR business; 10% is $13M. The <b>broader</b> addressable market — state emergency assistance (TANF emergency, LIHEAP crisis, state rental assistance), CoC lead agencies, WIOA supportive services, tribal human services, and the recurring federal emergency-rental-assistance pattern — is on the order of <b>$1–2B</b> annually at comparable pricing (assumption; not built bottom-up and not relied upon for the recommendation). Note: the client-assistance <b>GMV</b> flowing through such agencies (dollars disbursed, not software revenue) is several billion; Signet prices the work, not the flow.</p>
+</section>
+
+<!-- ============ 5. GTM / MOAT / UNIT ECON ============ -->
+<section class="page">
+  <div class="eyebrow">Section 5</div>
+  <h2><span class="no">05</span>Go-to-Market, Competitive Moat &amp; Unit Economics</h2>
+  <div class="rule"></div>
+  <p class="sectlede">Land on one high-friction grant where the pain and the audit exposure are sharpest; expand across the agency's streams as the same supervisors adopt the same Review surface.</p>
+
+  <h3>Land &amp; expand</h3>
+  <p><b>Land</b> on a single fund with written federal rules and a recent or feared finding — HUD ESG rental/utility assistance is canonical (deposit and arrears caps, FMR and rent-reasonableness, third-party-only). A <b>90-day pilot</b> runs beside the current process; agency staff certify and release everything; the pilot ends with the agency's auditor reading the log. The close is the auditor's read, not a demo. Priced at the processing fee only, it stays under most small-purchase thresholds and out of a formal RFP. <b>Expand</b> to the second fund — the one whose supervisor sits beside the first — targeting a move from one stream to the majority of a $140M agency's ~30 (assumption) within six months, because the Review deck does not care which fund an item belongs to.</p>
+
+  <h3>Competitive matrix</h3>
+  <table>
+    <caption>Why the incumbents and the agentic challengers fail the compliance audit this market runs every year.</caption>
+    <thead><tr><th style="width:24%">Player</th><th style="width:26%">What it is</th><th>Why it fails real-time payment compliance</th></tr></thead>
+    <tbody>
+      <tr><td><b>Salesforce Nonprofit Cloud</b></td><td>CRM / case &amp; grant records</td><td>Records the case and award; no policy engine evaluated against a live bank feed at the moment of payment. "AI review" sits atop the case record and inherits the liability problem.</td></tr>
+      <tr><td><b>Tyler Technologies</b></td><td>Gov ERP &amp; case management</td><td>System of record for the award and the ledger; the compliance judgment between them stays manual. No certifier/releaser segregation on a sampled batch.</td></tr>
+      <tr><td><b>CaseWorthy</b></td><td>Human-services case mgmt</td><td>Strong on case data, absent on disbursement controls; no deterministic allocation across braided streams, no bank reconciliation.</td></tr>
+      <tr><td><b>AI multi-agent "swarms"</b></td><td>Agentic automation</td><td>Put a model in the decision seat. Fail on liability (B-302789), auditability (a score is not a control), and governance (M-25-21, EU AI Act Art. 14). Would need to <i>remove</i> capability to become compliant.</td></tr>
+      <tr><td style="border-bottom:1pt solid var(--ink)"><b class="good">Signet</b></td><td style="border-bottom:1pt solid var(--ink)">Verification &amp; certification layer</td><td style="border-bottom:1pt solid var(--ink)">Sits <i>between</i> the systems of record and exports to them. Deterministic engines + two named humans + a reproducible, hash-chained record. The product an auditor can read is the product the agency can buy.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>The moat: restraint + audit lock-in + a data flywheel</h3>
+  <p>Once an agency produces a Single Audit from Signet's hash-chained log, that log is the record of why every client payment happened. Switching means migrating a verifiable chain into a successor or keeping Signet read-only through the retention period (three years after the final expenditure report, 2 CFR 200.334). Both are audit-risk decisions made by the finance director who signed, not software decisions. Meanwhile each human resolution accumulates as agency-owned, portable, testable rules that lower the escalation rate with tenure — simultaneously the expansion argument (less supervisor time per request), the procurement argument (the agency owns its rules), and the margin argument (a rule costs less to run than a model call).</p>
+
+  <h3>Unit economics</h3>
+  <table>
+    <caption>Modeled unit economics at a blended $95,000 new-logo ACV. All figures (assumption); no operating history.</caption>
+    <thead><tr><th>Metric</th><th class="num">Value</th><th>Driver</th></tr></thead>
+    <tbody>
+      <tr><td>Gross margin</td><td class="num">85–92%</td><td>One cached parser read per document; cached lookups per vendor; SQLite-class footprint. COGS &lt; $0.20/request vs. $1.50 fee + license.</td></tr>
+      <tr><td>Blended new-logo ACV</td><td class="num">$95,000</td><td>License tier + processing fee at modeled volume; most early logos mid-tier.</td></tr>
+      <tr><td>Fully-loaded CAC</td><td class="num">$35–55k</td><td>One AE + solutions lead at public-sector quota norms; 9–12 month cycle.</td></tr>
+      <tr><td>CAC payback</td><td class="num">5–8 mo</td><td>At 85% GM; &lt;12 mo even at $45k ACV. Channel amortizes one sale across several agencies.</td></tr>
+      <tr><td>Net revenue retention</td><td class="num">125%+</td><td>Stream-count tier step-ups, request-volume growth, adjacent funds post-pilot; gross logo churn &lt;5% (audit switching cost).</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 6. TEST CASE ============ -->
+<section class="page">
+  <div class="eyebrow">Section 6</div>
+  <h2><span class="no">06</span>Hackathon Test Case &amp; Live Demo Specification</h2>
+  <div class="rule"></div>
+  <p class="sectlede">The stress test combines two planted anomalies: a landlord who signs under a trade name the vendor list does not carry, and a rent statement that bundles a prohibited late fee. (The brief named a Zillow receipt; the synthetic workload carries no Zillow vendor, so the trace below uses the planted data as it exists. The mechanics are identical.)</p>
+
+  <h4>The document</h4>
+  <p>A case manager requests <b>$850 of rent</b> for a 21-year-old in the transitional-housing program and attaches a photographed statement headed <b>"Bay Prop Mgmt"</b>. Itemization: Monthly rent <b>$800.00</b>; Late payment fee <b>$50.00</b>; Total due <b>$850.00</b>. The vendor list carries "Bay Area Housing LLC" (with its bank descriptor as an alias) but not the DBA.</p>
+
+  <table>
+    <caption>Step trace through the pipeline for the combined-anomaly case.</caption>
+    <thead><tr><th style="width:18%">Stage</th><th>Result</th></tr></thead>
+    <tbody>
+      <tr><td><b>Parsing</b></td><td>Payee "Bay Prop Mgmt" (read clearly); amount $850.00; two line items — rent $800 flagged <span class="mono">rent</span>, late fee $50 flagged <span class="mono">late_fee</span>. The flag is a category label the schema requests, not a judgment.</td></tr>
+      <tr><td><b>Policy</b></td><td>Client eligible (TYHF, RRDP). $850 under the rent batch limit → no LIMIT-OVER. Prohibited-items check finds a <span class="mono">late_fee</span> line against streams that prohibit it → <b class="bad">POL-HARD</b>, with the line, amount and stream in evidence. Proposed allocation: $800 rent from TYHF; the $50 is not allocable to any restricted stream.</td></tr>
+      <tr><td><b>Match</b></td><td>"Bay Prop Mgmt" scores below the vendor-confidence floor → <b class="warn">MATCH-LOW</b>, best candidate Bay Area Housing LLC. Public record shows no SF registration / no web presence — expected for a private landlord, noted not flagged (manual §4.1). Rent well under 125% of HUD 1-br FMR → no RENT-HIGH.</td></tr>
+      <tr><td><b>Sort</b></td><td>Two flags → <span class="mono">ESCALATED</span>. Reaches the Approver's Review deck with the photo, the parsed fields, each flag's plain title, the rule (§3.3 Prohibited items; §4.2 Names on documents), and the precedents retrieved from memory.</td></tr>
+      <tr><td><b>Human decision</b></td><td>Supervisor confirms the landlord by the number on the statement; writes: <i>"Bay Prop Mgmt is Bay Area Housing LLC's DBA, confirmed by phone; $800 rent from TYHF, $50 late fee from the unrestricted fund; CM to request a fee waiver."</i> Overrides allocation to TYHF $800 + unrestricted $50; approves. Item → <span class="mono">APPROVED</span>, joins the next batch. Nothing paid yet.</td></tr>
+      <tr><td><b>Learning</b></td><td>Two rules proposed: an alias <span class="mono">allow_within_limit</span> for "bay prop mgmt" above 0.95 confidence (replay: would have changed 2 past escalations on this landlord), and an <span class="mono">escalate</span> on <span class="mono">late_fee</span> (replay: matched 1, would have changed 0 — late fees already hard-fail). Finance activates the first, rejects the second as redundant; both logged.</td></tr>
+      <tr><td><b>Release &amp; audit</b></td><td>Batch certified after the sample is read, released by the Releaser; two Nessie withdrawals for this item (one per stream) with the batch id in the memo. The disallowed cost that would have been a finding is instead a $50 unrestricted expense with a documented reason; the next statement from this landlord matches on its alias and clears.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout"><b>What the test proves.</b> The model read a messy document correctly and did nothing else. The engines turned a trade name and a bundled fee into two specific, cited flags. A person decided in under a minute with the rule and precedent in front of them. The office learned an alias without anyone editing a config file — and declined to learn a rule it did not need. No money moved until a second person released it. Reproducible on every run with seed 1309.</p>
+</section>
+
+<!-- ============ 7. RISK & RECOMMENDATION ============ -->
+<section class="page">
+  <div class="eyebrow">Section 7</div>
+  <h2><span class="no">07</span>Risk Matrix &amp; Investment Recommendation</h2>
+  <div class="rule"></div>
+
+  <table>
+    <caption>Four-point risk analysis with likelihood, impact, and mitigation.</caption>
+    <thead><tr><th style="width:20%">Risk</th><th class="num" style="width:9%">Likely</th><th class="num" style="width:9%">Impact</th><th>Mitigation</th></tr></thead>
+    <tbody>
+      <tr><td><b>Government sales cycles</b></td><td class="num">High</td><td class="num">High</td><td>Pilot priced under small-purchase thresholds (processing fee only, no RFP); land on one fund, not the department; audit-firm and consortium channels that arrive with standing; AE hiring gated on measured cycle length; 21-month runway; Series A trigger set on ARR, not time.</td></tr>
+      <tr><td><b>Regulatory / disallowed-cost liability</b></td><td class="num">Medium</td><td class="num">High</td><td>Certification and release sit with named agency staff, stated in contract; the log reconstructs every check and actor; thresholds and rules are agency-owned config; outside 2 CFR 200 advisory review in year 1; E&amp;O sized to ACV; no funds-based pricing, so no argument the vendor benefited from a payment.</td></tr>
+      <tr><td><b>API dependency</b> (bank feed &amp; LLM uptime)</td><td class="num">Medium</td><td class="num">Medium</td><td>Every adapter has a same-shape mock; full chain runs offline from cache. Model unavailability degrades to a heuristic read + EXTRACT-LOW, never a stop. Model swappable behind one interface; production banking via the agency's own bank or a licensed aggregator; SLAs with credits.</td></tr>
+      <tr><td><b>Legacy data migration</b></td><td class="num">Medium</td><td class="num">Medium</td><td>Signet does not replace the systems of record; needs only three imports (streams, vendors, clients) with a CSV path from day one; pilot runs on one fund's subset; aliases/DBAs learned in use, not cleaned up front; connectors to one incumbent by month 12.</td></tr>
+    </tbody>
+  </table>
+
+  <p style="font-size:9pt"><b>Two further risks for the committee.</b> <b>Founder concentration</b> — a solo founder with public-sector exposure but no public-finance operating history; mitigated by a closing condition on a co-founder/senior hire with county-CFO credibility. <b>Control drift</b> — sample-based certification depends on supervisors actually reading, so Signet measures and surfaces attestation and override rates to the finance director (year-1 roadmap and a closing condition).</p>
+
+  <h3>Investment recommendation</h3>
+  <p style="font-family:var(--sans);font-size:10pt;margin:4pt 0 7pt;padding:7pt 10pt;background:var(--wash);border-left:2.5pt solid var(--ok);border-radius:3pt">
+    <b>The ask:</b> <b style="color:var(--signet)">$3.5M</b> seed at <b>$15M</b> post-money (23.3% to the round) · 1&times; non-participating preferred, pro rata · one lead board seat + one independent (former county CFO / CIO) · target <b>85%+</b> gross margin · recommendation <b style="color:var(--ok)">APPROVE</b>, subject to the conditions below.</p>
+  <p><b>Rationale.</b> The control architecture is correct for this market and already mapped to the standards procurement will test; the founder arrived at it by asking the liability question himself and rebuilding mid-event. The beachhead is a funded budget line with incumbents that record the case but do not run the control. Price reflects the absence of traction; the conditions convert that absence into the first milestones.</p>
+
+  <div style="display:flex;gap:18pt">
+    <div style="flex:1">
+      <h4>Conditions precedent</h4>
+      <ol style="font-family:var(--sans);font-size:8.6pt;padding-left:14pt">
+        <li>Signed 90-day pilot on a HUD ESG or equivalent fund, with the agency's auditor named as a reader of the log.</li>
+        <li>Founder ratification of the dual pricing model as consistent with the no-stake-in-payments principle.</li>
+        <li>SOC 2 roadmap in writing: Type I by month 3; Type II observation complete by month 12; security lead in the first six months.</li>
+        <li>Co-founder / senior hire with county-finance or public-sector-CIO credibility, identified before close, signed within six months.</li>
+        <li>Outside 2 CFR 200 advisory review of the control design and the contract's allocation of certification responsibility, in year 1.</li>
+        <li>Attestation and override rates reported to the finance director as a product feature (control-drift mitigation).</li>
+      </ol>
+    </div>
+    <div style="flex:1">
+      <h4>Milestones to Series A</h4>
+      <ul style="font-family:var(--sans);font-size:8.6pt;padding-left:14pt">
+        <li>3 paying agencies and one completed Single Audit on a Signet log by month 12.</li>
+        <li>$1.0M exit ARR with two references and one audit-firm channel producing pipeline by month 18–20.</li>
+        <li>The first twelve months are judged on pilots signed and an auditor's opinion of the log — not on revenue.</li>
+      </ul>
+      <h4>Target ownership &amp; terms</h4>
+      <p style="font-size:8.6pt;font-family:var(--sans);margin:2pt 0 0;color:var(--ink-2)">$2.0M minimum lead check · 23.3% to the round · founder &amp; option pool retain control · pro-rata rights to the lead.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:12pt;border-top:0.5pt solid var(--line);padding-top:8pt;font-family:var(--sans);font-size:8.2pt;color:var(--ink-2);line-height:1.55">
+    <b style="color:var(--ink)">Sources — compliance claims.</b>
+    <a href="https://www.law.cornell.edu/cfr/text/2/200.302">2&nbsp;CFR&nbsp;200.302</a> ·
+    <a href="https://www.law.cornell.edu/cfr/text/2/200.303">200.303</a> ·
+    <a href="https://www.law.cornell.edu/cfr/text/2/200.305">200.305</a> ·
+    <a href="https://www.law.cornell.edu/cfr/text/2/200.334">200.334</a> ·
+    <a href="https://www.law.cornell.edu/cfr/text/2/200.403">200.403</a> ·
+    <a href="https://www.law.cornell.edu/cfr/text/2/200.405">200.405</a> ·
+    <a href="https://www.law.cornell.edu/cfr/text/2/200.410">200.410</a> ·
+    <a href="https://www.ecfr.gov/current/title-24/subtitle-B/chapter-V/subchapter-C/part-576/subpart-B/section-576.105">24&nbsp;CFR&nbsp;576.105</a> ·
+    <a href="https://www.ecfr.gov/current/title-24/subtitle-B/chapter-V/subchapter-C/part-576/subpart-B/section-576.106">576.106</a> ·
+    <a href="https://www.gao.gov/greenbook">GAO&nbsp;Green&nbsp;Book</a> ·
+    <a href="https://www.govinfo.gov/content/pkg/GAOREPORTS-B-302789/html/GAOREPORTS-B-302789.htm">GAO&nbsp;B-302789</a> ·
+    <a href="https://www.nist.gov/itl/ai-risk-management-framework">NIST&nbsp;AI&nbsp;RMF&nbsp;1.0</a> ·
+    <a href="https://www.artificialintelligenceact.eu/article/14/">EU&nbsp;AI&nbsp;Act&nbsp;Art.&nbsp;14</a> ·
+    <a href="https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3">Annex&nbsp;III</a> ·
+    <a href="https://www.whitehouse.gov/wp-content/uploads/2025/04/M-25-21-Accelerating-Federal-Use-of-AI.pdf">OMB&nbsp;M-25-21</a>
+    <span style="display:block;margin-top:4pt;font-family:var(--mono);font-size:7.2pt;color:var(--ink-3)">Dollar tiers, sample rates, TAM ACVs, projections and cycle lengths are modeling assumptions, labeled (assumption); measured results are from the seeded synthetic workload. No real agency, person, or account appears in this document.</span>
+  </div>
+</section>
+
+</body>
+</html>

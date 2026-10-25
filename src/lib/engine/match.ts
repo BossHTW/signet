@@ -50,7 +50,15 @@ export function similarity(a: string, b: string): number {
   return Math.round((0.6 * dice + 0.4 * overlap) * 1000) / 1000;
 }
 
-export type CrsResult = { status: CrsStatus; riskFlags?: string[]; source: "LIVE" | "MOCK" };
+export type CrsResult = { status: CrsStatus; riskFlags?: string[]; source: "LIVE" | "MOCK"; raw?: unknown };
+
+export type PublicEvidence = {
+  sfRegistered: boolean | null;      // null = not checked
+  dbaNames: string[];                // names from the public registry (become aliases for matching)
+  webPresence: boolean | null;
+  source: string;
+};
+export type RentBenchmarkInput = { fmr1brCents: number; source: string } | null;
 
 export type MatchInput = {
   request: { category: Category; requestedCents: number; vendorNameRaw: string; requestedAt: string };
@@ -58,9 +66,12 @@ export type MatchInput = {
   vendors: Pick<Vendor, "id" | "legalName" | "aliases" | "normalizedName" | "crsStatus">[];
   bank: Pick<BankTransaction, "id" | "postedAt" | "amountCents" | "descriptor">[];
   crs: CrsResult | null;
+  publicRecord?: PublicEvidence | null;
+  rent?: RentBenchmarkInput;
 };
 
 export type MatchResult = {
+  publicRecord: PublicEvidence | null;
   vendorId: string | null;
   vendorLegalName: string | null;
   docVendorName: string;
@@ -83,9 +94,12 @@ export function match(i: MatchInput): MatchResult {
   const docVendor = i.extracted?.vendorName?.value ?? typed;
 
   // Vendor identity: best candidate over legal name + aliases, scored against both typed and document names
+  const publicAliases = i.publicRecord?.dbaNames ?? [];
   const scored = i.vendors
     .map((v) => {
-      const names = [v.legalName, ...(v.aliases ?? [])];
+      // public-registry DBA names count as aliases when they resemble this vendor (alias discovery)
+      const dba = publicAliases.filter((n) => similarity(n, v.legalName) >= 0.5 || similarity(n, typed) >= 0.5);
+      const names = [v.legalName, ...(v.aliases ?? []), ...dba];
       const s = Math.max(...names.flatMap((n) => [similarity(n, typed), similarity(n, docVendor)]));
       return { v, s };
     })
@@ -98,7 +112,7 @@ export function match(i: MatchInput): MatchResult {
   let vendorConfidence = 0;
   if (vendor) {
     // If the document name matches an alias/legal name strongly, trust that even if the typed name was sloppy
-    const docScore = Math.max(...[vendor.legalName, ...(vendor.aliases ?? [])].map((n) => similarity(n, docVendor)));
+    const docScore = Math.max(...[vendor.legalName, ...(vendor.aliases ?? []), ...publicAliases].map((n) => similarity(n, docVendor)));
     vendorConfidence = Math.round(Math.max(docScore, Math.min(best.s, 0.5 + 0.5 * typedVsDoc)) * 1000) / 1000;
   }
   if (vendorConfidence < VENDOR_MIN) {
@@ -137,7 +151,18 @@ export function match(i: MatchInput): MatchResult {
     });
   }
 
+  // Public record: a landlord or new vendor with no SF registration and no web presence is worth a look
+  const pr = i.publicRecord ?? null;
+  if (pr && pr.sfRegistered === false && pr.webPresence === false && (i.request.category === "rent" || i.request.category === "deposit" || !vendor)) {
+    t.push({ code: "PUBLIC-NONE", reason: `No San Francisco business registration or web presence found for "${vendor?.legalName ?? docVendor}" (${pr.source}).`, evidence: { source: pr.source } });
+  }
+  // Rent reasonableness against HUD fair market rent (1-bedroom); partial payments are fine, full rents above 125% of FMR get a look
+  if (i.rent && i.request.category === "rent" && i.request.requestedCents > i.rent.fmr1brCents * 1.25) {
+    t.push({ code: "RENT-HIGH", reason: `$${(i.request.requestedCents / 100).toFixed(0)} exceeds 125% of the 1-bedroom fair market rent ($${(i.rent.fmr1brCents / 100).toFixed(0)}, ${i.rent.source}).`, evidence: { fmr1brCents: i.rent.fmr1brCents } });
+  }
+
   return {
+    publicRecord: pr,
     vendorId: vendor?.id ?? null,
     vendorLegalName: vendor?.legalName ?? null,
     docVendorName: docVendor,

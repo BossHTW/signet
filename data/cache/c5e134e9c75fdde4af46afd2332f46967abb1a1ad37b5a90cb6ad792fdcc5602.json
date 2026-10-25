@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgNoEejXKZqLbm3ajHFWP",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01Vdy98jwf6nqZXHQEJwV8Lp",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "other",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "Mint Mobile",
+          "confidence": 0.9,
+          "evidence": "MINT MOBILE"
+        },
+        "amountCents": {
+          "value": 3000,
+          "confidence": 0.55,
+          "evidence": "Amount due: $30.00"
+        },
+        "notes": "Document is a single line (Line 1 of 5) of a 5-line family plan, showing only $30.00 for this line; the total for the whole account is not shown, so the amount may be a per-line share rather than the full bill. Document type is a phone-service bill, not one of the listed types, so set to other.",
+        "lineItems": {
+          "value": [
+            {
+              "label": "Unlimited (Line 1 of 5)",
+              "cents": 3000,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.6
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0.1
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0.1
+        },
+        "date": {
+          "value": "<UNKNOWN>",
+          "confidence": 0.1,
+          "evidence": ""
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1575,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 511,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

@@ -15,12 +15,12 @@ export function generateReports() {
     const rows: ReportRow[] = [];
     for (const { d, r } of decisions) {
       const alloc = d.allocation.find((a) => a.grantId === g.id);
-      const touches = alloc || (d.outcome !== "APPROVED" && (d.policyResult as { eligibleGrants?: string[] }).eligibleGrants?.[0] === g.id);
+      const touches = alloc || ((d.outcome === "ESCALATED" || d.outcome === "DENIED") && (d.policyResult as { eligibleGrants?: string[] }).eligibleGrants?.[0] === g.id);
       if (!touches) continue;
       rows.push({ requestId: r.id, clientId: r.clientId, category: r.category, cents: alloc?.cents ?? 0, decidedBy: d.decidedBy, outcome: d.outcome, triggers: d.triggers.map((t) => t.code), sealHash: d.seal.hash });
     }
     const totals = {
-      cents: rows.filter((x) => x.outcome === "APPROVED").reduce((s, x) => s + x.cents, 0),
+      cents: rows.filter((x) => x.outcome === "APPROVED" || x.outcome === "READY").reduce((s, x) => s + x.cents, 0),
       count: rows.length,
       escalated: rows.filter((x) => x.outcome === "ESCALATED").length,
       denied: rows.filter((x) => x.outcome === "DENIED").length,

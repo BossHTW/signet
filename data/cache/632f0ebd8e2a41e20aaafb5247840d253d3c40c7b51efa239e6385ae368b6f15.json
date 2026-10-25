@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfmPrF72SQSgwSxw2GA",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_0192zf25gi3tzNQCJAFzv7su",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "Harbor View Housing Co",
+          "evidence": "Harbor View Housing Co",
+          "confidence": 0.95
+        },
+        "clientNameOnDoc": {
+          "value": "Elena G.",
+          "confidence": 0.9
+        },
+        "date": {
+          "value": "2026-09-09",
+          "evidence": "Period: 2026-09-09",
+          "confidence": 0.7
+        },
+        "amountCents": {
+          "value": 80000,
+          "evidence": "Total Due: $800.00",
+          "confidence": 0.95
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Security deposit",
+              "cents": 80000,
+              "flag": "deposit"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "notes": "Document is titled 'Rent Receipt / Statement' but its only line item is a security deposit, and 'Please remit by the 5th' suggests a bill; docType is uncertain (receipt vs. other). Date is a period start, not a clear document date. No address appears in the text."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1597,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 505,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

@@ -1,0 +1,54 @@
+{
+  "vendorQuery": "Bay Area Rapid Transit",
+  "sfBusiness": {
+    "found": true,
+    "count": 4,
+    "dbaNames": [
+      "Glen Park Bart Station Parking Lot",
+      "Bay Area Rapid Transit (Bart)",
+      "Sf Bart"
+    ],
+    "ownerNames": [
+      "San Francisco Bay Area Rapid Transit District",
+      "Jeffrey Beltran",
+      "Emmanuel Soria"
+    ],
+    "firstStart": "2012-02-14",
+    "active": true,
+    "source": "data.sf.gov"
+  },
+  "web": {
+    "found": true,
+    "results": [
+      {
+        "title": "BART Bay Area Rapid Transit - Organization",
+        "link": "https://web.berkeleychamber.com/Transportation/BART-Bay-Area-Rapid-Transit--1665",
+        "displayLink": "https://web.berkeleychamber.com › Transportation › BA..."
+      },
+      {
+        "title": "BAY AREA RAPID TRANSIT: All You SHOULD Know ...",
+        "link": "https://www.tripadvisor.ie/Attraction_Review-g60713-d7715519-Reviews-Bay_Area_Rapid_Transit-San_Francisco_California.html",
+        "displayLink": "https://www.tripadvisor.ie › Attraction_Review-g60713..."
+      },
+      {
+        "title": "San Francisco Bay Area Rapid Transit",
+        "link": "https://www.mapquest.com/us/california/san-francisco-bay-area-rapid-transit-369047536",
+        "displayLink": "https://www.mapquest.com › ... › Concord"
+      },
+      {
+        "title": "Tried the Bay Area Rapid Transit (BART) to San Francisco. ...",
+        "link": "https://www.facebook.com/becomingcanadianvlog/posts/tried-the-bay-area-rapid-transit-bart-to-san-francisco-soooo-quiet/535575272193499/",
+        "displayLink": "9 reactions · 2 years ago"
+      },
+      {
+        "title": "Bay Area Rapid Transit (BART) | Metropedia",
+        "link": "https://metropedia-the-metro-and-subway-system.fandom.com/wiki/Bay_Area_Rapid_Transit_(BART)",
+        "displayLink": "https://metropedia-the-metro-and-subway-system.fandom.com › ..."
+      }
+    ],
+    "source": "Google (JSON) via Bright Data"
+  },
+  "fetchedAt": "2026-10-25T09:47:27.358Z",
+  "source": "BRIGHTDATA",
+  "errors": []
+}

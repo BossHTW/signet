@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfry78TSeBHG1qstiij",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_013GNFfBs5CkBExhnJZk6EX6",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "other",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "Bay County Clerk-Recorder",
+          "confidence": 0.85,
+          "evidence": "Bay County Clerk-Recorder"
+        },
+        "date": {
+          "value": "2026-09-24",
+          "confidence": 0.5,
+          "evidence": "2026-O9-24"
+        },
+        "amountCents": {
+          "value": 5300,
+          "confidence": 0.9,
+          "evidence": "Total $53.00"
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Document fee",
+              "cents": 5300,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "The case manager described it as from \"BAY CO CLERK\", but the document reads \"Bay County Clerk-Recorder\"; it is a single document fee with no client name or address shown. The date has an OCR letter 'O' in place of a zero, which I read as 09; the document type is unclear, so I marked it as other."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1558,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 517,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

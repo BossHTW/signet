@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfpYcBfKcnefTpfCanA",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01FWbyXKTr7C5XtqaWyNUnz6",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "utility_bill",
+          "confidence": 0.85
+        },
+        "vendorName": {
+          "value": "Bay Water & Sewer District",
+          "evidence": "Bay Water & Sewer District",
+          "confidence": 0.97
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "address": {
+          "value": "Service address on file (street address not shown in text)",
+          "confidence": 0.3
+        },
+        "date": {
+          "value": "2026-09-21",
+          "evidence": "Statement date: 2026-09-21",
+          "confidence": 0.97
+        },
+        "amountCents": {
+          "value": 29500,
+          "evidence": "Amount Due $295.00",
+          "confidence": 0.97
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Service charges",
+              "cents": 29500,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.95
+        },
+        "notes": "Document is a short account statement; no client name or street address appears in the OCR text, and the amount is consistent between the line item and total. Due upon receipt."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1589,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 475,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

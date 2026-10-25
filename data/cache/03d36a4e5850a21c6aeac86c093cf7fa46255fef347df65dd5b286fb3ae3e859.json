@@ -1,0 +1,82 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgNSADsEZFSeaRFdZb2bx",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_0154qKfhDmnVrt8yUPmraHn3",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.85
+        },
+        "vendorName": {
+          "value": "Tesla",
+          "confidence": 0.8,
+          "evidence": "Tesla logo header; 'Thanks for the ride, Boss Huang'"
+        },
+        "clientNameOnDoc": {
+          "value": "Boss Huang",
+          "confidence": 0.7
+        },
+        "date": {
+          "value": "2026-07-19",
+          "confidence": 0.9,
+          "evidence": "Trip Summary for July 19, 2026"
+        },
+        "amountCents": {
+          "value": 763,
+          "confidence": 0.9,
+          "evidence": "Trip Summary $7.63 Total"
+        },
+        "address": {
+          "value": "Pick up: 403 Main St, San Francisco, CA 94105; Drop off: 1355 Harrison St, San Francisco, CA 94103",
+          "confidence": 0.8
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Trip Fare",
+              "cents": 739,
+              "flag": "other"
+            },
+            {
+              "label": "Tax",
+              "cents": 24,
+              "flag": "tax"
+            }
+          ],
+          "confidence": 0.85
+        },
+        "notes": "The document is a rideshare trip receipt, not a transit pass; the case manager's label 'Tesla RoboTaxi' does not appear on the page, which shows only 'Tesla' in the header. Trip fare $7.39 plus tax $0.24 equals $7.63 total, and the payment card is Visa ending 7560."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 2510,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 609,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

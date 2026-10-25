@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfnznV8xBETAksgf2bM",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01GuEogmZKgt5ZfUZB2r2PoG",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.7
+        },
+        "vendorName": {
+          "value": "Sunset Residential Partners",
+          "evidence": "Sunset Residential Partners",
+          "confidence": 0.95
+        },
+        "clientNameOnDoc": {
+          "value": "Sofia F.",
+          "confidence": 0.9
+        },
+        "date": {
+          "value": "2026-09-23",
+          "evidence": "Period: 2026-09-23",
+          "confidence": 0.6
+        },
+        "amountCents": {
+          "value": 46500,
+          "evidence": "Total Due: $465.00",
+          "confidence": 0.97
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly rent",
+              "cents": 46500,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.95
+        },
+        "notes": "Document is a rent receipt/statement, not a standard receipt; the period date is a rental period, not necessarily an issue date, and the address is missing from the text.",
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1599,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 466,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

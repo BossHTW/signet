@@ -1,5 +1,5 @@
 // Rule DSL evaluator, proposal templates, and replay. Pure.
-import type { FieldPath, Predicate, RuleAction, TriggerCode } from "@/db/types";
+import { FIELD_PATHS, OPS, type FieldPath, type Predicate, type RuleAction, type Trigger, type TriggerCode } from "@/db/types";
 import { normalizeVendor } from "./match";
 
 export type RuleCtx = Record<FieldPath, unknown>;
@@ -42,6 +42,60 @@ export function validatePredicate(p: unknown, depth = 0): string | null {
 
 export type ProposalDraft = { predicate: Predicate; action: RuleAction; title: string };
 
+export type DraftedRule = {
+  predicate: Predicate;
+  title: string;
+  action: RuleAction;
+  draftedBy: `claude:${string}` | "template";
+  templatePredicate: Predicate;
+  claudePredicate: Predicate | null;
+};
+
+const FIELD_SET = new Set<string>(FIELD_PATHS);
+const OP_SET = new Set<string>(OPS);
+
+function fieldsAllowed(p: Predicate): boolean {
+  if ("all" in p) return p.all.every(fieldsAllowed);
+  if ("any" in p) return p.any.every(fieldsAllowed);
+  if ("not" in p) return fieldsAllowed(p.not);
+  return FIELD_SET.has(p.field) && OP_SET.has(p.op);
+}
+
+/** Keep the template's action. A model predicate is kept only when it is well-formed and, AND-ed with the template, still matches the request it came from. */
+export function applyClaudeDraft(
+  template: ProposalDraft,
+  ctx: RuleCtx,
+  claude: { title?: unknown; predicate?: unknown; model?: unknown } | null,
+): DraftedRule {
+  const plain: DraftedRule = { predicate: template.predicate, title: template.title, action: template.action, draftedBy: "template", templatePredicate: template.predicate, claudePredicate: null };
+  if (!claude) return plain;
+  const title = typeof claude.title === "string" ? claude.title.replace(/\s+/g, " ").trim().slice(0, 80) : "";
+  if (!title || validatePredicate(claude.predicate) || !fieldsAllowed(claude.predicate as Predicate)) return plain;
+  const claudePredicate = claude.predicate as Predicate;
+  const predicate: Predicate = { all: [template.predicate, claudePredicate] };
+  if (!evalPredicate(predicate, ctx)) return plain;
+  const model = typeof claude.model === "string" && claude.model ? claude.model : "claude";
+  return { predicate, title, action: template.action, draftedBy: model.startsWith("claude:") ? model as `claude:${string}` : `claude:${model}`, templatePredicate: template.predicate, claudePredicate };
+}
+
+export function isWaivable(t: Trigger, clientId: string): boolean {
+  if (t.code === "MATCH-LOW" || t.code === "PUBLIC-NONE") return true;
+  if (t.code === "DUP-HIT") return t.evidence?.byHash !== true && t.evidence?.clientId !== clientId;
+  return false;
+}
+
+export const WAIVE_COPY = {
+  can: "vendor-name mismatch, no public record, same vendor & amount from a different client",
+  never: "a reused receipt, eligibility, caps, prohibited items, amount mismatches, a missing bank posting, identity flags",
+};
+
+const vendorCategory = (vendorNameRaw: string, category: string): Predicate => ({
+  all: [
+    { field: "vendor.normalizedName", op: "eq", value: normalizeVendor(vendorNameRaw) },
+    { field: "request.category", op: "eq", value: category },
+  ],
+});
+
 /** Deterministic templates: the human's resolution + the trigger they acted on → a proposed rule. */
 export function proposeRule(args: {
   chosenTrigger: TriggerCode;
@@ -49,8 +103,18 @@ export function proposeRule(args: {
   vendorNameRaw: string;
   lineItemFlags: string[];
   humanOutcome: "APPROVED" | "DENIED";
+  chosenTriggerObj?: Trigger;
+  clientId?: string;
 }): ProposalDraft {
-  const { chosenTrigger, category, vendorNameRaw, lineItemFlags, humanOutcome } = args;
+  const { chosenTrigger, category, vendorNameRaw, lineItemFlags, humanOutcome, chosenTriggerObj, clientId } = args;
+  if (humanOutcome === "APPROVED") {
+    const predicate = vendorCategory(vendorNameRaw, category);
+    const waivable = chosenTriggerObj ? isWaivable(chosenTriggerObj, clientId ?? "") : false;
+    if (waivable) {
+      return { action: "allow_within_limit", title: `Allow "${vendorNameRaw}" ${category} requests within the limit`, predicate };
+    }
+    return { action: "flag", title: `"${vendorNameRaw}" approved by a person; ${chosenTrigger} still needs review every time`, predicate };
+  }
   switch (chosenTrigger) {
     case "DUP-HIT":
       return {
@@ -70,20 +134,16 @@ export function proposeRule(args: {
       };
     }
     case "MATCH-LOW":
-      return humanOutcome === "APPROVED"
-        ? {
-            title: `Treat "${vendorNameRaw}" as a known alias`,
-            action: "allow_within_limit",
-            predicate: { all: [
-              { field: "vendor.normalizedName", op: "eq", value: normalizeVendor(vendorNameRaw) },
-              { field: "match.vendorConfidence", op: "gte", value: 0.6 },
-            ] },
-          }
-        : {
-            title: `Always escalate "${vendorNameRaw}"`,
-            action: "escalate",
-            predicate: { field: "request.vendorNameRaw", op: "matches", value: escapeRe(vendorNameRaw) },
-          };
+      return {
+        title: `Always escalate "${vendorNameRaw}"`,
+        action: "escalate",
+        predicate: { field: "request.vendorNameRaw", op: "matches", value: escapeRe(vendorNameRaw) },
+      };
+    case "PUBLIC-NONE":
+      return { title: "Escalate landlords with no public record", action: "escalate", predicate: { all: [
+        { field: "request.category", op: "in", value: ["rent", "deposit"] }, { field: "match.vendorConfidence", op: "lt", value: 0.95 } ] } };
+    case "RENT-HIGH":
+      return { title: `Flag ${category} above benchmark`, action: "flag", predicate: { field: "request.category", op: "eq", value: category } };
     case "VENDOR-FLAG":
       return {
         title: "Escalate any non-verified vendor",
@@ -106,13 +166,21 @@ export function proposeRule(args: {
   }
 }
 
-export type ReplayItem = { requestId: string; ctx: RuleCtx; decidedBy: "SYSTEM" | "HUMAN"; outcome: "APPROVED" | "ESCALATED" | "DENIED"; triggerCodes: TriggerCode[] };
+export type ReplayItem = {
+  requestId: string;
+  ctx: RuleCtx;
+  decidedBy: "SYSTEM" | "HUMAN";
+  outcome: "READY" | "ESCALATED" | "APPROVED" | "DENIED";
+  triggerCodes: TriggerCode[];
+  clientId: string;
+  triggers: Trigger[];
+};
 
 export function replay(rule: { predicate: Predicate; action: RuleAction }, history: ReplayItem[]) {
   const matched = history.filter((h) => evalPredicate(rule.predicate, h.ctx));
   const wouldChange = matched.filter((h) =>
-    (rule.action === "escalate" && h.decidedBy === "SYSTEM" && h.outcome === "APPROVED") ||
-    (rule.action === "allow_within_limit" && h.outcome !== "APPROVED" && h.triggerCodes.length === 1 && h.triggerCodes[0] === "MATCH-LOW"),
+    (rule.action === "escalate" && h.decidedBy === "SYSTEM" && h.outcome === "READY") ||
+    (rule.action === "allow_within_limit" && h.outcome === "ESCALATED" && h.triggers.length > 0 && h.triggers.every((t) => isWaivable(t, h.clientId))),
   );
   return { matched: matched.length, wouldChange: wouldChange.length, ids: wouldChange.map((h) => h.requestId).slice(0, 20) };
 }

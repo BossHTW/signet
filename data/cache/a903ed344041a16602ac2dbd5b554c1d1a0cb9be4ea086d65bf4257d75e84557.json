@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMg4fjhgSPXGCACHy3qN",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01MsKPknTffAL3QCb2WAgE1c",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "Bay Area Rapid Transit",
+          "confidence": 0.9,
+          "evidence": "Bay Area Rapid Transit"
+        },
+        "date": {
+          "value": "2026-10-14",
+          "confidence": 0.95,
+          "evidence": "2026-10-14"
+        },
+        "amountCents": {
+          "value": 11000,
+          "confidence": 0.9,
+          "evidence": "Total $110.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Transit fare",
+              "cents": 11000,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.85
+        },
+        "notes": "Document is a short transit fare receipt; the line item reads \"$11000\" (decimal dropped by OCR) and matches the total \"$110.00\", so 11000 cents is used. The case manager's BART label matches the vendor name on the document. The document has no client name or address.",
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1549,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 502,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

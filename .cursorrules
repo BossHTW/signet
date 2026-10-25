@@ -15,7 +15,7 @@ Tagline: "Not a rubber stamp. Not a bottleneck." Every human decision ends with 
 2. TWO DETERMINISTIC ENGINES in src/lib/engine/: policy.ts and match.ts. Pure functions. No I/O,
    no Date.now() (take `today` as input), no randomness. Every trigger has a code from TriggerCode
    and a human-readable reason.
-3. DENIAL IS NEVER AUTONOMOUS. src/lib/engine/decide.ts returns only APPROVED or ESCALATED.
+- The system outcome is READY or ESCALATED only. There is no code path to APPROVED, DENIED or a payment. A human certifies (program.supervisor), a different human releases (finance.director). Denial is never autonomous.
    DENIED is written only by the human decision route handler with a non-empty rationale.
 4. HUMAN LEARNING LOOP. Rules are proposed by code templates (engine/rules.ts), edited and
    activated only by a human via /api/rules/[id]/activate. Replay before activate.
@@ -27,9 +27,9 @@ Tagline: "Not a rubber stamp. Not a bottleneck." Every human decision ends with 
 
 ## Directory contract
 - src/lib/engine/*       pure logic, 100% covered by tests/ (Vitest). No imports from adapters or llm.
-- src/lib/adapters/*     Nessie and CRS. Each has <name>.ts (LIVE) and <name>.mock.ts with the SAME
-                         interface. adapters/index.ts selects by MODE. Never call fetch() outside adapters
-                         and llm/client.ts.
+- src/lib/adapters/*     Nessie, CRS, public.ts (Bright Data: Web Unlocker + Google JSON, cached with fetched_at),
+                         memory.ts (Moss semantic indexes with a local fallback). LIVE/MOCK selected by MODE and keys.
+                         Never call fetch() outside adapters and llm/client.ts. Public, logged-out web data only.
 - src/lib/llm/*          client.ts (Anthropic SDK, spend guard), extract.ts, write.ts, cache.ts, prompts/*.md.
 - src/lib/pipeline.ts    the only orchestrator. Route handlers call pipeline functions; no logic in routes.
 - src/app/**             UI + route handlers. Server components by default; "use client" only for forms.

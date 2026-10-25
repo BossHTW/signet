@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfyj2VZQv2YsJRjatj3",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01P8TSkYJGxJNqMz8ftAGYry",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "Harbor View Housing Co",
+          "evidence": "Harbor View Housing Co",
+          "confidence": 0.9
+        },
+        "clientNameOnDoc": {
+          "value": "Elena G.",
+          "confidence": 0.85
+        },
+        "date": {
+          "value": "2026-10-11",
+          "evidence": "Period: 2026-10-11",
+          "confidence": 0.6
+        },
+        "amountCents": {
+          "value": 78700,
+          "evidence": "Total Due: $787.00",
+          "confidence": 0.9
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Security deposit",
+              "cents": 78700,
+              "flag": "deposit"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "notes": "Document is titled \"RENT RECEIPT / STATEMENT\" and says \"Please remit by the 5th,\" which reads more like a rent bill than a receipt; the period date is ambiguous. The vendor name matches the case manager's note (\"Harbor View Housing\"), but the document says \"Harbor View Housing Co\". No address appears, so it is marked unknown."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1601,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 533,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

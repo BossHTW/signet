@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfxgWRJRgDAV4313Dsa",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01HNLmwMUZgqF6XU9Wbx1Nmp",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "Bay Area Rapid Transit",
+          "confidence": 0.85,
+          "evidence": "Bay Area Rapid Transit"
+        },
+        "date": {
+          "value": "2026-10-08",
+          "confidence": 0.9,
+          "evidence": "2026-10-08"
+        },
+        "amountCents": {
+          "value": 8000,
+          "confidence": 0.85,
+          "evidence": "Total $80.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Transit fare",
+              "cents": 8000,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.85
+        },
+        "notes": "The document names Bay Area Rapid Transit and has no mention of Clipper; the case manager's description does not match the text. A $80.00 transit fare is unusually high, so the amount may be an OCR or data error. Document type is uncertain (receipt assumed).",
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1552,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 502,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

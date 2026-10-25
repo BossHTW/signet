@@ -1,0 +1,73 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNKAsCzDmEV3BFSdpzUM",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_011Q8w46tD6kLyQtrPvKt7ih",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "utility_bill",
+          "confidence": 0.95
+        },
+        "vendorName": {
+          "value": "Bay Water & Sewer District",
+          "evidence": "Bay Water & Sewer District",
+          "confidence": 0.95
+        },
+        "date": {
+          "value": "2026-09-30",
+          "evidence": "Statement date: 2026-09-30",
+          "confidence": 0.95
+        },
+        "amountCents": {
+          "value": 8000,
+          "evidence": "Service charges $80.00",
+          "confidence": 0.65
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "address": {
+          "value": "Service address on file",
+          "confidence": 0.5
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Service charges",
+              "cents": 8000
+            }
+          ],
+          "confidence": 0.65
+        },
+        "notes": "Amount Due line is truncated/incomplete in OCR; total amount inferred from service charges line only. Client name and full service address not provided on excerpt."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1431,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 345,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

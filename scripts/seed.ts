@@ -19,7 +19,8 @@ CREATE TABLE IF NOT EXISTS documents (id TEXT PRIMARY KEY, request_id TEXT NOT N
 CREATE INDEX IF NOT EXISTS doc_request ON documents(request_id);
 CREATE INDEX IF NOT EXISTS doc_hash ON documents(source_hash);
 CREATE TABLE IF NOT EXISTS bank_transactions (id TEXT PRIMARY KEY, account_id TEXT NOT NULL, posted_at TEXT NOT NULL, amount_cents INTEGER NOT NULL, descriptor TEXT NOT NULL, counterparty_normalized TEXT NOT NULL, source TEXT NOT NULL);
-CREATE TABLE IF NOT EXISTS decisions (id TEXT PRIMARY KEY, request_id TEXT NOT NULL UNIQUE, outcome TEXT NOT NULL, decided_by TEXT NOT NULL, human_id TEXT, rationale TEXT, triggers TEXT NOT NULL, allocation TEXT NOT NULL, limits_applied TEXT NOT NULL, policy_result TEXT NOT NULL, match_result TEXT NOT NULL, case_summary TEXT, seal TEXT NOT NULL, decided_at TEXT NOT NULL, decision_ms INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS decisions (id TEXT PRIMARY KEY, request_id TEXT NOT NULL UNIQUE, outcome TEXT NOT NULL, decided_by TEXT NOT NULL, human_id TEXT, rationale TEXT, triggers TEXT NOT NULL, allocation TEXT NOT NULL, limits_applied TEXT NOT NULL, policy_result TEXT NOT NULL, match_result TEXT NOT NULL, case_summary TEXT, seal TEXT NOT NULL, decided_at TEXT NOT NULL, decision_ms INTEGER NOT NULL, batch_id TEXT);
+CREATE TABLE IF NOT EXISTS release_batches (id TEXT PRIMARY KEY, status TEXT NOT NULL DEFAULT 'OPEN', item_ids TEXT NOT NULL, sample_ids TEXT NOT NULL, attested_ids TEXT NOT NULL DEFAULT '[]', total_cents INTEGER NOT NULL, opened_by TEXT NOT NULL, opened_at TEXT NOT NULL, certified_by TEXT, certified_at TEXT, released_by TEXT, released_at TEXT);
 CREATE TABLE IF NOT EXISTS audit_events (seq INTEGER PRIMARY KEY AUTOINCREMENT, at TEXT NOT NULL, request_id TEXT, type TEXT NOT NULL, actor TEXT NOT NULL, payload TEXT NOT NULL, prev_hash TEXT NOT NULL, hash TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS rule_proposals (id TEXT PRIMARY KEY, source_decision_id TEXT NOT NULL, rationale TEXT NOT NULL, predicate TEXT NOT NULL, action TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'PROPOSED', replay_impact TEXT, created_at TEXT NOT NULL, activated_at TEXT, activated_by TEXT);
 CREATE TABLE IF NOT EXISTS compliance_reports (id TEXT PRIMARY KEY, grant_id TEXT NOT NULL, period_start TEXT NOT NULL, period_end TEXT NOT NULL, rows TEXT NOT NULL, totals TEXT NOT NULL, generated_at TEXT NOT NULL);
@@ -32,7 +33,8 @@ export function loadSeed(seed: Seed, dbPath = DB_PATH) {
   db.pragma("journal_mode = DELETE");
   db.pragma("busy_timeout = 5000");
   db.exec(DDL);
-  for (const t of ["compliance_reports", "rule_proposals", "audit_events", "decisions", "bank_transactions", "documents", "requests", "vendors", "grant_streams", "clients", "case_managers"]) db.exec(`DELETE FROM ${t}`);
+  try { db.exec("ALTER TABLE decisions ADD COLUMN batch_id TEXT"); } catch { /* already there */ } // upgrade older databases in place
+  for (const t of ["compliance_reports", "release_batches", "rule_proposals", "audit_events", "decisions", "bank_transactions", "documents", "requests", "vendors", "grant_streams", "clients", "case_managers"]) db.exec(`DELETE FROM ${t}`);
   db.exec("DELETE FROM sqlite_sequence WHERE name='audit_events'");
   const j = (x: unknown) => JSON.stringify(x);
   const tx = db.transaction(() => {

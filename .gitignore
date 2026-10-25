@@ -50,3 +50,6 @@ data/photos/*
 !data/demo-scenario.json
 !data/cache/public/
 !data/photos/.gitkeep
+
+# local scratch
+_trash/

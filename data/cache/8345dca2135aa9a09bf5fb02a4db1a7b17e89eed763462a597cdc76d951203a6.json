@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfxKvfgeFvutfSNiGxu",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01HpifL48oQTttZexG4fVQJH",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "utility_bill",
+          "confidence": 0.7
+        },
+        "vendorName": {
+          "value": "Northbay Internet Services",
+          "confidence": 0.85,
+          "evidence": "Northbay Internet Services"
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0.2
+        },
+        "address": {
+          "value": "Service address on file (street address not present in OCR text)",
+          "confidence": 0.3
+        },
+        "date": {
+          "value": "2026-10-08",
+          "confidence": 0.9,
+          "evidence": "Statement date: 2026-10-08"
+        },
+        "amountCents": {
+          "value": 22000,
+          "confidence": 0.9,
+          "evidence": "Amount Due $220.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Service charges",
+              "cents": 22000,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.85
+        },
+        "notes": "The case manager called this a utility bill from \"Northbay ISP\", but the document is from Northbay Internet Services, an internet provider; the document has no client name or street address, and the OCR text is short with no account number, so the client name and address need a human check."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1583,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 505,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

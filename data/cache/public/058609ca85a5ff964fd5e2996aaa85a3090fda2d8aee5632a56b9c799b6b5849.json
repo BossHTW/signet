@@ -1,0 +1,24 @@
+{
+  "vendorQuery": "Bay Area Housing LLC",
+  "sfBusiness": {
+    "found": true,
+    "count": 1,
+    "dbaNames": [
+      "Bay Area Housing Innovation Fund LLC"
+    ],
+    "ownerNames": [
+      "Bay Area Housing Innovation Fund LLC"
+    ],
+    "firstStart": "2024-04-03",
+    "active": true,
+    "source": "data.sf.gov"
+  },
+  "web": {
+    "found": false,
+    "results": [],
+    "source": "Google (JSON) via Bright Data"
+  },
+  "fetchedAt": "2026-10-25T09:44:48.021Z",
+  "source": "BRIGHTDATA",
+  "errors": []
+}

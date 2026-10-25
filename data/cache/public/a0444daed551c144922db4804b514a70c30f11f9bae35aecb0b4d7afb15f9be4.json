@@ -1,0 +1,26 @@
+{
+  "vendorQuery": "Bay Water & Sewer District",
+  "sfBusiness": {
+    "found": false,
+    "count": 0,
+    "dbaNames": [],
+    "ownerNames": [],
+    "firstStart": null,
+    "active": null,
+    "source": "data.sf.gov"
+  },
+  "web": {
+    "found": true,
+    "results": [
+      {
+        "title": "SF Water, Power, Sewer (SFPUC)",
+        "link": "https://www.facebook.com/MySFPUC/photos/1369113205244398/",
+        "displayLink": "6 months ago"
+      }
+    ],
+    "source": "Google (JSON) via Bright Data"
+  },
+  "fetchedAt": "2026-10-25T09:45:40.537Z",
+  "source": "BRIGHTDATA",
+  "errors": []
+}

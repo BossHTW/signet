@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNK81i8dqiLA3A1y3adT",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_016TEJq4RWDsYvo7kAkRQFRB",
+      "name": "record_extraction",
+      "input": {
+        "vendorName": "\n<parameter name=\"value\">Bay County Clerk-Recorder",
+        "confidence": 0.95,
+        "evidence": "Bay County Clerk-Recorder"
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1418,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 538,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

@@ -1,0 +1,61 @@
+{
+  "vendorQuery": "Tesla",
+  "sfBusiness": {
+    "found": true,
+    "count": 25,
+    "dbaNames": [
+      "Tesla, Inc.",
+      "Salisbury Backhoe Service",
+      "All On Electric",
+      "Tesla Motors, Inc.",
+      "Tesla San Francisco Service Plus T.I",
+      "Performance Plus Plumbing",
+      "Tesla Energy Operations",
+      "Tesla, Inc"
+    ],
+    "ownerNames": [
+      "Tesla Inc",
+      "Salisbury Jd",
+      "Joel Dahlhiem",
+      "Northern California Tile And Stone Inc",
+      "Performance Plus Plumbing Inc"
+    ],
+    "firstStart": "2002-03-12",
+    "active": true,
+    "source": "data.sfgov.org"
+  },
+  "web": {
+    "found": true,
+    "results": [
+      {
+        "title": "Tesla San Francisco - Van Ness",
+        "link": "https://www.tesla.com/findus/location/store/sanfranciscovanness",
+        "displayLink": "https://www.tesla.com › findus › location › store › sanfr..."
+      },
+      {
+        "title": "Tesla - San Francisco, CA",
+        "link": "https://www.yelp.com/biz/tesla-san-francisco",
+        "displayLink": "https://www.yelp.com › ... › Automotive › Car Dealers"
+      },
+      {
+        "title": "Tesla: Electric Cars, Solar & Clean Energy",
+        "link": "https://www.tesla.com/",
+        "displayLink": "https://www.tesla.com"
+      },
+      {
+        "title": "Tesla San Francisco Office: Careers, Perks + Culture",
+        "link": "https://www.builtinsf.com/company/tesla",
+        "displayLink": "https://www.builtinsf.com › company › tesla"
+      },
+      {
+        "title": "The San Francisco Tesla showroom on Van Ness Avenue has ...",
+        "link": "https://www.facebook.com/SFChronicle/videos/the-san-francisco-tesla-showroom-on-van-ness-avenue-has-been-operating-without-a/1008917497814663/",
+        "displayLink": "40+ reactions · 1 year ago"
+      }
+    ],
+    "source": "Google (JSON) via Bright Data"
+  },
+  "fetchedAt": "2026-10-25T05:52:20.515Z",
+  "source": "BRIGHTDATA",
+  "errors": []
+}

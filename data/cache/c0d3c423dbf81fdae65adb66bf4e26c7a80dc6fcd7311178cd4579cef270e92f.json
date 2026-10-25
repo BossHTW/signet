@@ -1,0 +1,65 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNK7jChrLr4ZnSmrEWSF",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01QdUH2RAHEHCJw2VqbNFGNw",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "utility_bill",
+          "confidence": 0.9
+        },
+        "vendorName": {
+          "value": "Northbay Internet Services",
+          "evidence": "Northbay Internet Services",
+          "confidence": 0.95
+        },
+        "date": {
+          "value": "2026-09-27",
+          "evidence": "Statement date: 2026-09-27",
+          "confidence": 0.95
+        },
+        "amountCents": {
+          "value": 6400,
+          "evidence": "Amount Due $64.00",
+          "confidence": 0.95
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Service charges",
+              "cents": 6400
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "OCR artifact: \"$64.0O\" (capital O instead of zero), but context confirms $64.00. Service address on file but not specified in document."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1433,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 274,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

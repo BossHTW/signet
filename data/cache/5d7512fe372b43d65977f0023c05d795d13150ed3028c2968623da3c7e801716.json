@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMg3mhbLk2brf4FsyVsQ",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01BRt97L1JqyFvojEZFZNK5T",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "Metro by T-Mobile",
+          "confidence": 0.95,
+          "evidence": "Metro by T-Mobile"
+        },
+        "date": {
+          "value": "2026-10-16",
+          "confidence": 0.9,
+          "evidence": "2026-10-16"
+        },
+        "amountCents": {
+          "value": 8999,
+          "confidence": 0.95,
+          "evidence": "Total $89.99"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Prepaid monthly plan",
+              "cents": 8999,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "The document is a short text with no address or client name; the case manager described it as a phone bill, but the text reads like a prepaid plan receipt, so docType is uncertain.",
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1560,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 467,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

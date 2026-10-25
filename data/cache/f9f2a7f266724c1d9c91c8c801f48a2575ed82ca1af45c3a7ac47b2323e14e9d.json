@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMftRBZHhv5Brdf1Mayh",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01Rq7AyMXitXZiTm4wkCQ4W7",
+      "name": "record_extraction",
+      "input": {
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "amountCents": {
+          "value": 8600,
+          "confidence": 0.95,
+          "evidence": "Total $86.00"
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "date": {
+          "value": "2026-09-30",
+          "confidence": 0.9,
+          "evidence": "2026-09-30"
+        },
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.6
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly plan",
+              "cents": 8600,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "Document is a short phone bill/receipt for a monthly plan; no address, client name, or invoice number appears in the OCR text, and the document type is uncertain (could be a bill rather than a receipt).",
+        "vendorName": {
+          "value": "Metro by T-Mobile",
+          "confidence": 0.9,
+          "evidence": "Metro by T-Mobile"
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1557,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 479,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

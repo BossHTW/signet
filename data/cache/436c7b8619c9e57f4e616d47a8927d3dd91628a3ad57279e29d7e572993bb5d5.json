@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfu7Crg1c6CveRgYpAg",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01KsqzjQ5cb7mqf9FWP4t26k",
+      "name": "record_extraction",
+      "input": {
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "amountCents": {
+          "value": 7300,
+          "confidence": 0.95,
+          "evidence": "Total $73.00"
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "date": {
+          "value": "2026-09-28",
+          "confidence": 0.95,
+          "evidence": "2026-09-28"
+        },
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.8
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Transit fare",
+              "cents": 7300,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "Short OCR text with no address or client name; the document shows only one transit fare line and a total of $73.00, and the vendor name matches the case manager's description.",
+        "vendorName": {
+          "value": "Golden Gate Transit",
+          "confidence": 0.9,
+          "evidence": "Golden Gate Transit"
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1560,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 460,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

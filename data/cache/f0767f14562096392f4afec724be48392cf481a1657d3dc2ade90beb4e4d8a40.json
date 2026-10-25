@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfsLtpMvMNJiNzT78RZ",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_018bvwpFHzYJDSVQGnZS6M82",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.8
+        },
+        "vendorName": {
+          "value": "Westside Commons Management",
+          "evidence": "Westside Commons Management",
+          "confidence": 0.9
+        },
+        "clientNameOnDoc": {
+          "value": "Andre H.",
+          "confidence": 0.85
+        },
+        "date": {
+          "value": "2026-09-30",
+          "evidence": "Period: 2026-09-30",
+          "confidence": 0.7
+        },
+        "amountCents": {
+          "value": 68100,
+          "evidence": "Total Due: $681.00",
+          "confidence": 0.95
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly rent",
+              "cents": 68100,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.95
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "notes": "Document is labeled \"Rent Receipt / Statement\" but reads as a monthly rent statement with a payment request (\"Please remit by the 5th\"); the date is a period marker, not an issue date, and no address appears in the text."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1602,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 483,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

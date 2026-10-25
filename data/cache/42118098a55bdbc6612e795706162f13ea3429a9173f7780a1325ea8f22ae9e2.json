@@ -1,0 +1,64 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNKJ5sw25yfMYrYTZ5Lu",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01TQByF9hH93SZpusDA7fBhG",
+      "name": "record_extraction",
+      "input": {
+        "vendorName": {
+          "value": "California DMV",
+          "confidence": 0.95
+        },
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.85
+        },
+        "date": {
+          "value": "2026-10-14",
+          "confidence": 0.95,
+          "evidence": "2026-10-14"
+        },
+        "amountCents": {
+          "value": 5900,
+          "confidence": 0.95,
+          "evidence": "Total $59.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Document fee",
+              "cents": 5900
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "DMV document fee receipt; no client name or address present on document."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1411,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 242,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

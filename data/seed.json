@@ -489,7 +489,7 @@
         "MISSION TERRACE APTS"
       ],
       "category": "rent",
-      "crsTestIdentityId": null,
+      "crsTestIdentityId": "P01",
       "crsStatus": "VERIFIED",
       "nessieAccountId": null,
       "descriptor": "MISSION TERRACE APTS"
@@ -671,7 +671,7 @@
         "GG ROOMS"
       ],
       "category": "deposit",
-      "crsTestIdentityId": null,
+      "crsTestIdentityId": "P13",
       "crsStatus": "FLAGGED",
       "nessieAccountId": null,
       "descriptor": "GG ROOMS"

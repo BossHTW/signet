@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgNoGrdwUk48DU21pFqbC",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01LNzrgHY9YfmQLzqFrcCFj1",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "other",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "MINT MOBILE",
+          "confidence": 0.95,
+          "evidence": "MINT MOBILE"
+        },
+        "amountCents": {
+          "value": 3000,
+          "confidence": 0.95,
+          "evidence": "Amount due: $30.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Agency family plan (5 lines) - Line 5 of 5, Unlimited",
+              "cents": 3000,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.85
+        },
+        "notes": "Document is a mobile phone service line item, not a standard receipt/bill type; docType set to other. Text states it is only one line of a 5-line family plan, so the total is for this line only. No date, address, or client name appears in the text.",
+        "date": {
+          "value": "",
+          "confidence": 0,
+          "evidence": ""
+        },
+        "address": {
+          "value": "",
+          "confidence": 0
+        },
+        "clientNameOnDoc": {
+          "value": "",
+          "confidence": 0
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1581,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 475,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

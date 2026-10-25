@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfrFFx8ops21x5TdiZP",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_014EjzUuWweScnPLDSQkMov4",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "Harbor View Housing Co",
+          "evidence": "Harbor View Housing Co",
+          "confidence": 0.9
+        },
+        "clientNameOnDoc": {
+          "value": "Camila D.",
+          "confidence": 0.9
+        },
+        "date": {
+          "value": "2026-09-26",
+          "evidence": "Period: 2026-09-26",
+          "confidence": 0.7
+        },
+        "amountCents": {
+          "value": 89300,
+          "evidence": "Total Due: $893.00",
+          "confidence": 0.9
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Security deposit",
+              "cents": 89300,
+              "flag": "deposit"
+            }
+          ],
+          "confidence": 0.85
+        },
+        "notes": "Document is titled \"Rent Receipt / Statement\" with a \"Please remit by the 5th\" line, so its type is ambiguous; the case manager's name \"HARBOR VIEW HOUSING\" differs in case from the document's \"Harbor View Housing Co\", and the single line item is labeled a security deposit, which I recorded as flagged deposit.",
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1601,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 529,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

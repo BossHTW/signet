@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMg8QhSRNadXZjvViQ5k",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01JdXZdL1s3TU3FHjV2GYa1T",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "utility_bill",
+          "confidence": 0.9
+        },
+        "vendorName": {
+          "value": "Bay Water & Sewer District",
+          "confidence": 0.9,
+          "evidence": "Bay Water & Sewer District"
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "address": {
+          "value": "Service address on file (street address not legible in OCR text)",
+          "confidence": 0.2
+        },
+        "date": {
+          "value": "2026-10-18",
+          "confidence": 0.7,
+          "evidence": "Statement date: 2026-1O-18"
+        },
+        "amountCents": {
+          "value": 40500,
+          "confidence": 0.75,
+          "evidence": "Amount Due $405.O0"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Service charges",
+              "cents": 0,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.2
+        },
+        "notes": "OCR shows letter 'O' in place of zeros in the date and amount ('2026-1O-18', '$405.O0'); I read these as 2026-10-18 and $405.00. The 'Service charges' line amount is truncated ('…') so no itemized amounts are available, and the service address and client name are not on the document text."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1582,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 538,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

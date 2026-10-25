@@ -1,0 +1,52 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNmGXRorYTfdEFjaEq8X",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01DNLoRc4WiFXKDbsqxq9qyC",
+      "name": "draft_rule",
+      "input": {
+        "title": "Duplicate receipt filed for same vendor and amount",
+        "predicate": {
+          "op": "and",
+          "clauses": [
+            {
+              "field": "request.vendorNameRaw",
+              "op": "contains",
+              "value": "Metro by T-Mobile"
+            },
+            {
+              "field": "request.requestedCents",
+              "op": "eq",
+              "value": 8999
+            }
+          ]
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1028,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 153,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

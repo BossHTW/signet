@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNK4TtsUWEfSoHN1eH4f",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01KnaoerKJ5aVhi8DBBPjx5X",
+      "name": "record_extraction",
+      "input": {
+        "vendorName": "\n<parameter name=\"value\">Golden Gate Transit",
+        "confidence": 0.95,
+        "evidence": "Header \"Golden Gate Transit\""
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1412,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 443,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

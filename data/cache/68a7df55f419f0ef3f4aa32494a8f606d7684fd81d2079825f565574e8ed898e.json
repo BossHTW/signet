@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMft6eqWCmtpMhrDABCX",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_0168qPtSoR2QYJym6Rp78t9i",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.85
+        },
+        "vendorName": {
+          "value": "Sunset Residential Partners",
+          "evidence": "Sunset Residential Partners",
+          "confidence": 0.95
+        },
+        "amountCents": {
+          "value": 79500,
+          "evidence": "Total Due: $795.00",
+          "confidence": 0.95
+        },
+        "date": {
+          "value": "2026-09-29",
+          "evidence": "Period: 2026-09-29",
+          "confidence": 0.7
+        },
+        "clientNameOnDoc": {
+          "value": "Devon T.",
+          "confidence": 0.9
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly rent",
+              "cents": 79500,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "The document is titled \"Rent Receipt / Statement\" but is a rent statement with a payment request (\"Please remit by the 5th\"), so docType could be receipt or other; the date is a period label, not an issue date; no address appears on the document."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1598,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 490,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

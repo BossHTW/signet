@@ -69,8 +69,8 @@ describe("the eight planted anomalies are caught by the deterministic engines", 
 
 describe("the normal workload mostly auto-approves", () => {
   const normal = world.filter((o) => !o.req.plantedAnomaly);
-  it("at least 75% of non-planted requests are APPROVED by the system", () => {
-    const approved = normal.filter((o) => o.result.decision.outcome === "APPROVED").length;
+  it("at least 75% of non-planted requests are READY (verified, batch-eligible) by the system", () => {
+    const approved = normal.filter((o) => o.result.decision.outcome === "READY").length;
     expect(approved / normal.length).toBeGreaterThanOrEqual(0.75);
   });
   it("the three legitimate splits escalate with SPLIT-REQ (a human confirms allocations)", () => {
@@ -79,6 +79,6 @@ describe("the normal workload mostly auto-approves", () => {
     for (const s of splits) expect(codes(s)).toContain("SPLIT-REQ");
   });
   it("nothing is ever DENIED by the system", () => {
-    for (const o of world) expect(o.result.decision.outcome).not.toBe("DENIED");
+    for (const o of world) expect(["READY", "ESCALATED"]).toContain(o.result.decision.outcome); // never APPROVED, never DENIED, never a payment
   });
 });

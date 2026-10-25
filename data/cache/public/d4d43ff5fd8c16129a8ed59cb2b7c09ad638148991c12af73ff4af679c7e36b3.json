@@ -1,0 +1,50 @@
+{
+  "vendorQuery": "Mint Mobile",
+  "sfBusiness": {
+    "found": true,
+    "count": 1,
+    "dbaNames": [
+      "Mint Mobile, LLC"
+    ],
+    "ownerNames": [
+      "Mint Mobile, LLC"
+    ],
+    "firstStart": "2020-01-01",
+    "active": true,
+    "source": "data.sfgov.org"
+  },
+  "web": {
+    "found": true,
+    "results": [
+      {
+        "title": "does anyone use mint mobile in SF? How's the coverage?",
+        "link": "https://www.reddit.com/r/AskSF/comments/1h2g72p/does_anyone_use_mint_mobile_in_sf_hows_the/",
+        "displayLink": "20+ comments · 1 year ago"
+      },
+      {
+        "title": "5G Coverage Map - Nation's Largest 5G Network",
+        "link": "https://www.mintmobile.com/coverage/",
+        "displayLink": "https://www.mintmobile.com › coverage"
+      },
+      {
+        "title": "Mint Mobile | Wireless that's Easy, Online, $15 Bucks a Month",
+        "link": "https://www.mintmobile.com/",
+        "displayLink": "https://www.mintmobile.com"
+      },
+      {
+        "title": "Is Mint Mobile good in California?",
+        "link": "https://www.mintmobile.com/blog/is-mint-mobile-good-in-california/",
+        "displayLink": "https://www.mintmobile.com › Blog"
+      },
+      {
+        "title": "Does Mint Mobile have stores?",
+        "link": "https://www.mintmobile.com/help/does-mint-mobile-have-stores/",
+        "displayLink": "https://www.mintmobile.com › Help Center Articles"
+      }
+    ],
+    "source": "Google (JSON) via Bright Data"
+  },
+  "fetchedAt": "2026-10-25T06:06:16.696Z",
+  "source": "BRIGHTDATA",
+  "errors": []
+}

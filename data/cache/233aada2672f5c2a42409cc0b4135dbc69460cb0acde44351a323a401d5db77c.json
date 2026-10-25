@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfzVPz31JLmXE4CqDdN",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01Q3vTA1HD2d4vhtbAzwiarW",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.7
+        },
+        "vendorName": {
+          "value": "Sunset Residential Partners",
+          "evidence": "Sunset Residential Partners",
+          "confidence": 0.95
+        },
+        "amountCents": {
+          "value": 115000,
+          "evidence": "Total Due: $1150.00",
+          "confidence": 0.95
+        },
+        "date": {
+          "value": "2026-10-10",
+          "evidence": "Period: 2026-10-10",
+          "confidence": 0.6
+        },
+        "clientNameOnDoc": {
+          "value": "Priya K.",
+          "confidence": 0.9
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly rent",
+              "cents": 115000,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "notes": "Document is titled as a rent receipt/statement but reads as a rent statement with 'Please remit by the 5th'; the 'Period' field is a single date, not a range, and no address appears on the document."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1600,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 479,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

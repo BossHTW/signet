@@ -32,7 +32,7 @@ export function runWorld(seed: Seed = generate(), extract = truthExtract): Outco
       history, activeRules: [], limits: DEFAULT_LIMITS, today: seed.today,
     });
     out.push({ req: q, result });
-    // history semantics: auto-approved requests count as APPROVED spend; escalated ones are pending (no spend yet)
+    // history semantics: READY (verified) requests count as committed spend; escalated ones are pending (no spend yet)
     history.push({
       requestId: q.id, clientId: q.clientId, clientDisplayName: client.displayName,
       vendorNormalized: normalizeVendor(q.vendorNameRaw), requestedCents: q.requestedCents, requestedAt: q.requestedAt,

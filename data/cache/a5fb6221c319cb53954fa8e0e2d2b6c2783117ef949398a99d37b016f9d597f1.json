@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNKHfNYRgKTPMLYkg1f7",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01TeSquKskqP6N4LDsCUtMrq",
+      "name": "record_extraction",
+      "input": {
+        "vendorName": "\n<parameter name=\"value\">Bay Area Rapid Transit",
+        "confidence": 0.95,
+        "evidence": "Bay Area Rapid Transit"
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1411,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 503,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

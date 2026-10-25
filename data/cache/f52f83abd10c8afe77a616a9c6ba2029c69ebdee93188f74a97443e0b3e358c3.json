@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfokAgBiRgZQryULSbF",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01YJPYQZLF7Gen8RjHwbykXo",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.85
+        },
+        "vendorName": {
+          "value": "Sunset Residential Partners",
+          "evidence": "Sunset Residential Partners",
+          "confidence": 0.95
+        },
+        "clientNameOnDoc": {
+          "value": "Sofia F.",
+          "confidence": 0.9
+        },
+        "amountCents": {
+          "value": 75700,
+          "evidence": "Total Due: $757.00",
+          "confidence": 0.95
+        },
+        "date": {
+          "value": "2026-09-20",
+          "evidence": "Period: 2026-09-20",
+          "confidence": 0.7
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly rent",
+              "cents": 75700,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "Document is a rent receipt/statement labeled \"Rent Receipt / Statement\" with a \"Please remit by the 5th\" note, so it may be a bill rather than proof of payment; the date is a billing period and no address appears."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1599,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 488,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

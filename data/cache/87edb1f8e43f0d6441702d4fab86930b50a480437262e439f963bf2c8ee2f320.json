@@ -1,0 +1,71 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNKDkBesuMM5tZ8Scrvr",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01F5DfybGo5ZbZZ8WmFb6P4s",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.95
+        },
+        "vendorName": {
+          "value": "Harbor View Housing Co",
+          "confidence": 0.95,
+          "evidence": "Harbor View Housing Co"
+        },
+        "clientNameOnDoc": {
+          "value": "Elena G.",
+          "confidence": 0.95,
+          "evidence": "Tenant: Elena G."
+        },
+        "date": {
+          "value": "2026-10-11",
+          "confidence": 0.95,
+          "evidence": "Period: 2026-10-11"
+        },
+        "amountCents": {
+          "value": 78700,
+          "confidence": 0.95,
+          "evidence": "Total Due: $787.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Security deposit",
+              "cents": 78700,
+              "flag": "deposit"
+            }
+          ],
+          "confidence": 0.95
+        },
+        "notes": "Document is a rent receipt/statement showing security deposit amount matching total due."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1440,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 308,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

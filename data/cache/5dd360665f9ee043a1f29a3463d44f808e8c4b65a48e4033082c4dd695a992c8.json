@@ -1,0 +1,64 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNKC9UZRMjpiAECwbp5J",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01HSZowHbWhn7ygeyZvqmBux",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.95
+        },
+        "vendorName": {
+          "value": "Golden Gate Transit",
+          "confidence": 0.95,
+          "evidence": "Golden Gate Transit"
+        },
+        "date": {
+          "value": "2026-10-05",
+          "confidence": 0.95,
+          "evidence": "2026-10-05"
+        },
+        "amountCents": {
+          "value": 2400,
+          "confidence": 0.95,
+          "evidence": "Total $24.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Transit fare",
+              "cents": 2400
+            }
+          ],
+          "confidence": 0.95
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1411,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 221,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

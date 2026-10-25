@@ -1,0 +1,34 @@
+{
+  "model": "claude-sonnet-5-5",
+  "id": "msg_011CgMfsyHL5FxK93VTLW1Mc",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "thinking",
+      "thinking": "",
+      "signature": "CAQSxwcKEAgTGAI4AUIIdGhpbmtpbmcSDBqvE1EuXJftKe2tFRoM6q1zCYH6dJTNyXfbIjDWVVOxi9PXPFBruHSiW9NZQI4SAtRKcNGNwztLyi96vZWSHSTQAYWQwd5MFu2IJuUq5AYXeMKOGOltDkLEdY2RZRhyjnlLRwzHj+ABoRfSq9clPH7XHRWl2NDFPJ/PBz89wVpjeM0UckxAHWB9HvT47v9NR3009iKWFaWkbB317FhGKcyBtCWWLWlvGI4pKs1V36YmTlm1oHSreLatdcJ8jJ5qz6X6i1RYzDLWyjKQi8qeXeA7SySp3bHLwciNNHvFoYSXlu4Riucflhl7UCSvIN/JhnjgYWSo9JcgMSHYxVmViqpdBFSRK2ApvNtLWO3YkufOPGUXcMHlsCeWCXBv/9RVeSA3jl7ApU1bl8aZcgMPAL1Anv2y1BUgW8a2SL4oNBoDHZsgxaL12zLlTJisgXy/UJRmEKDxtCKv9lqhI4dPaOG2VqdN4lvcFV5p5PKOLzM455ljYxxtsJs+hiehPD4ApVI+EwmUb6CbNaKvOhzO1QqplBTymSyDAVrELPtIfVgyXxcJCtpw1KsGqLAKXxmRrAunlruknj3xUYDaYI9fS1G8YP8J/JjYsZwUSiJxYIVIDiFk17cYhEieZnjvET7D7s1od3m32q/+p0IjwzUBicIL0+6ZTdi4K5q2Tm2tsmi7jAxBukwQYIalwoohx6wVyQcQFwpYg8B4I6awpf4dKXrqJx2qS3IgF1HJxnYa8g+hdMq2DOVTfJGj8CXEgGOgJVQNxCG9GOz1JZhUwLU7170O3eyj1zIfS50PZU8h6lQIvNN7RLC0edH4SR7COe5/IEbUbU415hSn6UqxrHiTQDH3J2WDOU21+nn7jtBujhC7nrdca4tfPCJjfVN344HtoFY+W3FqtkodXVu97F8RimhFDML0NfM+WeUudeTLF2AqDEq1y7VwzgOMMMOId1ogpgyvGMlb7F83Exb4YpHId39R1Td4tiXq2KNxYDj7pAexwwi2OyVhlt5eKxHENz4gVHBNkvt2sPvEtb5ouKH1g5mkqPp483L8CJ4qvqI1m+6fQJ7iGFIKDQwObdcWUdNAZg0MLn1pFY/e2ij546eADouDEDT6B2ojSoKfnMVqVhAmC96TLPuT91n9X6ywvJlYRioPTHRP8mui1xCMPyAOFNCQ4c9/XqoQYvcUm8oIjpC+J9VYIJOSeMhq94efkFIRnsF+Nz2MfhP7u+AJswYXTjgg//zUUFLIhteA4qnxqLwsw0PyGAE="
+    }
+  ],
+  "container": null,
+  "stop_reason": "max_tokens",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 256,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 120,
+    "output_tokens_details": {
+      "thinking_tokens": 119
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

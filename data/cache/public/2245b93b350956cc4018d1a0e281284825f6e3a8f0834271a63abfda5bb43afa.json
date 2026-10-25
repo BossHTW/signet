@@ -1,0 +1,20 @@
+{
+  "vendorQuery": "Sunset Residential Partners",
+  "sfBusiness": {
+    "found": false,
+    "count": 0,
+    "dbaNames": [],
+    "ownerNames": [],
+    "firstStart": null,
+    "active": null,
+    "source": "data.sf.gov"
+  },
+  "web": {
+    "found": false,
+    "results": [],
+    "source": "Google (JSON) via Bright Data"
+  },
+  "fetchedAt": "2026-10-25T09:45:20.283Z",
+  "source": "BRIGHTDATA",
+  "errors": []
+}

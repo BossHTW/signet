@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfoM1Ptc7NHG1sPW68f",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01YQhBdF4yJVa8TYcJUh58Nr",
+      "name": "record_extraction",
+      "input": {
+        "address": {
+          "value": "Service address on file",
+          "confidence": 0.3
+        },
+        "amountCents": {
+          "value": 8100,
+          "confidence": 0.95,
+          "evidence": "Amount Due $81.00"
+        },
+        "clientNameOnDoc": {
+          "value": "",
+          "confidence": 0.2
+        },
+        "date": {
+          "value": "2026-09-23",
+          "confidence": 0.95,
+          "evidence": "Statement date: 2026-09-23"
+        },
+        "docType": {
+          "value": "utility_bill",
+          "confidence": 0.85
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Service charges",
+              "cents": 8100,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "Document is a short account statement; the service address is a placeholder with no actual address, and no client name appears on the text. Vendor matches the case manager's description.",
+        "vendorName": {
+          "value": "Bay Water & Sewer District",
+          "confidence": 0.95,
+          "evidence": "Bay Water & Sewer District"
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1589,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 460,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

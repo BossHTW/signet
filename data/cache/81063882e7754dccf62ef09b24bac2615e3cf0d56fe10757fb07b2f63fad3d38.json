@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgNoGhchkxQ17CMzhbd8D",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01GKxEW4TNdMxBLJCSL27RSU",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "other",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "Mint Mobile",
+          "confidence": 0.95,
+          "evidence": "MINT MOBILE"
+        },
+        "amountCents": {
+          "value": 3000,
+          "confidence": 0.9,
+          "evidence": "Amount due: $30.00"
+        },
+        "date": {
+          "value": "",
+          "confidence": 0,
+          "evidence": ""
+        },
+        "clientNameOnDoc": {
+          "value": "",
+          "confidence": 0
+        },
+        "address": {
+          "value": "",
+          "confidence": 0
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Agency family plan (5 lines) - Line 4 of 5 - Unlimited",
+              "cents": 3000,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.85
+        },
+        "notes": "The OCR text shows a single line of a mobile family plan with a total of $30.00; no date, client name, or address appears, and the document type is not clearly a phone bill, so it is recorded as 'other' with lower confidence."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1581,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 474,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

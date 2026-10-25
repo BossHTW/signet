@@ -16,7 +16,7 @@ export type HistoryItem = {
   requestedAt: string;
   documentHashes: string[];
   allocation: Allocation[];
-  outcome: "APPROVED" | "ESCALATED" | "DENIED";
+  outcome: "READY" | "ESCALATED" | "APPROVED" | "DENIED";
 };
 
 export type PolicyInput = {
@@ -145,7 +145,7 @@ export function evaluatePolicy(i: PolicyInput): PolicyResult {
   if (i.request.requestedCents > limit) {
     t.push({
       code: "LIMIT-OVER",
-      reason: `$${cents(i.request.requestedCents)} exceeds the $${cents(limit)} auto-approve limit for ${i.request.category}.`,
+      reason: `$${cents(i.request.requestedCents)} exceeds the $${cents(limit)} batch limit for ${i.request.category}.`,
       evidence: { limit },
     });
   }
@@ -170,7 +170,7 @@ export function evaluatePolicy(i: PolicyInput): PolicyResult {
 
 export function remainingForClient(g: GrantStream, clientId: string, history: HistoryItem[]): number {
   const spent = history
-    .filter((h) => h.clientId === clientId && h.outcome === "APPROVED")
+    .filter((h) => h.clientId === clientId && (h.outcome === "APPROVED" || h.outcome === "READY")) // committed, not only released
     .flatMap((h) => h.allocation)
     .filter((a) => a.grantId === g.id)
     .reduce((s, a) => s + a.cents, 0);

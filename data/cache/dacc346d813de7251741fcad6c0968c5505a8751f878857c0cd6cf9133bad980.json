@@ -1,0 +1,70 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNK3W2paiuTsjt7xAx7t",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_014DEVNn12AnGG3cF9R8zrQ6",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.9
+        },
+        "vendorName": {
+          "value": "Harbor View Housing Co",
+          "confidence": 0.95,
+          "evidence": "Harbor View Housing Co"
+        },
+        "clientNameOnDoc": {
+          "value": "Elena G.",
+          "confidence": 0.9,
+          "evidence": "Tenant: Elena G."
+        },
+        "date": {
+          "value": "2026-09-09",
+          "confidence": 0.95,
+          "evidence": "Period: 2026-09-09"
+        },
+        "amountCents": {
+          "value": 80000,
+          "confidence": 0.95,
+          "evidence": "Total Due: $800.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Security deposit",
+              "cents": 80000,
+              "flag": "deposit"
+            }
+          ],
+          "confidence": 0.95
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1439,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 278,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

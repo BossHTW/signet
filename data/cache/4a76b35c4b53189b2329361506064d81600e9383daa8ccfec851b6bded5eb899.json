@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfzqSz1F9sbPomrrmA1",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01P3eAgsJnpNisdRgATgyiam",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "Metro by T-Mobile",
+          "confidence": 0.85,
+          "evidence": "Metro by T-Mobile"
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "date": {
+          "value": "2026-10-12",
+          "confidence": 0.85,
+          "evidence": "2026-10-12"
+        },
+        "amountCents": {
+          "value": 7500,
+          "confidence": 0.85,
+          "evidence": "Total $75.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly plan",
+              "cents": 7500,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.85
+        },
+        "notes": "The document says \"Metro by T-Mobile,\" not \"MetroPCS\"; the case manager's label does not match the text, though MetroPCS is a former T-Mobile prepaid brand now under Metro by T-Mobile. No client name or address appears, and the document is short with no header detail, so the doc type is uncertain."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1553,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 517,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

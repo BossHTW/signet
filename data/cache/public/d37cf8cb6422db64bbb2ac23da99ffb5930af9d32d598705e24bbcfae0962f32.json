@@ -1,0 +1,31 @@
+{
+  "vendorQuery": "California DMV",
+  "sfBusiness": {
+    "found": false,
+    "count": 0,
+    "dbaNames": [],
+    "ownerNames": [],
+    "firstStart": null,
+    "active": null,
+    "source": "data.sf.gov"
+  },
+  "web": {
+    "found": true,
+    "results": [
+      {
+        "title": "California DMV",
+        "link": "https://www.dmv.ca.gov/",
+        "displayLink": "https://www.dmv.ca.gov"
+      },
+      {
+        "title": "DMV - 1377 Fell St, San Francisco, California",
+        "link": "https://www.google.com/goto?url=CAESZQHrOzAVAFwxY3VoEsODzn4kJdIPwNCSzXBB6yuqJc5CLgpUn5ZNYRkM5Y6oBc0ATGnd7JsM1SBrMfeSxgfMPo30yIWxyLSZsdjumcnO7KEXxoxE9v6IJmmoQYxC5-im5G_fN7DP",
+        "displayLink": "https://www.yelp.com › biz › dmv-san-francisco"
+      }
+    ],
+    "source": "Google (JSON) via Bright Data"
+  },
+  "fetchedAt": "2026-10-25T09:47:59.163Z",
+  "source": "BRIGHTDATA",
+  "errors": []
+}

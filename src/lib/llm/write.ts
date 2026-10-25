@@ -34,3 +34,16 @@ export function fallbackSummary(i: SummaryInput) {
   const codes = i.triggers.map((t) => t.code);
   return `${i.category} $${(i.requestedCents / 100).toFixed(2)} to ${i.vendorNameRaw}; ${codes.length ? `checks: ${codes.join(", ")}` : "all checks clear"}.`.slice(0, 160);
 }
+
+/** One short plain-English paragraph for a supervisor who is not technical. Built from the structured explanation; null when the model is unavailable. */
+export async function writeExplanation(i: { headline: string; flags: { title: string; saw: string; rule: { cite: string; text: string } | null; precedent: { text: string; outcome: string } | null; look: string }[]; clean: string[]; category: string; requestedCents: number; vendorNameRaw: string; caseNote: string }): Promise<string | null> {
+  if (!i.flags.length) return null;
+  const res = await cachedMessage({
+    model: SONNET, max_tokens: 260,
+    system: `You explain a financial-assistance record to a program supervisor who is not technical and has thirty seconds. Plain words, no codes, no jargon, no percentages. Describe what was found, what rule it comes from, and what to look at. Never use the words approve, approved, deny, denied, reject, should, recommend. No new facts.`,
+    messages: [{ role: "user", content: `Request: ${i.category} $${(i.requestedCents / 100).toFixed(2)} to "${i.vendorNameRaw}". Case note: ${i.caseNote}\n${i.headline}\n${i.flags.map((f, n) => `${n + 1}. ${f.title}. Seen: ${f.saw}${f.rule ? ` Rule: ${f.rule.cite}: ${f.rule.text}` : ""}${f.precedent ? ` A supervisor once handled a similar case (${f.precedent.outcome}): ${f.precedent.text}` : ""} Look at: ${f.look}`).join("\n")}\nWhat passed: ${i.clean.join(" ")}\nWrite one paragraph, 60–110 words.` }],
+  });
+  if (isUnavailable(res)) return null;
+  const text = res.content.find((b) => b.type === "text");
+  return text && text.type === "text" ? scrub(text.text) : null;
+}

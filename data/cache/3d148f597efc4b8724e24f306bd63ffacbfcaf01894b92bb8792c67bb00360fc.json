@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfuoAw5XKwU5ottN2Zu",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01PnqyNGEFoUD1jktX6hcpiP",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.7
+        },
+        "vendorName": {
+          "value": "Westside Commons Management",
+          "evidence": "Westside Commons Management",
+          "confidence": 0.95
+        },
+        "clientNameOnDoc": {
+          "value": "Marcus H.",
+          "confidence": 0.85
+        },
+        "amountCents": {
+          "value": 120000,
+          "evidence": "Total Due: $120000",
+          "confidence": 0.9
+        },
+        "date": {
+          "value": "2026-10-01",
+          "evidence": "Period: 2026-10-01",
+          "confidence": 0.8
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly rent",
+              "cents": 120000,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "notes": "Document is titled \"Rent Receipt / Statement\" but reads as a rent statement with a payment request (\"Please remit by the 5th\"), so docType is uncertain; the total is missing its decimal in OCR (\"$120000\") and was read as $1,200.00 matching the monthly rent line; no address appears in the text."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1595,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 513,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

@@ -1,0 +1,76 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgNoCzGTomEsgHF2yZ9kt",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01TdgjEgxdNUwjriZ8RdBjSR",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "other",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "Mint Mobile",
+          "confidence": 0.9,
+          "evidence": "MINT MOBILE"
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "amountCents": {
+          "value": 3000,
+          "confidence": 0.6,
+          "evidence": "Amount due: $30.00"
+        },
+        "date": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Agency family plan (5 lines) - Line 1 of 5 Unlimited",
+              "cents": 3000,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.6
+        },
+        "notes": "Document is a truncated phone bill excerpt: it shows only line 1 of 5 for a $30.00 amount due, with no date, client name, or address; the total for the full 5-line plan is unclear, and it may not be a complete bill."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1564,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 497,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

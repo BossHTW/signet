@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signet — Not a rubber stamp</title>
+<meta name="description" content="Signet checks every public aid payment against policy, the bank and the vendor, then two different people sign before a dollar moves.">
+<meta property="og:title" content="Signet — Not a rubber stamp">
+<meta property="og:description" content="Claude reads. Code checks. People decide. Autonomous verification for public aid payments.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+  :root{
+    --paper:#FAFAF7; --card:#FFFFFF; --ink:#15181A; --ink-2:#5B6168; --ink-3:#8A9097;
+    --line:#E4E6E0; --line-2:#CFD3CB;
+    --seal:#B3261E; --seal-soft:#FBECEA; --verify:#36587A; --verify-soft:#EAF0F6;
+    --ok:#2E6B3F; --ok-soft:#E7F2EA; --signet:#FFD22D;
+    --disp:"Barlow Condensed",system-ui,sans-serif; --body:"Public Sans",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(16px,5vw,48px)}
+  header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .brand .mk{width:28px;height:28px;border-radius:50%;border:2px solid var(--seal);display:grid;place-items:center;color:var(--seal);font-family:var(--disp);font-weight:700}
+  .brand .wm{font-family:var(--disp);font-weight:700;font-size:23px}
+  nav{display:flex;gap:clamp(12px,2.4vw,28px);font-size:15px}
+  nav a{text-decoration:none;color:var(--ink-2)} nav a:hover{color:var(--ink)}
+  @media (max-width:640px){nav .opt{display:none}}
+  .kick{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:16px}
+  h1,h2,h3{font-family:var(--disp);font-weight:700;line-height:.95;letter-spacing:-.01em}
+  h1{font-size:clamp(60px,11vw,156px)}
+  h2{font-size:clamp(40px,5.6vw,76px)}
+  .hl{background:linear-gradient(transparent 62%,var(--signet) 62%)}
+  .red{color:var(--seal)} .green{color:var(--ok)} .blue{color:var(--verify)}
+  .sub{font-size:clamp(18px,1.8vw,24px);color:var(--ink-2);max-width:40ch;margin-top:22px}
+  .hero{padding:clamp(48px,9vw,120px) 0 clamp(40px,6vw,80px)}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;padding:14px 22px;border-radius:12px;text-decoration:none;border:1.5px solid var(--ink)}
+  .btn.primary{background:var(--ink);color:var(--paper)}
+  .btn:focus-visible,nav a:focus-visible{outline:3px solid var(--signet);outline-offset:3px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 12px 32px rgba(21,24,26,.06)}
+  section{padding:clamp(56px,8vw,110px) 0;border-top:1px solid var(--line)}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:center}
+  @media (max-width:860px){.grid3,.grid2{grid-template-columns:1fr}}
+  .step{padding:26px}
+  .step .n{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+  .step h3{font-size:clamp(34px,3.4vw,48px);margin-top:10px}
+  .step p{color:var(--ink-2);margin-top:10px}
+  .chip{display:inline-flex;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.04em;border-radius:999px;padding:5px 11px}
+  .chip.esc{background:var(--seal-soft);color:var(--seal)}
+  .moment .card{padding:22px 24px}
+  .rows{font-family:var(--mono);font-size:13px;color:var(--ink-2);margin-top:14px}
+  .rows div{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line)}
+  .rows .miss{color:var(--seal);font-weight:600;border:1.5px dashed var(--seal);border-radius:10px;padding:9px 12px;margin-top:8px}
+  .ints{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:36px}
+  @media (max-width:980px){.ints{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:520px){.ints{grid-template-columns:1fr}}
+  .int{padding:20px}
+  .int b{font-family:var(--disp);font-size:24px}
+  .int p{font-size:14px;color:var(--ink-2);margin-top:6px}
+  .links{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+  @media (max-width:860px){.links{grid-template-columns:1fr}}
+  .link{padding:26px;text-decoration:none;display:block;transition:transform .2s}
+  .link:hover{transform:translateY(-3px)}
+  .link h3{font-size:34px}
+  .link p{color:var(--ink-2);margin-top:8px}
+  .link .go{font-family:var(--mono);font-size:13px;margin-top:16px;display:block}
+  .video{aspect-ratio:16/9;width:100%;border:0;border-radius:16px;background:#111;margin-top:36px}
+  footer{border-top:1px solid var(--line);padding:32px 0 48px;font-size:14px;color:var(--ink-3);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a class="brand" href="/"><span class="mk">S</span><span class="wm">Signet</span></a>
+    <nav aria-label="Primary">
+      <a href="/where-did-the-50-dollars-go">Live demo</a>
+      <a href="/deck">Slides</a>
+      <a class="opt" href="/memo">Memo</a>
+      <a class="opt" href="/integrations">Integrations</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div class="kick">Verification for public aid payments</div>
+    <h1>Not a <span class="hl">rubber stamp.</span></h1>
+    <p class="sub">Signet checks every aid payment before the money moves: the receipt, the bank, the vendor. People still make the call.</p>
+    <div class="cta">
+      <a class="btn primary" href="/where-did-the-50-dollars-go">Where did the $50 go? Try it →</a>
+      <a class="btn" href="/deck">See the slides</a>
+    </div>
+  </div>
+
+  <section class="moment">
+    <div class="grid2">
+      <div>
+        <div class="kick">The moment</div>
+        <h2>The receipt says paid.<br><span class="red">The bank says no.</span></h2>
+        <p class="sub">A $50 utility reimbursement looks fine on paper. There's no matching withdrawal in the bank feed, so Signet stops it, shows its evidence, and hands it to a person.</p>
+      </div>
+      <div class="card">
+        <div class="kick" style="margin-bottom:6px">PG&amp;E payment confirmation</div>
+        <div style="font-family:var(--disp);font-size:52px;font-weight:700;line-height:1">$50.00</div>
+        <div class="rows">
+          <div><span>Bank feed · last 60 days</span><span>Nessie</span></div>
+          <div class="miss"><span>PG&amp;E · $50.00</span><span>not found</span></div>
+        </div>
+        <div style="margin-top:16px"><span class="chip esc">ESCALATED · BANK-LOW</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="kick">How it works</div>
+    <h2>Claude reads. Code checks. <span class="red">People decide.</span></h2>
+    <div class="grid3">
+      <div class="card step"><div class="n">01 · Claude</div><h3 class="blue">Reads</h3><p>Turns a receipt or bill into fields with a confidence for each. It never makes the call.</p></div>
+      <div class="card step"><div class="n">02 · Deterministic code</div><h3>Checks</h3><p>Grant rules, duplicates, the bank feed, vendor identity and public records. Same input, same answer.</p></div>
+      <div class="card step"><div class="n">03 · Two people</div><h3 class="red">Decide</h3><p>One certifies, a different person releases. Every step lands in a hash-chained log.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="kick">Built on</div>
+    <h2>Every check shows its work.</h2>
+    <div class="ints">
+      <div class="card int"><b class="blue">Claude</b><p>Reads documents, writes plain-language summaries.</p></div>
+      <div class="card int"><b>Nessie</b><p>Bank feed for reconciliation and the real withdrawal at release.</p></div>
+      <div class="card int"><b>CRS</b><p>Vendor identity checks on sandbox test personas.</p></div>
+      <div class="card int"><b>Bright Data</b><p>SF business registry and web presence, timestamped.</p></div>
+      <div class="card int"><b>Moss</b><p>Memory of how people resolved similar cases.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="kick">Go deeper</div>
+    <h2>See it, read it, try it.</h2>
+    <!-- When the video is up: set src to the YouTube embed URL and delete the word hidden. -->
+    <iframe class="video" title="Signet demo video" src="about:blank" loading="lazy" allowfullscreen hidden></iframe>
+    <div class="links">
+      <a class="card link" href="/where-did-the-50-dollars-go"><h3>Live demo</h3><p>Follow one request from receipt to release, with two different people signing.</p><span class="go">Open →</span></a>
+      <a class="card link" href="/deck"><h3>Slides</h3><p>The whole idea in eight slides.</p><span class="go">Open →</span></a>
+      <a class="card link" href="/memo"><h3>Investor memo</h3><p>Market, architecture, risks and the pilot plan.</p><span class="go">Open →</span></a>
+    </div>
+  </section>
+
+  <footer>
+    <span>Signet · built solo by Boss Huang at Cal Hacks 13.0</span>
+    <span>Bay County Youth &amp; Family Services is fictional. All clients, funders and documents are synthetic.</span>
+  </footer>
+</div>
+</body>
+</html>

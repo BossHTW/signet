@@ -1,0 +1,47 @@
+{
+  "vendorQuery": "Pacific Gas & Electric Company",
+  "sfBusiness": {
+    "found": true,
+    "count": 6,
+    "dbaNames": [
+      "Pacific Gas And Electric Company",
+      "Pacific Gas And Electric Company Substation J",
+      "Pacific Gas & Electric Company"
+    ],
+    "ownerNames": [
+      "Pacific Gas & Electric Co"
+    ],
+    "firstStart": "1968-10-01",
+    "active": true,
+    "source": "data.sf.gov"
+  },
+  "web": {
+    "found": true,
+    "results": [
+      {
+        "title": "PG&E: Pacific Gas & Electric Company",
+        "link": "https://www.pge.com/en.html",
+        "displayLink": "https://www.pge.com › ..."
+      },
+      {
+        "title": "Pacific Gas and Electric Company",
+        "link": "https://en.wikipedia.org/wiki/Pacific_Gas_and_Electric_Company",
+        "displayLink": "https://en.wikipedia.org › wiki › Pacific_Gas_and_Elect..."
+      },
+      {
+        "title": "The Pacific Gas & Electric Company (PG&E) - ACT News",
+        "link": "https://www.act-news.com/buyers-guide/the-pacific-gas-electric-company-pge/",
+        "displayLink": "https://www.act-news.com › buyers-guide › the-pacific-g..."
+      },
+      {
+        "title": "Pacific Gas & Electric Company",
+        "link": "https://www.sfserviceguide.org/organizations/323",
+        "displayLink": "https://www.sfserviceguide.org › organizations"
+      }
+    ],
+    "source": "Google (JSON) via Bright Data"
+  },
+  "fetchedAt": "2026-10-25T11:09:49.531Z",
+  "source": "BRIGHTDATA",
+  "errors": []
+}

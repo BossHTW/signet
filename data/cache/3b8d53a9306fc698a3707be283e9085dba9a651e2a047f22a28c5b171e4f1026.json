@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgNnupBGgt9vubUDGgN31",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_011NjQwYJvq4sjXfdNeNi2Rp",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "utility_bill",
+          "confidence": 0.7
+        },
+        "vendorName": {
+          "value": "Pacific Gas & Electric Company",
+          "confidence": 0.75,
+          "evidence": "PG&E PAYMENT CONFIRMATION"
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "amountCents": {
+          "value": 5000,
+          "confidence": 0.85,
+          "evidence": "Amount paid: $50.00"
+        },
+        "date": {
+          "value": "2026-10-18",
+          "confidence": 0.9,
+          "evidence": "Payment date: 2026-10-18"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Electric service",
+              "cents": 5000,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.85
+        },
+        "notes": "This is a payment confirmation, not a bill; it shows a $50.00 payment on account ending 4471 and no client name or service address. The vendor name 'PG&E' is inferred from the case manager's note and the document's 'PG&E' header."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1582,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 514,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfsmhaDYqLxwPhA2dDq",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01KMCMVF2eBnJn5X67t1sLfM",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "utility_bill",
+          "confidence": 0.85
+        },
+        "vendorName": {
+          "value": "Northbay Internet Services",
+          "confidence": 0.97,
+          "evidence": "Northbay Internet Services"
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0.2
+        },
+        "address": {
+          "value": "Service address on file (street address not shown in text)",
+          "confidence": 0.3
+        },
+        "amountCents": {
+          "value": 19900,
+          "confidence": 0.93,
+          "evidence": "AMOUNT DUE: $199.00"
+        },
+        "date": {
+          "value": "2026-09-30",
+          "confidence": 0.95,
+          "evidence": "Statement date: 2026-09-30"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Service charges",
+              "cents": 19900,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "Document is an account statement with no client name or street address in the text; total due $199.00 with a single service charge line, no late fees or reconnection penalties shown."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1590,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 480,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

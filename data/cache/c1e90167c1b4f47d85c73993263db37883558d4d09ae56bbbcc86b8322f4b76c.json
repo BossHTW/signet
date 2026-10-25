@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfz9DYeY3GnVAZZB6Lj",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01JyoAF77EmuacnhLjcb4fx2",
+      "name": "record_extraction",
+      "input": {
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0.1
+        },
+        "amountCents": {
+          "value": 9500,
+          "confidence": 0.9,
+          "evidence": "Total $95.00"
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0.1
+        },
+        "date": {
+          "value": "2026-10-11",
+          "confidence": 0.9,
+          "evidence": "2026-10-11"
+        },
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.8
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Transit fare",
+              "cents": 9500,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "Short OCR text with no address or client name; a $95.00 transit fare is unusually high for a single fare, so the amount may warrant a check against the source.",
+        "vendorName": {
+          "value": "Bay Area Rapid Transit",
+          "confidence": 0.9,
+          "evidence": "Bay Area Rapid Transit"
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1560,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 466,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

@@ -1,0 +1,65 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNKEZDcqEkR5Pr5VB5Cd",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01XQ15EisNKmPx2fXRfAMoER",
+      "name": "record_extraction",
+      "input": {
+        "vendorName": {
+          "value": "Metro by T-Mobile",
+          "confidence": 0.95,
+          "evidence": "Metro by T-Mobile"
+        },
+        "docType": {
+          "value": "utility_bill",
+          "confidence": 0.85
+        },
+        "date": {
+          "value": "2026-10-12",
+          "confidence": 0.95,
+          "evidence": "2026-10-12"
+        },
+        "amountCents": {
+          "value": 7500,
+          "confidence": 0.95,
+          "evidence": "Total $75.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly plan",
+              "cents": 7500
+            }
+          ],
+          "confidence": 0.95
+        },
+        "notes": "Case manager identified vendor as MetroPCS, but document header shows \"Metro by T-Mobile\" (MetroPCS was rebranded to Metro by T-Mobile). Future-dated document (2026)."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1414,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 288,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

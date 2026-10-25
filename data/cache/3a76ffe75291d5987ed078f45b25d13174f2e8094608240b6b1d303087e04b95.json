@@ -1,0 +1,69 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNTHp3NWDnMBk7R6UVgQ",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_018zdhvyWbhbmXbjP647RTri",
+      "name": "record_extraction",
+      "input": {
+        "vendorName": {
+          "value": "Mint Mobile",
+          "confidence": 0.95,
+          "evidence": "MINT MOBILE"
+        },
+        "docType": {
+          "value": "utility_bill",
+          "confidence": 0.85
+        },
+        "date": {
+          "value": "2026-10-18",
+          "confidence": 0.95,
+          "evidence": "Statement date: 2026-10-18"
+        },
+        "clientNameOnDoc": {
+          "value": "Agency family plan",
+          "confidence": 0.8
+        },
+        "amountCents": {
+          "value": 3000,
+          "confidence": 0.95,
+          "evidence": "Amount due (this line): $30.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Unlimited plan (1 of 5 lines)",
+              "cents": 3000
+            }
+          ],
+          "confidence": 0.9
+        },
+        "notes": "This is one line of a 5-line family plan; the document shows Line 2 of 5, and the amount due reflects only this line's share ($30.00 of the $150.00 total plan cost).\""
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1454,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 343,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

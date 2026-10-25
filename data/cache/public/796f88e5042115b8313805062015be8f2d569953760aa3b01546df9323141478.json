@@ -1,0 +1,14 @@
+{
+  "vendorQuery": "Mesa Verde Rideshare Co",
+  "sfBusiness": null,
+  "web": {
+    "found": true,
+    "results": [],
+    "source": "Test fixture (synthetic, not fetched)"
+  },
+  "fetchedAt": "2026-10-25T06:25:56.182Z",
+  "source": "MOCK",
+  "errors": [
+    "synthetic test fixture for rule demo; not Bright Data"
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMg35JjAzwmbhwsJv8bT",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01RbxLKCmYJvdRuN3ex88cxM",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "Cricket Wireless",
+          "confidence": 0.95,
+          "evidence": "Cricket Wireless"
+        },
+        "date": {
+          "value": "2026-10-10",
+          "confidence": 0.9,
+          "evidence": "2026-10-10"
+        },
+        "amountCents": {
+          "value": 9400,
+          "confidence": 0.9,
+          "evidence": "Total $94.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly plan",
+              "cents": 9400,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.85
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "notes": "Document is a short, sparse OCR text with no client name or address; the case manager describes it as a phone bill, but the text reads like a monthly plan receipt, so docType is uncertain."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1553,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 470,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

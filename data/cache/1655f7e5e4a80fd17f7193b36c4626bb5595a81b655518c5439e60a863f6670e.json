@@ -1,0 +1,64 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNKFnLgnJmqTbzwXkunL",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01X2wg3tATRpsRvty466wHsg",
+      "name": "record_extraction",
+      "input": {
+        "vendorName": {
+          "value": "Cricket Wireless",
+          "confidence": 0.95,
+          "evidence": "Cricket Wireless"
+        },
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.85
+        },
+        "date": {
+          "value": "2026-10-09",
+          "confidence": 0.95,
+          "evidence": "2026-10-09"
+        },
+        "amountCents": {
+          "value": 6600,
+          "confidence": 0.95,
+          "evidence": "Total $66.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly plan",
+              "cents": 6600
+            }
+          ],
+          "confidence": 0.9
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1411,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 214,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

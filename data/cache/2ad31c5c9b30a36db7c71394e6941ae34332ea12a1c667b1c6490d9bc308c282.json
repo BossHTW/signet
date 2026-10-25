@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMg1xXfZB88L8YVK4ZCe",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01Hb6ZJkvDR2DgqGzYtxY42Y",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "other",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "Bay County Clerk-Recorder",
+          "confidence": 0.95,
+          "evidence": "Bay County Clerk-Recorder"
+        },
+        "date": {
+          "value": "2026-10-13",
+          "confidence": 0.9,
+          "evidence": "2026-10-13"
+        },
+        "amountCents": {
+          "value": 3100,
+          "confidence": 0.93,
+          "evidence": "Total $31.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Document fee",
+              "cents": 3100,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.9
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "notes": "The document is a short receipt-style text with a single $31.00 document fee; it does not name a client or address, and the document type is not explicitly stated, so docType is a low-confidence guess."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1561,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 475,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

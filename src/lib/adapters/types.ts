@@ -8,7 +8,7 @@ export interface BankAdapter {
   /** Postings in the operating account within the window. */
   listPostings(args: { sinceDays: number; today: string }): Promise<BankPosting[]>;
   /** Pay a vendor. Returns the bank's transaction id. */
-  transfer(args: { vendorId: string; vendorName: string; amountCents: number; memo: string }): Promise<{ txnId: string; postedAt: string }>;
+  transfer(args: { vendorId: string; vendorName: string; amountCents: number; memo: string }): Promise<{ txnId: string; postedAt: string; accountId?: string; raw?: unknown }>;
 }
 
 export interface VendorCheckAdapter {

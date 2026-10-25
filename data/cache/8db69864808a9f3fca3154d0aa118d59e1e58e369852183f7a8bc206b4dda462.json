@@ -1,0 +1,69 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNKEG228PbTWmBscGcYB",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_012dBW7v1BheNhfGzUHfoumq",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.95
+        },
+        "vendorName": {
+          "value": "Sunset Residential Partners",
+          "confidence": 0.95,
+          "evidence": "Sunset Residential Partners"
+        },
+        "clientNameOnDoc": {
+          "value": "Priya K.",
+          "confidence": 0.95,
+          "evidence": "Tenant: Priya K."
+        },
+        "date": {
+          "value": "2026-10-10",
+          "confidence": 0.95,
+          "evidence": "Period: 2026-10-10"
+        },
+        "amountCents": {
+          "value": 115000,
+          "confidence": 0.95,
+          "evidence": "Total Due: $1150.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly rent",
+              "cents": 115000
+            }
+          ],
+          "confidence": 0.95
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1446,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 279,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

@@ -1,0 +1,68 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNKG19dF7tkay8v7G1mM",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_018Jp4rCNmgnTcSgkVkerzPF",
+      "name": "record_extraction",
+      "input": {
+        "vendorName": {
+          "value": "Bay County Clerk-Recorder",
+          "confidence": 0.95,
+          "evidence": "Bay County Clerk-…"
+        },
+        "date": {
+          "value": "2026-10-13",
+          "confidence": 0.95,
+          "evidence": "2026-10-13"
+        },
+        "amountCents": {
+          "value": 7000,
+          "confidence": 0.95,
+          "evidence": "Total $70.00"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Document fee",
+              "cents": 7000,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.95
+        },
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.9
+        },
+        "clientNameOnDoc": "null",
+        "address": "null",
+        "notes": "Vendor name truncated in OCR (\"Clerk-…\"); inferred from case manager statement."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1418,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 357,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

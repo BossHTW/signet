@@ -1,0 +1,34 @@
+{
+  "model": "claude-sonnet-5-5",
+  "id": "msg_011CgMirGv24fWTvWkKVKG6f",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "thinking",
+      "thinking": "",
+      "signature": "CAQSzQoKEAgTGAI4AUIIdGhpbmtpbmcSDOA4vB0vdowTOv3WRBoMVVF7MHSwWEdZI+xVIjAIoY/wEhkMLFyT/0IV4xYrVO6MHChU7y5SpabthnB+PtWACDdW1dDud4KQrinKuPYq6gnmTwSX0Eh87caCzzTwGRipKfdj4jESseJcHsiOgxuzCRYJ54Tx2QzBzRTTsHCOfnMWZJcrzV00H2jksElWcI2N/bUVS1O9f6JPGeczBIUAQQBA75S1Yvn+GXdU6nSqqeQ0TY15EmVgECNwOVg3CVRoe0nWVzdHxn6JPJGaQ90MO0GuaSrJefB2gDn/Hm9PXeLT8QA+AnaWmcvO0/GE3oyPvj/5C9W8dceFwj/wdQr6/gVZB7V8XsNSCcyIj1aygdXXMbGSLbItdHi1s1v/D4NqW4BsXidqEGgLz7vvMqgt0ScVgalvOjn41brfh9ZtyOEdsvXiugCNWgeOORc+URV7e5ZJq+TB8q+7K6c9FQBtSsdEzKPEbEmKdKLtcCUzzSQsN2BaF+/sEo6hOKkq6MBuC5kbbLL3Pauo3RTv9Vd8oYBVSXcw5xmgCieXEwHxmSL1+2X32kG6QtLABgRMeTOfDqPoYlu0Lx8xIj1yDG2QY1o9jctnpQ5+gsSCoZzRshswhv6Glc3KA2mn7OTmBKTc6Z6OZI9QhpTtVuE0FfmSIqat7da1yRTJjjfePPO0laJKPwb9JhcTvBhea2I1JHwgO1lNkV6Nf/KThkRy2u0YR8RgmOhDH8cdVjEyVXdTlhOtAzQkDyRjSNSSSqPobTNhcjWh+V+OKIebEBKJs8qzfnb+hjiMHXQ4QOvJvZi7/WfwWn3w9z59RKyxGasub8mml89NCr48/AQjJ7wP/A82UfTCIbYVBHf+h3r9B1H9xth2cUAoX51tYLrh6ACFbamf0CN/vF0urZqSHe6/BSmukpcf4sapojY/50NkOUVGtpyaKhlYOBuSn/JWAi5+lPG1Ff8lae5RJfnY0ku1x/rVAUmch9iXAeepYBlxmqH4RfwEUrO1omZAGKAxLwjMCh8HpgE6iQpX1hyIUi8s85t0+jwhZ0EfD34mgfK3kt6MAsKhem9Fp+vR5LOcithW29Rvjbz2QQjNQxIIqm7T4EyZKjOSRPagdf5datOt2i+/PQEXSYYxOiD8AG9IR9giLPu5lKoKqNLTTWgF9tTvB2fKK5yc5aIM68zRHlCnRuYYg+xb+JnQQvfQ55tztsgUvapEKszdJlbZ77PnSt5KTYt169Mo979obFHC3T5msd3enTjupdDNNASzpzVoJLbChc8kds3IDtZdRjut5RhK1ek8lT+XwwRepS/pIBPSVs6Kjq1NA8DKLnKFTGEoWGEnj2n7GLWRO2sPlDs2V3La4lTeNwitLZ7Td61hdPUGV6zbtb2BmwOfVl1TrmO/ropGPoniBoeutAvam3Su5lPoAnyRFvL64u2ljYpPd1SIIKxeWX/6LMMvAANGpXBbI0KTbC6O8xMCG4EKe1SHfb3WM8RrPp8JoRCZTv5HiBb22whgNYkg403plgGYzfoz2L9vtCHQSrXiKLKA/eWhBn2Pepkyjq4a9m8q7Ugvcwlp6CWN4+3c2uBvNnLZpTiZTATwh2gF7icQYoMN3OABuC74KiRxhTQGSh5c5UzKObp3o5d2xwiHNZ/5ANiDFqiPtp+Zps7kcM33rKhvq6WFcK6/tgsGZ96B/ko9oN3f9HIAP0Dhe39r/G1iDbcsCOQYNR2W3b9wx4+2BPYjEO70ScSlppD8PUbsOur+xjHY5bpscsJasOftoxm3sCKRPUcxGAE="
+    }
+  ],
+  "container": null,
+  "stop_reason": "max_tokens",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 521,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 260,
+    "output_tokens_details": {
+      "thinking_tokens": 260
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

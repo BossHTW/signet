@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMfyLWRTKeUKK9oyNWQ7",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01DizMSJn3w3PU6vGfdWzgpU",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "other",
+          "confidence": 0.6
+        },
+        "vendorName": {
+          "value": "Cricket Wireless",
+          "confidence": 0.9,
+          "evidence": "Cricket Wireless"
+        },
+        "date": {
+          "value": "2026-10-05",
+          "confidence": 0.9,
+          "evidence": "2026-10-05"
+        },
+        "amountCents": {
+          "value": 10600,
+          "confidence": 0.3,
+          "evidence": "Monthly plan $106.00; Total $10… (truncated)"
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly plan",
+              "cents": 10600,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.5
+        },
+        "notes": "Document is a wireless phone bill fragment, not clearly labeled; the total line is truncated at \"$10…\" so the total amount is unreadable, and the $106.00 monthly plan is the only confirmed amount. Document type is uncertain.",
+        "clientNameOnDoc": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        }
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1552,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 502,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

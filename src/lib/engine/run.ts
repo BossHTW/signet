@@ -16,6 +16,8 @@ export type RunInput = {
   vendors: MatchInput["vendors"];
   bank: MatchInput["bank"];
   crs: CrsResult | null;
+  publicRecord?: MatchInput["publicRecord"];
+  rent?: MatchInput["rent"];
   history: HistoryItem[];
   activeRules: Pick<RuleProposal, "id" | "predicate" | "action" | "rationale">[];
   limits: Record<Category, number>;
@@ -29,7 +31,7 @@ export function runChecks(i: RunInput): RunResult {
     request: i.request, client: i.client, extracted: i.extracted, documentHashes: i.documentHashes,
     grants: i.grants, history: i.history, activeRules: i.activeRules, limits: i.limits, today: i.today,
   });
-  const matchRes = match({ request: i.request, extracted: i.extracted, vendors: i.vendors, bank: i.bank, crs: i.crs });
+  const matchRes = match({ request: i.request, extracted: i.extracted, vendors: i.vendors, bank: i.bank, crs: i.crs, publicRecord: i.publicRecord ?? null, rent: i.rent ?? null });
 
   const ctx: RuleCtx = {
     ...buildPolicyCtx(
@@ -43,6 +45,6 @@ export function runChecks(i: RunInput): RunResult {
     "grant.id": policy.allocation[0]?.grantId ?? null,
   };
 
-  const decision = decide({ category: i.request.category, requestedCents: i.request.requestedCents, policy, matchRes, limits: i.limits, activeRules: i.activeRules, ctx });
+  const decision = decide({ category: i.request.category, requestedCents: i.request.requestedCents, policy, matchRes, limits: i.limits, activeRules: i.activeRules, ctx, clientId: i.request.clientId });
   return { policy, matchRes, decision, ctx };
 }

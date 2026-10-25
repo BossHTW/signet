@@ -1,0 +1,34 @@
+{
+  "model": "claude-sonnet-5-5",
+  "id": "msg_011CgMfueJd9VjQrazJxjhkW",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "thinking",
+      "thinking": "",
+      "signature": "CAQSuQcKEAgTGAI4AUIIdGhpbmtpbmcSDHNJcdW5odBI0+/5xBoMw2+hJpyAPd+bnAvBIjCUyp87HETh49itBZtS9UcnpTOpN6mBCBtldtn/0pEnOzwoWbZGQ56Zum1s8mYOD/Uq1gbJFcgrgSbo8clWbhQMEW+ZUcRpCeb3N8/q8u9++lc0a2jeb9lVvcOHi/4nJ0/B2Zep83H+uDjw6EYBhbLRsq2ykWDvG3+FyDyedEgBvqEh9w7yzRKai5UVMKqScT+IAWyL2MMGf5HdacUEIg8E116oP+NZN0EtgLEB12y0lkn2Y8dmUM73qVolCxuaBkh1W6eW8TDVf2GHXM1/Kp5nHl4oFwfTpWlYWQFreB7zpZgwGWhTv4gKOKUXtpbcjIi2jTD0pxZSYixG02aWU3rb5G3bYDm1k8OjKgGMBMEkQrIOvwxMmerNpPmxZDOdsDXRLwAxCBijfcfZdsWI8nJqwQd7Dunsfq0X4Q6tCT8Dxl9ryaIxsPUwC5M/I/ah39ZBjFyjLE98SKtzMsfZVV1n/3nkkAdMxDtx6P+jyHClru5p01CfTQEqJnBYjmfnXOss4fnxYKyXs4DmZwRyWLrbmudJhtH8IrIZLUWH5bDEwz7EtBosq51075ea7gFTdf6wfeaw8f22M3ZpfVMshsHOzET3ZaUZVncQI8jiK4CyLrYxuWBE2l/P3oCkkd0sDS28CsOULpvtQmRzre3G7swHW6yt9phjmvXesdh+KYrkh+G8OlFHqRUgqBvXBSde+nBPMd+NI23jOhLy6lvLv9Ly0GQrU3zouBS9W2B2L27PrYy2cJxW/BQl6GWw0FsJKn1yRKyzZ7i+unKgnqr/Db4yWyEv8q8GC267zCdW+/pu/bMnf0kBHpEJTW0nKKCXAXpEKuRfSmmXfBkrAgxrhZD1bvjPXbb8LC48bYIybScnVxvTJQvk+iSFWEk3p92iyT6h8RtcenYdD3Sd7q4tSGhUDkhLnQ00vc+OAy77OgdBDVZd7k0+guMPnPV/cWKfPYiXB+I9BAaVzB8FJOWokjb0DwSiblRLvB73vrxwEW+y3UH+mDSY07EK24ZYM0Mx+U0KqA+evQEl4zOiN0fAJ/+p4v+9LR5wNvdGAUQie57EJyKz8391XwI90lrFlcSZnmhnmCaMfOXjcxTrG2PM8fVnOtNfolJZTDWjDGvrYLVihJq/mmy0PTPKCD1xfRFdGkNBVyFOhg3/TByI1A27DpGBd6KRXl/8pbtK2GDKhUrUSFu3F8oyBRdfzxgB"
+    }
+  ],
+  "container": null,
+  "stop_reason": "max_tokens",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 250,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 120,
+    "output_tokens_details": {
+      "thinking_tokens": 120
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

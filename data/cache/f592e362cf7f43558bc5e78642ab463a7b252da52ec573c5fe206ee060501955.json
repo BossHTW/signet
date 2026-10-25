@@ -1,0 +1,77 @@
+{
+  "model": "claude-haiku-5-5",
+  "id": "msg_011CgMg3PZakbfMXVK5jV2V7",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01LorUXQe4tBc9murxrYyQU9",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.85
+        },
+        "vendorName": {
+          "value": "Mission Terrace Apartments LP",
+          "evidence": "Mission Terrace Apartments LP",
+          "confidence": 0.9
+        },
+        "clientNameOnDoc": {
+          "value": "Sofia F.",
+          "confidence": 0.85
+        },
+        "date": {
+          "value": "2026-10-15",
+          "evidence": "Period: 2O26-10-15",
+          "confidence": 0.7
+        },
+        "amountCents": {
+          "value": 53600,
+          "evidence": "Total Due: $536.00",
+          "confidence": 0.95
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly rent",
+              "cents": 53600,
+              "flag": "other"
+            }
+          ],
+          "confidence": 0.95
+        },
+        "address": {
+          "value": "<UNKNOWN>",
+          "confidence": 0
+        },
+        "notes": "Document is labeled a rent receipt/statement but is not a lease; the 'Period' date has an OCR-like character ('2O26' with letter O) which I read as 2026; the vendor name matches the case manager's 'MISSION TERRACE APTS' but the document reads 'Mission Terrace Apartments LP'. No address appears on the document."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1605,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 536,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

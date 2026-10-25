@@ -1,7 +1,7 @@
 import { sqliteTable, text, integer, index } from "drizzle-orm/sqlite-core";
 import type {
   Category, Eligibility, Extracted, Trigger, Allocation, Seal, AuditType, Predicate,
-  RuleAction, RuleStatus, ReportRow, Outcome, RequestStatus, SealKind, CrsStatus, Program,
+  RuleAction, RuleStatus, ReportRow, Outcome, RequestStatus, SealKind, CrsStatus, Program, BatchStatus,
 } from "./types";
 
 export const caseManagers = sqliteTable("case_managers", {
@@ -98,7 +98,25 @@ export const decisions = sqliteTable("decisions", {
   seal: text("seal", { mode: "json" }).$type<Seal>().notNull(),
   decidedAt: text("decided_at").notNull(),
   decisionMs: integer("decision_ms").notNull(),
+  batchId: text("batch_id"),
 });
+
+// A release batch: opened by the Approver over READY + human-APPROVED items, certified after the sample is attested, released by a different person.
+export const releaseBatches = sqliteTable("release_batches", {
+  id: text("id").primaryKey(),
+  status: text("status").$type<BatchStatus>().notNull().default("OPEN"),
+  itemIds: text("item_ids", { mode: "json" }).$type<string[]>().notNull(),
+  sampleIds: text("sample_ids", { mode: "json" }).$type<string[]>().notNull(),
+  attestedIds: text("attested_ids", { mode: "json" }).$type<string[]>().notNull().default([]),
+  totalCents: integer("total_cents").notNull(),
+  openedBy: text("opened_by").notNull(),
+  openedAt: text("opened_at").notNull(),
+  certifiedBy: text("certified_by"),
+  certifiedAt: text("certified_at"),
+  releasedBy: text("released_by"),
+  releasedAt: text("released_at"),
+});
+export type ReleaseBatch = typeof releaseBatches.$inferSelect;
 
 export const auditEvents = sqliteTable("audit_events", {
   seq: integer("seq").primaryKey({ autoIncrement: true }),

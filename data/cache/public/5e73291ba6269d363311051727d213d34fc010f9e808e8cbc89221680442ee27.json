@@ -1,0 +1,54 @@
+{
+  "vendorQuery": "Metro by T-Mobile",
+  "sfBusiness": {
+    "found": true,
+    "count": 10,
+    "dbaNames": [
+      "Metro By T-Mobile"
+    ],
+    "ownerNames": [
+      "Ew Express LLC",
+      "Techno Ca LLC",
+      "T-Mobile Usa, Inc.",
+      "Aloba Sf Inc",
+      "Diamond Wireless"
+    ],
+    "firstStart": "2019-01-01",
+    "active": true,
+    "source": "data.sf.gov"
+  },
+  "web": {
+    "found": true,
+    "results": [
+      {
+        "title": "Find Metro by T-Mobile locations in San Francisco, CA",
+        "link": "https://www.metrobyt-mobile.com/stores/ca/san-francisco/?srsltid=AYCX9vL-QWaJIKalvkcbEnU5Ftmhc5Y-pLCC-AI9iyKajvgTFY9Q5EdG",
+        "displayLink": "https://www.metrobyt-mobile.com › stores › san-francisco"
+      },
+      {
+        "title": "Metro by T-Mobile®: Prepaid Phone Plans, Devices & More",
+        "link": "https://www.metrobyt-mobile.com/?srsltid=AYCX9vJORv2xXnzs9XgSAWkqCt20JVCRg_OJ4MRPSGrP5sxit7OdTMw8",
+        "displayLink": "https://www.metrobyt-mobile.com"
+      },
+      {
+        "title": "Find Metro by T-Mobile locations in San Bruno, CA",
+        "link": "https://www.metrobyt-mobile.com/stores/ca/san-bruno/?srsltid=AYCX9vJ8LST6XH-VvBUxS9ugM8LDIQMasMoHIHcqyavrcBo72qZEGM6P",
+        "displayLink": "https://www.metrobyt-mobile.com › stores › san-bruno"
+      },
+      {
+        "title": "Metro by T-Mobile - San Francisco, California",
+        "link": "https://www.yelp.com/biz/metro-by-t-mobile-san-francisco-3",
+        "displayLink": "https://www.yelp.com › ... › Shopping › Mobile Phones"
+      },
+      {
+        "title": "Metro by T-Mobile - San Francisco",
+        "link": "https://www.mapquest.com/us/california/metro-by-t-mobile-11773511",
+        "displayLink": "https://www.mapquest.com › ... › San Francisco › 94110"
+      }
+    ],
+    "source": "Google (JSON) via Bright Data"
+  },
+  "fetchedAt": "2026-10-25T09:46:57.375Z",
+  "source": "BRIGHTDATA",
+  "errors": []
+}

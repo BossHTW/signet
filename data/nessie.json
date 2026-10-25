@@ -1,0 +1,26 @@
+{
+  "customerId": "2675b9e8-ff3b-469a-a34d-987ad4bf6f69",
+  "accountId": "2dd1cde5-aadf-48d3-9923-d49c7919f735",
+  "merchants": {
+    "GOLDEN GATE TRANSIT": "265fe1bf-2bd6-441a-8cbb-03aaf1da29c5",
+    "BAY WATER SEWER": "9fdabe25-35fd-4c39-9b97-80978bb4f44d",
+    "METROPCS 800-123": "063cc0aa-6004-4706-9789-f4575a7e7122",
+    "NORTHBAY INTERNET": "6e1dd339-defb-486c-ae79-3db58f33467d",
+    "CA DMV FEE": "9efe6391-c5c9-45ed-a46d-d1be4526f2e6",
+    "PGE*ONLINE PMT": "af64d71e-ab08-4468-99e5-01685ee4ed3e",
+    "BART CLIPPER": "37c0bc6e-1329-4a16-b30c-b67a7a47a622",
+    "CRICKET WIRELESS": "6105c2ec-e996-473c-af8f-814a8e1d0577",
+    "HARBOR VIEW HOUSING": "ef050c98-323a-477d-815f-496b0073c882",
+    "WESTSIDE COMMONS MGMT": "336e9e01-abca-4557-8f8f-67e05c4c5ab3",
+    "SUNSET RESIDENTIAL": "14c9ad35-c31f-4ba3-87be-bbf9bc07b933",
+    "BAY CO CLERK": "5ee86cf2-7960-4a8c-b490-ae43b3c9c18a",
+    "BAY PROP MGMT": "88ebaa17-cdb4-467f-bc9c-89d523a34d8d",
+    "MISSION TERRACE APTS": "62c0bf23-2576-494e-8ca3-5b2126f26edb",
+    "UBER TRIP": "49762867-d594-4674-8c44-1915cfe1a2d9",
+    "USPS PO 0944": "1c094efc-1142-4a74-985e-e935dae6cc54",
+    "OFFICE DEPOT 2210": "094884c0-88d9-4600-8db4-eaf89e5f2574",
+    "PAYROLL ADJ": "c78e653e-a3cd-46f2-9289-f5226b2afd8a",
+    "COSTCO WHSE #0472": "362f9dbf-db57-426b-a4d5-96fb44a543d6",
+    "AMZN MKTP US": "acebcd78-953e-4a00-b088-e0ab33ee2bca"
+  }
+}

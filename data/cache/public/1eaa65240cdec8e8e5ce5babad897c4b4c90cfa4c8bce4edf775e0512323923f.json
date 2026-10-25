@@ -1,0 +1,36 @@
+{
+  "vendorQuery": "Bay County Clerk-Recorder",
+  "sfBusiness": {
+    "found": false,
+    "count": 0,
+    "dbaNames": [],
+    "ownerNames": [],
+    "firstStart": null,
+    "active": null,
+    "source": "data.sf.gov"
+  },
+  "web": {
+    "found": true,
+    "results": [
+      {
+        "title": "Office of the County Clerk",
+        "link": "https://www.sf.gov/departments--city-administrator--office-county-clerk",
+        "displayLink": "https://www.sf.gov › departments--city-administrator--o..."
+      },
+      {
+        "title": "welcome to the san francisco county clerk's office",
+        "link": "https://countyclerk.sfgov.org/Portal/",
+        "displayLink": "https://countyclerk.sfgov.org › Portal"
+      },
+      {
+        "title": "San Francisco County Clerk's Office",
+        "link": "https://www.yelp.com/biz/san-francisco-county-clerks-office-san-francisco",
+        "displayLink": "https://www.yelp.com › biz › san-francisco-county-cler..."
+      }
+    ],
+    "source": "Google (JSON) via Bright Data"
+  },
+  "fetchedAt": "2026-10-25T09:48:05.968Z",
+  "source": "BRIGHTDATA",
+  "errors": []
+}

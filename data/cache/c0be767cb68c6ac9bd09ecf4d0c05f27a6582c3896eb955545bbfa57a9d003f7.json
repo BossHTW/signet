@@ -1,0 +1,71 @@
+{
+  "model": "claude-haiku-4-5-20251001",
+  "id": "msg_011CgNKATcv6wfvGLZhSK6Lf",
+  "type": "message",
+  "role": "assistant",
+  "content": [
+    {
+      "type": "tool_use",
+      "id": "toolu_01FGA2AZ9gFwgVKGV2TCjpNE",
+      "name": "record_extraction",
+      "input": {
+        "docType": {
+          "value": "receipt",
+          "confidence": 0.95
+        },
+        "vendorName": {
+          "value": "Westside Commons Management",
+          "confidence": 0.98,
+          "evidence": "Westside Commons Management"
+        },
+        "clientNameOnDoc": {
+          "value": "Marcus H.",
+          "confidence": 0.95,
+          "evidence": "Tenant: Marcus H."
+        },
+        "date": {
+          "value": "2026-10-01",
+          "confidence": 0.95,
+          "evidence": "Period: 2026-10-01"
+        },
+        "amountCents": {
+          "value": 120000,
+          "confidence": 0.55,
+          "evidence": "Total Due: $120000",
+          "notes": "OCR likely dropped decimal; $1200.00 rent shown but total reads $120000 without decimal point. Plausible correction would be $1200.00 = 120000 cents, but the 'Total Due' phrasing suggests this may be malformed. Human review needed."
+        },
+        "lineItems": {
+          "value": [
+            {
+              "label": "Monthly rent",
+              "cents": 120000
+            }
+          ],
+          "confidence": 0.6
+        },
+        "notes": "OCR dropped decimal in total amount field; Total Due shows $120000 instead of likely $1200.00. Verify actual amount owed."
+      },
+      "caller": {
+        "type": "direct"
+      }
+    }
+  ],
+  "container": null,
+  "stop_reason": "tool_use",
+  "stop_sequence": null,
+  "stop_details": null,
+  "usage": {
+    "input_tokens": 1442,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+      "ephemeral_5m_input_tokens": 0,
+      "ephemeral_1h_input_tokens": 0
+    },
+    "output_tokens": 390,
+    "service_tier": "standard",
+    "inference_geo": "not_available",
+    "speed": "standard"
+  },
+  "diagnostics": null
+}

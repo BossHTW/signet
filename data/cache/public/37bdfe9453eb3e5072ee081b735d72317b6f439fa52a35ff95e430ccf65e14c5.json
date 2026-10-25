@@ -1,0 +1,24 @@
+{
+  "vendorQuery": "Golden Gate Rooms LLC",
+  "sfBusiness": {
+    "found": true,
+    "count": 1,
+    "dbaNames": [
+      "The Moss Room"
+    ],
+    "ownerNames": [
+      "Moss And Stone LLC"
+    ],
+    "firstStart": "2008-03-11",
+    "active": false,
+    "source": "data.sf.gov"
+  },
+  "web": {
+    "found": false,
+    "results": [],
+    "source": "DuckDuckGo via Bright Data"
+  },
+  "fetchedAt": "2026-10-25T09:56:26.457Z",
+  "source": "BRIGHTDATA",
+  "errors": []
+}

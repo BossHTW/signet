@@ -4,10 +4,10 @@ import { runWorld } from "../tests/harness";
 
 const world = runWorld();
 const n = world.length;
-const approved = world.filter((o) => o.result.decision.outcome === "APPROVED").length;
+const approved = world.filter((o) => o.result.decision.outcome === "READY").length;
 const escalated = n - approved;
 const planted = world.filter((o) => o.req.plantedAnomaly);
-const caught = planted.filter((o) => o.result.decision.outcome !== "APPROVED");
+const caught = planted.filter((o) => o.result.decision.outcome !== "READY");
 const byCode: Record<string, number> = {};
 for (const o of world) for (const t of o.result.decision.triggers) byCode[t.code] = (byCode[t.code] ?? 0) + 1;
 
