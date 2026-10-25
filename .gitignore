@@ -43,7 +43,10 @@ next-env.d.ts
 
 # signet
 .env.local
-data/*.db
-data/*.db-journal
+data/*.db*
+data/uploads
 data/photos/*
+!data/demo-snapshot.db
+!data/demo-scenario.json
+!data/cache/public/
 !data/photos/.gitkeep

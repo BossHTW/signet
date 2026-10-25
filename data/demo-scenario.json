@@ -1,0 +1,11 @@
+{
+  "act1": "req_act1",
+  "mint": [
+    "req_mint_1",
+    "req_mint_2",
+    "req_mint_3",
+    "req_mint_4",
+    "req_mint_5"
+  ],
+  "reused": "req_mint_reused"
+}
