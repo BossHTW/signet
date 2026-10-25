@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Signet — Slides</title>
-<meta name="description" content="Signet: autonomous verification for public aid payments. Claude reads, code checks, people decide.">
+<meta name="description" content="Signet checks every aid payment before the money moves. People still make the call.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -13,121 +13,146 @@
     --paper:#FAFAF7; --card:#FFFFFF; --ink:#15181A; --ink-2:#5B6168; --ink-3:#8A9097;
     --line:#E4E6E0; --line-2:#CFD3CB;
     --seal:#B3261E; --seal-soft:#FBECEA; --verify:#36587A; --verify-soft:#EAF0F6;
-    --ok:#2E6B3F; --ok-soft:#E7F2EA; --flag:#8A4B00; --signet:#FFD22D;
+    --ok:#2E6B3F; --ok-soft:#E7F2EA; --signet:#FFD22D;
     --disp:"Barlow Condensed",system-ui,sans-serif; --body:"Public Sans",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{height:100%}
   body{background:var(--paper);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased}
   .deck{height:100vh;overflow-y:auto;scroll-snap-type:y mandatory}
-  section{min-height:100vh;scroll-snap-align:start;display:grid;align-items:center;padding:clamp(72px,8vw,120px) clamp(16px,7vw,120px);position:relative}
-  .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:center;width:100%;max-width:1280px;margin:0 auto}
-  .solo{width:100%;max-width:1100px;margin:0 auto}
-  @media (max-width:860px){.split{grid-template-columns:1fr}}
-  .kick{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px}
-  h1,h2{font-family:var(--disp);font-weight:700;line-height:.94;letter-spacing:-.01em}
-  h1{font-size:clamp(56px,10vw,150px)}
-  h2{font-size:clamp(44px,6.4vw,96px)}
-  .sub{font-size:clamp(18px,1.7vw,24px);color:var(--ink-2);line-height:1.45;margin-top:22px;max-width:34ch}
+  section{min-height:100vh;scroll-snap-align:start;display:grid;align-items:center;padding:clamp(64px,6.5vw,92px) clamp(16px,7vw,112px);position:relative}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center;width:100%;max-width:1280px;margin:0 auto}
+  .solo{width:100%;max-width:1180px;margin:0 auto}
+  @media (max-width:880px){.split{grid-template-columns:1fr}.deck{scroll-snap-type:none}section{min-height:auto}}
+  .kick{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:16px}
+  h1,h2{font-family:var(--disp);font-weight:700;line-height:.96;letter-spacing:-.01em}
+  h1{font-size:clamp(46px,7.2vw,112px)}
+  h2{font-size:clamp(38px,5vw,76px)}
+  h2.long{font-size:clamp(34px,4.3vw,64px)}
+  .sub{font-size:clamp(17px,1.6vw,23px);color:var(--ink-2);line-height:1.45;margin-top:20px;max-width:40ch}
   .hl{background:linear-gradient(transparent 62%,var(--signet) 62%)}
-  .red{color:var(--seal)} .green{color:var(--ok)} .blue{color:var(--verify)}
+  .red{color:var(--seal)} .green{color:var(--ok)} .blue{color:var(--verify)} .muted{color:var(--ink-3)}
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 12px 32px rgba(21,24,26,.06)}
   .mono{font-family:var(--mono)}
   .chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.04em;border-radius:999px;padding:5px 11px;white-space:nowrap}
   .chip.esc{background:var(--seal-soft);color:var(--seal)} .chip.ready{background:var(--ok-soft);color:var(--ok)} .chip.info{background:var(--verify-soft);color:var(--verify)}
-  .foot{position:absolute;left:clamp(16px,7vw,120px);bottom:28px;font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.06em}
+  .foot{position:absolute;left:clamp(16px,7vw,112px);right:clamp(16px,7vw,112px);bottom:24px;font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.04em}
 
-  /* reveal */
-  .r{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .6s cubic-bezier(.2,.8,.2,1)}
+  .r{opacity:0;transform:translateY(16px);transition:opacity .55s cubic-bezier(.2,.8,.2,1),transform .55s cubic-bezier(.2,.8,.2,1)}
   section.in .r{opacity:1;transform:none}
-  section.in .r.d1{transition-delay:.12s} section.in .r.d2{transition-delay:.24s} section.in .r.d3{transition-delay:.36s}
+  section.in .r.d1{transition-delay:.12s} section.in .r.d2{transition-delay:.24s} section.in .r.d3{transition-delay:.36s} section.in .r.d4{transition-delay:.48s}
   @media (prefers-reduced-motion:reduce){.r{opacity:1;transform:none;transition:none}}
 
-  /* seal */
-  .seal{width:clamp(150px,18vw,240px);aspect-ratio:1;border:3px solid var(--seal);border-radius:50%;display:grid;place-items:center;text-align:center;color:var(--seal);transform:rotate(-9deg);position:relative;margin:0 auto}
+  /* 1 seal */
+  .seal{width:clamp(150px,17vw,230px);aspect-ratio:1;border:3px solid var(--seal);border-radius:50%;display:grid;place-items:center;text-align:center;color:var(--seal);transform:rotate(-9deg);position:relative;margin:0 auto}
   .seal::after{content:"";position:absolute;inset:10px;border:1.5px solid var(--seal);border-radius:50%;opacity:.55}
   .seal b{font-family:var(--disp);font-size:clamp(26px,3vw,40px);text-transform:uppercase;letter-spacing:.05em;line-height:1}
   .seal span{display:block;font-family:var(--mono);font-size:11px;margin-top:6px;letter-spacing:.1em;text-transform:uppercase}
 
-  /* receipt vs bank */
-  .pair{display:grid;gap:16px}
-  .receipt{padding:22px 24px;font-family:var(--mono);font-size:14px;line-height:1.7}
+  /* 2 bills + checklist */
+  .bills{display:grid;gap:10px}
+  .bill{display:grid;grid-template-columns:1fr auto;gap:4px 12px;padding:14px 18px}
+  .bill b{font-size:16px} .bill .amt{font-family:var(--mono);font-weight:600;text-align:right}
+  .bill .g{grid-column:1/-1;font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+  .checks{margin-top:14px;padding:16px 18px}
+  .checks .t{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+  .checks ul{list-style:none;display:grid;gap:8px;font-size:15px}
+  .checks li{display:flex;gap:10px;align-items:baseline}
+  .checks li::before{content:"";flex:0 0 14px;height:14px;border:1.5px solid var(--line-2);border-radius:4px;transform:translateY(2px)}
+
+  /* 3 gap */
+  .gap{display:grid;grid-template-columns:1fr 1.35fr 1fr;gap:14px;margin-top:40px;align-items:stretch}
+  @media (max-width:880px){.gap{grid-template-columns:1fr}}
+  .col{padding:22px}
+  .col .t{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+  .col .n{font-family:var(--disp);font-size:clamp(26px,2.4vw,34px);font-weight:700;margin-top:6px;line-height:1}
+  .col p{color:var(--ink-2);margin-top:8px;font-size:15px}
+  .hole{border:2px dashed var(--seal);border-radius:16px;padding:22px;background:repeating-linear-gradient(-45deg,transparent 0 10px,rgba(179,38,30,.035) 10px 20px)}
+  .hole .t{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--seal)}
+  .hole .n{font-family:var(--disp);font-size:clamp(26px,2.4vw,34px);font-weight:700;margin-top:6px;color:var(--seal);line-height:1}
+  .hole ul{list-style:none;margin-top:12px;display:grid;gap:8px;font-size:15px}
+  .hole li::before{content:"? ";font-family:var(--mono);font-weight:600;color:var(--seal)}
+
+  /* 4 timeline */
+  .tl{display:grid;grid-template-columns:auto 1fr auto 1fr auto;align-items:center;gap:12px;margin-top:40px}
+  @media (max-width:880px){.tl{grid-template-columns:1fr}.tl .bar{height:28px;width:2px;margin:0 auto}}
+  .ev{padding:18px 20px;text-align:center;min-width:170px}
+  .ev .w{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+  .ev .x{font-family:var(--disp);font-size:28px;font-weight:700;margin-top:6px;line-height:1}
+  .bar{height:2px;background:repeating-linear-gradient(90deg,var(--line-2) 0 8px,transparent 8px 14px)}
+  .slips{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+
+  /* 5 receipt vs bank */
+  .pair{display:grid;gap:14px}
+  .receipt{padding:20px 22px;font-family:var(--mono);font-size:14px;line-height:1.7}
   .receipt .t{font-weight:600;letter-spacing:.08em}
   .receipt .amt{font-family:var(--disp);font-size:44px;font-weight:700;line-height:1;margin-top:8px}
-  .feed{padding:8px 0}
   .feed .h{display:flex;justify-content:space-between;padding:10px 20px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);border-bottom:1px solid var(--line)}
   .row{display:grid;grid-template-columns:70px 1fr auto;gap:12px;padding:11px 20px;font-family:var(--mono);font-size:13px;border-bottom:1px solid var(--line);color:var(--ink-2)}
-  .row:last-child{border-bottom:0}
-  .row.miss{color:var(--seal);background:repeating-linear-gradient(-45deg,transparent 0 8px,rgba(179,38,30,.05) 8px 16px);border:1.5px dashed var(--seal);border-radius:10px;margin:8px 12px;font-weight:600}
+  .row.miss{color:var(--seal);border:1.5px dashed var(--seal);border-radius:10px;margin:8px 12px;font-weight:600}
   .verdict{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 18px}
   .verdict p{font-size:14px;color:var(--ink-2)}
 
-  /* three steps */
-  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
-  @media (max-width:860px){.steps{grid-template-columns:1fr}}
-  .step{padding:26px}
+  /* 6 steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  @media (max-width:880px){.steps{grid-template-columns:1fr}}
+  .step{padding:24px}
   .step .n{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
-  .step .v{font-family:var(--disp);font-size:clamp(34px,3.6vw,52px);font-weight:700;line-height:1;margin-top:10px}
-  .step p{color:var(--ink-2);margin-top:10px;line-height:1.45;font-size:16px}
+  .step .v{font-family:var(--disp);font-size:clamp(32px,3.2vw,46px);font-weight:700;line-height:1;margin-top:10px}
+  .step p{color:var(--ink-2);margin-top:10px;line-height:1.45;font-size:15px}
 
-  /* two people */
-  .people{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center}
-  .person{padding:24px;text-align:center}
-  .person .role{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
-  .person .nm{font-family:var(--disp);font-size:34px;font-weight:700;margin-top:8px}
-  .person p{font-size:14px;color:var(--ink-2);margin-top:6px}
-  .neq{font-family:var(--disp);font-size:56px;color:var(--seal);font-weight:700}
-  .chain{display:flex;gap:6px;margin-top:22px;flex-wrap:wrap}
-  .chain span{font-family:var(--mono);font-size:11px;padding:6px 9px;border:1px solid var(--line-2);border-radius:8px;color:var(--ink-2);background:var(--card)}
-
-  /* rule flip */
-  .rule{padding:18px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-  .rule b{font-family:var(--disp);font-size:26px}
-  .reqs{margin-top:14px;padding:6px 0}
-  .req{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;padding:12px 20px;border-bottom:1px solid var(--line);font-size:14px}
+  /* 7 rule flip */
+  .rule{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .rule b{font-family:var(--disp);font-size:24px}
+  .reqs{margin-top:12px}
+  .req{display:grid;grid-template-columns:1fr auto auto;gap:14px;align-items:center;padding:11px 20px;border-bottom:1px solid var(--line);font-size:14px}
   .req:last-child{border-bottom:0}
   .req .amt{font-family:var(--mono);color:var(--ink-2)}
   .flip .chip.ready{display:none}
   section.in .flip .chip.esc{animation:out .3s ease forwards}
   section.in .flip .chip.ready{display:inline-flex;animation:inn .35s ease both}
-  section.in .flip:nth-child(1) .chip{animation-delay:1.0s} section.in .flip:nth-child(2) .chip{animation-delay:1.3s}
+  section.in .flip:nth-child(1) .chip{animation-delay:1s} section.in .flip:nth-child(2) .chip{animation-delay:1.3s}
   section.in .flip:nth-child(3) .chip{animation-delay:1.6s} section.in .flip:nth-child(4) .chip{animation-delay:1.9s}
   @keyframes out{to{opacity:0;width:0;padding:0;margin:0;overflow:hidden}}
   @keyframes inn{from{opacity:0;transform:scale(.8)}to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){section.in .flip .chip{animation:none}}
-  .never{margin-top:16px;padding:14px 20px;border-radius:12px;background:var(--seal-soft);color:var(--seal);font-size:14px;font-weight:600}
+  .req.stay{background:var(--seal-soft)}
+  .never{margin-top:12px;padding:12px 18px;border-radius:12px;background:var(--seal-soft);color:var(--seal);font-size:14px;font-weight:600}
 
-  /* integrations */
-  .ints{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px}
+  /* 8 value */
+  .vals{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+  @media (max-width:880px){.vals{grid-template-columns:1fr}}
+  .val{padding:26px}
+  .val .v{font-family:var(--disp);font-size:clamp(30px,3vw,42px);font-weight:700;line-height:1}
+  .val p{color:var(--ink-2);margin-top:10px;font-size:15px;line-height:1.45}
+  .buyer{margin-top:18px;padding:16px 22px;display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-size:15px;color:var(--ink-2)}
+  .buyer b{color:var(--ink)}
+
+  /* 9 integrations */
+  .ints{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:36px}
   @media (max-width:980px){.ints{grid-template-columns:repeat(2,1fr)}}
   @media (max-width:520px){.ints{grid-template-columns:1fr}}
-  .int{padding:20px}
-  .int .nm{font-family:var(--disp);font-size:26px;font-weight:700}
-  .int p{font-size:14px;color:var(--ink-2);margin-top:8px;line-height:1.45}
-  .real{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
-  @media (max-width:700px){.real{grid-template-columns:1fr}}
-  .real div{padding:16px 20px;font-size:14px;color:var(--ink-2);line-height:1.5}
-  .real b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+  .int{padding:18px}
+  .int .nm{font-family:var(--disp);font-size:24px;font-weight:700}
+  .int p{font-size:14px;color:var(--ink-2);margin-top:6px;line-height:1.45}
 
-  /* close */
-  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
   .btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:16px;padding:14px 22px;border-radius:12px;text-decoration:none;border:1.5px solid var(--ink);color:var(--ink)}
   .btn.primary{background:var(--ink);color:var(--paper)}
   .btn:focus-visible{outline:3px solid var(--signet);outline-offset:3px}
 
-  /* chrome */
   .brand{position:fixed;left:clamp(16px,2.4vw,36px);top:20px;z-index:10;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
   .brand .mk{width:26px;height:26px;border-radius:50%;border:2px solid var(--seal);display:grid;place-items:center;color:var(--seal);font-family:var(--disp);font-weight:700;font-size:14px}
   .brand .wm{font-family:var(--disp);font-weight:700;font-size:21px}
   .count{position:fixed;right:clamp(16px,2.4vw,36px);top:22px;z-index:10;font-family:var(--mono);font-size:12px;color:var(--ink-3)}
-  .navbtns{position:fixed;right:clamp(16px,2.4vw,36px);bottom:20px;z-index:10;display:flex;gap:8px}
+  .navbtns{position:fixed;right:clamp(16px,2.4vw,36px);bottom:18px;z-index:10;display:flex;gap:8px}
   .navbtns button{width:40px;height:40px;border-radius:10px;border:1px solid var(--line-2);background:var(--card);color:var(--ink);font-size:18px;cursor:pointer}
   .navbtns button:focus-visible{outline:3px solid var(--signet);outline-offset:2px}
 </style>
 </head>
 <body>
 <a class="brand" href="/" aria-label="Signet home"><span class="mk">S</span><span class="wm">Signet</span></a>
-<div class="count" id="count" aria-live="polite">1 / 8</div>
+<div class="count" id="count" aria-live="polite">1 / 10</div>
 <div class="navbtns"><button id="prev" aria-label="Previous slide">↑</button><button id="next" aria-label="Next slide">↓</button></div>
 
 <main class="deck" id="deck">
@@ -136,130 +161,161 @@
   <section data-label="Title">
     <div class="split">
       <div>
-        <div class="kick r">Signet · Cal Hacks 13.0</div>
-        <h1 class="r d1">Not a <span class="hl">rubber stamp.</span></h1>
-        <p class="sub r d2">Checks every aid payment before the money moves. People still make the call.</p>
+        <div class="kick r">Signet</div>
+        <h1 class="r d1">Every aid payment, <span class="hl">checked</span> before the money moves.</h1>
+        <p class="sub r d2">For nonprofits and county agencies that pay rent, bills and fees on behalf of people in crisis.</p>
       </div>
-      <div class="r d2"><div class="seal"><div><b>Sealed</b><span>by two people</span></div></div></div>
+      <div class="r d2"><div class="seal"><div><b>Not a rubber stamp</b><span>notarubberstamp.biz</span></div></div></div>
     </div>
   </section>
 
   <!-- 2 -->
-  <section data-label="Problem">
-    <div class="solo">
-      <div class="kick r">The problem</div>
-      <h2 class="r d1">Small payments.<br>Strict rules.<br><span class="red">One tired signature.</span></h2>
-      <p class="sub r d2" style="max-width:52ch">County aid agencies pay rent, utilities, phone lines and bus passes for clients. Every dollar has grant rules attached. Under volume, review becomes a rubber stamp.</p>
+  <section data-label="Today">
+    <div class="split">
+      <div>
+        <div class="kick r">How it works today</div>
+        <h2 class="long r d1">Nonprofits pay a stream of small bills for people in crisis, and <span class="red">check each one by hand.</span></h2>
+        <p class="sub r d2">Each payment comes out of a grant, and each grant has its own rules about who qualifies, how much, and for what. A person checks every bill against all of it, then signs.</p>
+      </div>
+      <div>
+        <div class="bills">
+          <div class="card bill r d1"><b>Rent · one month</b><span class="amt">$1,200</span><span class="g">Emergency housing grant</span></div>
+          <div class="card bill r d1"><b>Utility bill · PG&amp;E</b><span class="amt">$50</span><span class="g">Utility assistance fund</span></div>
+          <div class="card bill r d2"><b>Phone line · Mint Mobile</b><span class="amt">$30</span><span class="g">Youth connectivity grant</span></div>
+        </div>
+        <div class="card checks r d3">
+          <div class="t">For every one, someone checks</div>
+          <ul><li>Is this allowed under the grant?</li><li>Did the money actually leave the bank?</li><li>Is the vendor real?</li><li>Has this receipt been paid before?</li></ul>
+        </div>
+      </div>
     </div>
-    <div class="foot">Bay County Youth &amp; Family Services is fictional. All data is synthetic.</div>
   </section>
 
   <!-- 3 -->
-  <section data-label="The moment">
-    <div class="split">
-      <div>
-        <div class="kick r">The moment</div>
-        <h2 class="r d1">Where did<br>the <span class="hl">$50</span> go?</h2>
-        <p class="sub r d2">A client asks to be reimbursed for a utility bill they say was paid. The receipt looks fine. The bank says the money never left.</p>
-      </div>
-      <div class="pair">
-        <div class="card receipt r d1">
-          <div class="t">PG&amp;E · PAYMENT CONFIRMATION</div>
-          <div>Account ****4471 · Oct 18</div>
-          <div class="amt">$50.00</div>
-        </div>
-        <div class="card feed r d2" aria-label="Bank feed">
-          <div class="h"><span>Operating account · Nessie</span><span>last 60 days</span></div>
-          <div class="row"><span>Oct 16</span><span>MINT MOBILE</span><span>−$30.00</span></div>
-          <div class="row"><span>Oct 14</span><span>BART CLIPPER</span><span>−$42.00</span></div>
-          <div class="row miss"><span>—</span><span>PG&amp;E · $50.00</span><span>not found</span></div>
-        </div>
-        <div class="card verdict r d3"><span class="chip esc">ESCALATED · BANK-LOW</span><p>Stopped before a cent moves. A person checks.</p></div>
+  <section data-label="The gap">
+    <div class="solo">
+      <div class="kick r">The gap</div>
+      <h2 class="long r d1">Case software records who got help. Accounting records what was paid. <span class="red">Nothing checks the payment itself.</span></h2>
+      <div class="gap">
+        <div class="card col r d1"><div class="t">Case management</div><div class="n">Who got help</div><p>Client records, case notes, eligibility.</p></div>
+        <div class="hole r d2"><div class="t">Unchecked today</div><div class="n">Should this payment go out?</div>
+          <ul><li>Allowed by this grant's rules</li><li>Money really left the bank</li><li>Vendor exists</li><li>Not paid twice</li></ul></div>
+        <div class="card col r d3"><div class="t">Accounting</div><div class="n">What was paid</div><p>Ledger entries after the money is gone.</p></div>
       </div>
     </div>
+    <div class="foot">Insight from conversations with the lead grants accountant at Larkin Street Youth Services, San Francisco.</div>
   </section>
 
   <!-- 4 -->
-  <section data-label="How it works">
+  <section data-label="Why it matters">
     <div class="solo">
-      <div class="kick r">How it works</div>
-      <h2 class="r d1">Claude reads. Code checks.<br><span class="red">People decide.</span></h2>
-      <div class="steps">
-        <div class="card step r d1"><div class="n">01 · Claude</div><div class="v blue">Reads</div><p>Turns a receipt, lease or bill into fields with a confidence for each. It never decides.</p></div>
-        <div class="card step r d2"><div class="n">02 · Deterministic code</div><div class="v">Checks</div><p>Grant rules, duplicates, the bank feed, vendor identity, public records. Same input, same answer.</p></div>
-        <div class="card step r d3"><div class="n">03 · Two people</div><div class="v red">Decide</div><p>The system can only say Ready or Escalated. Approving and paying belong to named people.</p></div>
+      <div class="kick r">Why it matters</div>
+      <h2 class="r d1">So mistakes surface at audit, months later, <span class="red">and the money gets paid back.</span></h2>
+      <div class="tl">
+        <div class="card ev r d1"><div class="w">Day 1</div><div class="x">Bill is paid</div></div>
+        <div class="bar r d1" aria-hidden="true"></div>
+        <div class="card ev r d2"><div class="w">Months later</div><div class="x">Audit finds it</div></div>
+        <div class="bar r d2" aria-hidden="true"></div>
+        <div class="card ev r d3" style="border-color:var(--seal)"><div class="w red">The cost</div><div class="x red">Repaid from other funds</div></div>
       </div>
+      <p class="sub r d3" style="max-width:60ch">A funder can require money spent outside its rules to be paid back. For a nonprofit, that comes out of money meant for other people. What slips through:</p>
+      <div class="slips r d4"><span class="chip esc">Same receipt paid twice</span><span class="chip esc">Reimbursing a bill that was never paid</span><span class="chip esc">A vendor that doesn't exist</span><span class="chip esc">A cost the grant doesn't allow</span></div>
     </div>
   </section>
 
   <!-- 5 -->
-  <section data-label="Two people">
+  <section data-label="Signet">
     <div class="split">
       <div>
-        <div class="kick r">Separation of duties</div>
-        <h2 class="r d1">Nothing moves<br>without <span class="hl">two people.</span></h2>
-        <p class="sub r d2">One certifies the batch. A different person releases it. Every step is sealed into a hash-chained log anyone can verify.</p>
+        <div class="kick r">Signet · where did the $50 go?</div>
+        <h2 class="long r d1">Signet checks every payment <span class="hl">before</span> it goes out, and shows its evidence.</h2>
+        <p class="sub r d2">A client asks to be reimbursed $50 for a utility bill. The receipt looks fine. Signet checks the bank: the money never left. It stops the payment and tells a person why.</p>
       </div>
-      <div>
-        <div class="people r d1">
-          <div class="card person"><div class="role">Certifier</div><div class="nm">Supervisor</div><p>Attests a sample, signs the batch</p></div>
-          <div class="neq" aria-label="must be different from">≠</div>
-          <div class="card person"><div class="role">Releaser</div><div class="nm">Finance</div><p>Releases; payment goes out via Nessie</p></div>
+      <div class="pair">
+        <div class="card receipt r d1"><div class="t">PG&amp;E · PAYMENT CONFIRMATION</div><div>Account ****4471 · Oct 18</div><div class="amt">$50.00</div></div>
+        <div class="card feed r d2" aria-label="Bank feed">
+          <div class="h"><span>Bank account · last 60 days</span><span>live feed</span></div>
+          <div class="row"><span>Oct 16</span><span>MINT MOBILE</span><span>−$30.00</span></div>
+          <div class="row"><span>Oct 14</span><span>BART CLIPPER</span><span>−$42.00</span></div>
+          <div class="row miss"><span>—</span><span>PG&amp;E · $50.00</span><span>not found</span></div>
         </div>
-        <div class="chain r d2" aria-label="Audit chain">
-          <span>REQUEST_CREATED</span><span>CHECKS_RUN</span><span>ESCALATED</span><span>HUMAN_DECIDED</span><span>BATCH_CERTIFIED</span><span>BATCH_RELEASED</span><span>PAYMENT_SENT ✓</span>
-        </div>
+        <div class="card verdict r d3"><span class="chip esc">STOPPED · NO BANK RECORD</span><p>Takes seconds. Nothing is paid until a person looks.</p></div>
       </div>
     </div>
   </section>
 
   <!-- 6 -->
-  <section data-label="Learns">
-    <div class="split">
-      <div>
-        <div class="kick r">It learns, within limits</div>
-        <h2 class="r d1">Approve a pattern once.<br><span class="green">Signet remembers.</span></h2>
-        <p class="sub r d2">A person's decision becomes a rule a second person switches on. Replay shows what it would change before it runs.</p>
-      </div>
-      <div>
-        <div class="card rule r d1"><div><div class="kick" style="margin:0 0 4px">Rule · Finance approved</div><b>Allow Mint Mobile phone, within the limit</b></div><span class="chip info">replay: 4 would clear</span></div>
-        <div class="card reqs r d2">
-          <div class="req flip"><span>Line 2 · Nia A.</span><span class="amt">$30.00</span><span><span class="chip esc">ESCALATED</span><span class="chip ready">READY</span></span></div>
-          <div class="req flip"><span>Line 3 · Camila D.</span><span class="amt">$30.00</span><span><span class="chip esc">ESCALATED</span><span class="chip ready">READY</span></span></div>
-          <div class="req flip"><span>Line 4 · Mateo K.</span><span class="amt">$30.00</span><span><span class="chip esc">ESCALATED</span><span class="chip ready">READY</span></span></div>
-          <div class="req flip"><span>Line 5 · Kai J.</span><span class="amt">$30.00</span><span><span class="chip esc">ESCALATED</span><span class="chip ready">READY</span></span></div>
-        </div>
-        <div class="never r d3">A rule can never approve a reused receipt, waive eligibility or caps, or skip a missing bank posting.</div>
+  <section data-label="How it works">
+    <div class="solo">
+      <div class="kick r">How it works</div>
+      <h2 class="r d1">AI reads the paperwork. Code checks the rules. <span class="red">Two people decide.</span></h2>
+      <div class="steps">
+        <div class="card step r d1"><div class="n">01 · Claude</div><div class="v blue">Reads</div><p>Turns a receipt or bill into who, how much and when, with a confidence for each. It never makes the call.</p></div>
+        <div class="card step r d2"><div class="n">02 · Plain code, not AI</div><div class="v">Checks</div><p>Grant rules, the bank, vendor identity, public records, duplicates. Same request, same answer, every time.</p></div>
+        <div class="card step r d3"><div class="n">03 · Two different people</div><div class="v red">Decide</div><p>One certifies, another releases the money. Every step goes into a log that can't be quietly edited.</p></div>
       </div>
     </div>
   </section>
 
   <!-- 7 -->
-  <section data-label="Built on">
-    <div class="solo">
-      <div class="kick r">Built on</div>
-      <h2 class="r d1">Every check shows its work.</h2>
-      <div class="ints">
-        <div class="card int r d1"><div class="nm blue">Claude</div><p>Reads documents into typed fields. Writes the plain-language summary.</p></div>
-        <div class="card int r d1"><div class="nm">Nessie</div><p>The bank feed for reconciliation, and the real withdrawal at release.</p></div>
-        <div class="card int r d2"><div class="nm">CRS</div><p>FraudFinder identity checks on vendors, sandbox test personas only.</p></div>
-        <div class="card int r d2"><div class="nm">Bright Data</div><p>SF business registry and web presence. Public data, timestamped.</p></div>
-        <div class="card int r d3"><div class="nm">Moss</div><p>Memory of how people resolved similar cases, plus the manual.</p></div>
+  <section data-label="Learns">
+    <div class="split">
+      <div>
+        <div class="kick r">It gets smarter, safely</div>
+        <h2 class="long r d1">It learns from your staff, <span class="green">without switching off the checks that matter.</span></h2>
+        <p class="sub r d2">A supervisor approves one line of a family phone plan. Signet turns that into a rule, shows what it would change, and a second person switches it on. The other lines clear. A reused receipt still doesn't.</p>
       </div>
-      <div class="real">
-        <div class="card r d2"><b class="green">Real</b>Claude, Nessie, CRS and Bright Data calls. Each shows its request and response on /integrations.</div>
-        <div class="card r d3"><b class="red">Simulated</b>The agency, clients, caseworkers, funders and documents. No real personal data, anywhere.</div>
+      <div>
+        <div class="card rule r d1"><div><div class="kick" style="margin:0 0 4px">New rule · approved by Finance</div><b>Allow this family plan's phone lines</b></div><span class="chip info">would clear 4</span></div>
+        <div class="card reqs r d2">
+          <div class="req flip"><span>Line 2</span><span class="amt">$30.00</span><span><span class="chip esc">FLAGGED</span><span class="chip ready">READY</span></span></div>
+          <div class="req flip"><span>Line 3</span><span class="amt">$30.00</span><span><span class="chip esc">FLAGGED</span><span class="chip ready">READY</span></span></div>
+          <div class="req flip"><span>Line 4</span><span class="amt">$30.00</span><span><span class="chip esc">FLAGGED</span><span class="chip ready">READY</span></span></div>
+          <div class="req flip"><span>Line 5</span><span class="amt">$30.00</span><span><span class="chip esc">FLAGGED</span><span class="chip ready">READY</span></span></div>
+          <div class="req stay"><span>Line 1's receipt, submitted again</span><span class="amt">$30.00</span><span class="chip esc">STILL FLAGGED</span></div>
+        </div>
+        <div class="never r d3">No rule can approve a reused receipt, change who qualifies, or skip a missing bank record.</div>
       </div>
     </div>
   </section>
 
   <!-- 8 -->
+  <section data-label="What changes">
+    <div class="solo">
+      <div class="kick r">What changes</div>
+      <h2 class="r d1">Faster help. Fewer paybacks. <span class="green">Audit-ready from day one.</span></h2>
+      <div class="vals">
+        <div class="card val r d1"><div class="v">Faster help</div><p>Clean requests are ready in seconds. Staff spend their time only on what's flagged.</p></div>
+        <div class="card val r d2"><div class="v">Fewer paybacks</div><p>Problems are caught before the money moves, not discovered at audit months later.</p></div>
+        <div class="card val r d3"><div class="v">Audit-ready</div><p>Every payment carries its evidence and two named signatures, in a log that can't be edited.</p></div>
+      </div>
+      <div class="card buyer r d4"><b>Who it's for:</b> finance directors and program managers at nonprofits and county agencies that pay emergency aid. It sits next to the case and accounting tools they already use.</div>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section data-label="Built on">
+    <div class="solo">
+      <div class="kick r">Built on</div>
+      <h2 class="r d1">Every check shows its work.</h2>
+      <div class="ints">
+        <div class="card int r d1"><div class="nm blue">Claude</div><p>Reads receipts and bills. Writes the plain-English summary.</p></div>
+        <div class="card int r d1"><div class="nm">Nessie</div><p>The bank feed for "did it leave?", and the real payment at release.</p></div>
+        <div class="card int r d2"><div class="nm">CRS</div><p>Vendor identity checks, on sandbox test identities.</p></div>
+        <div class="card int r d2"><div class="nm">Bright Data</div><p>Public business records and web presence, dated.</p></div>
+        <div class="card int r d3"><div class="nm">Moss</div><p>Memory of how staff handled similar cases.</p></div>
+      </div>
+      <p class="sub r d3" style="max-width:70ch">Real API calls, each inspectable on /integrations. The agency, clients and documents in the demo are fictional; no real person's data is used.</p>
+    </div>
+  </section>
+
+  <!-- 10 -->
   <section data-label="Next">
     <div class="split">
       <div>
         <div class="kick r">What's next</div>
-        <h2 class="r d1">A pilot on one county fund.</h2>
-        <p class="sub r d2">Run beside the current process for 90 days. Measure what it catches and the hours it gives back. Let the auditor read the log.</p>
+        <h2 class="r d1">A pilot next to one nonprofit's real process.</h2>
+        <p class="sub r d2">Run Signet alongside the current sign-off on past, anonymized payments. Count what it catches and the hours it gives back. Let the auditor read the log.</p>
         <div class="cta r d3">
           <a class="btn primary" href="/where-did-the-50-dollars-go">Try the live demo →</a>
           <a class="btn" href="/memo">Read the memo</a>
